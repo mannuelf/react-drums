@@ -4,9 +4,26 @@ import Pad from "./components/pad.jsx";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">Native Drums</header>
-      <Pad />
+    <div className="app">
+      <header className="app-header">React Drums</header>
+      <section className="app-panel">
+        <Pad />
+        <Pad />
+        <Pad />
+        <Pad />
+        <Pad />
+        <Pad />
+        <Pad />
+        <Pad />
+        <Pad />
+        <Pad />
+        <Pad />
+        <Pad />
+        <Pad />
+        <Pad />
+        <Pad />
+        <Pad />
+      </section>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-.App {
+.app {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -10,7 +10,20 @@
   background-color: #282c34;
 }
 
-.App-header {
-  font-size: calc(10px + 2vmin);
-  color: white;
+.app-header {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  width: 100%;
+  height: 20vh;
+  border-bottom: 1px solid #555;
+}
+
+.app-panel {
+  display: grid;
+  flex-wrap: wrap;
+  height: 80vh;
+  width: 100%;
+  border-top: 1px solid #222;
+  padding: 1em 0.5em;
 }
