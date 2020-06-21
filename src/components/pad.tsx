@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import _ from "lodash";
 import { getDrums } from "../data/drums";
 import styled from "styled-components";
@@ -38,10 +38,17 @@ class Pad extends Component {
   render() {
     const { kit } = this.state;
     const sounds = kit.sounds;
-    const audioElements = Object.values(sounds).map((sound, index) => (
-      <audio src={sound} data-key={index} key={index}></audio>
-    ));
-    return audioElements;
+    const pads = Object.values(sounds).map((sound, index) => {
+      return (
+        <Fragment>
+          <Button key={index} data-key={index}>
+            a
+          </Button>
+          <audio src={sound} data-key={index} key={index}></audio>
+        </Fragment>
+      );
+    });
+    return pads;
   }
 }
 
