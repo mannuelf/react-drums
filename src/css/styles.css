@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #222 url("../img/double-bubble-dark/double-bubble-dark.png")
+    repeat;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.app {
+  width: 100%;
+  max-width: 320px;
+  margin: 1em auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  text-align: center;
+  background-color: #282c34;
+  padding: 1.5em;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
+  border-radius: 4px;
+  border-bottom: 1px solid #222;
+  border-left: 1px solid #333;
+  border-top: 1px solid #555;
+}
+
+.app-header {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  width: 100%;
+  height: 64px;
+  border-bottom: 1px solid #555;
+}
+
+.app-header h1 {
+  color: #ccc;
+}
+
+.app-panel {
+  display: grid;
+  grid: repeat(4, 64px) / auto-flow 64px;
+  grid-auto-columns: 1fr;
+  gap: 10px;
+  height: auto;
+  width: auto;
+  border-top: 1px solid #222;
+  padding: 1em;
+}
