@@ -28,7 +28,14 @@ class Pad extends Component {
         kick: "../sounds/808/kick.wav",
         openhat: "../sounds/808/ride.wav",
         snare: "../sounds/808/snare.wav",
-        tink: "../sounds/808/tom.wav"
+        tink: "../sounds/808/tom.wav",
+        boom2: "../sounds/808/boom.wav",
+        clap2: "../sounds/808/clap.wav",
+        hihat2: "../sounds/808/hihat.wav",
+        kick2: "../sounds/808/kick.wav",
+        openhat2: "../sounds/808/ride.wav",
+        snare2: "../sounds/808/snare.wav",
+        tink2: "../sounds/808/tom.wav"
       }
     }
   };
