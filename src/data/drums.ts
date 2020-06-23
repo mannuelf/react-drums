@@ -7,9 +7,11 @@ export const drums: object[] = [
       clap: "../sounds/808/clap.wav",
       hihat: "../sounds/808/hihat.wav",
       kick: "../sounds/808/kick.wav",
-      openhat: "../sounds/808/ride.wav",
+      openhat: "../sounds/808/openhat.wav",
+      ride: "../sounds/808/ride.wav",
       snare: "../sounds/808/snare.wav",
-      tink: "../sounds/808/tom.wav"
+      tink: "../sounds/808/tink.wav",
+      tom: "../sounds/808/tom.wav"
     }
   }
 ];

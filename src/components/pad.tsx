@@ -26,32 +26,44 @@ class Pad extends Component {
         clap: "../sounds/808/clap.wav",
         hihat: "../sounds/808/hihat.wav",
         kick: "../sounds/808/kick.wav",
-        openhat: "../sounds/808/ride.wav",
+        openhat: "../sounds/808/openhat.wav",
+        ride: "../sounds/808/ride.wav",
         snare: "../sounds/808/snare.wav",
-        tink: "../sounds/808/tom.wav",
-        boom2: "../sounds/808/boom.wav",
-        clap2: "../sounds/808/clap.wav",
-        hihat2: "../sounds/808/hihat.wav",
-        kick2: "../sounds/808/kick.wav",
-        openhat2: "../sounds/808/ride.wav",
-        snare2: "../sounds/808/snare.wav",
-        tink2: "../sounds/808/tom.wav"
+        tink: "../sounds/808/tink.wav",
+        tom: "../sounds/808/tom.wav"
       }
     }
   };
 
   componentDidMount() {}
 
+  playSound = (e: any) => {
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`.key[data-key=${e.keyCode}]`);
+    console.log(typeof audio, audio);
+    /*if (!audio) return;
+    audio.currentTime = 0;
+    audio.play();
+    key.classList.add("playing");*/
+  };
+
   render() {
     const { kit } = this.state;
     const sounds = kit.sounds;
+    const mainKit = kit;
+    const pad = Object.entries(mainKit).map(([key, value], index) => {});
     const pads = Object.values(sounds).map((sound, index) => {
       return (
         <Fragment>
-          <Button key={index} data-key={index}>
+          <Button
+            key=""
+            data-key="65"
+            onKeyDown={e => this.playSound(e)}
+            onClick={e => this.playSound(e)}
+          >
             a
           </Button>
-          <audio src={sound} data-key={index} key={index}></audio>
+          <audio src={sound} data-key="65" key={index}></audio>
         </Fragment>
       );
     });
