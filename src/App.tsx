@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import DrumPads from "./components/drumpads";
-import { getDrums, getDrumKitByName } from "./data/drums";
+import { getDrumKitByName } from "./data/drums";
 
-interface AppProps {
+export interface AppProps {
   kit: object[];
 }
 
 class App extends Component {
-  constructor(props: any) {
+  constructor(props: AppProps) {
     super(props);
     this.state = {
       kit: []
@@ -16,7 +16,7 @@ class App extends Component {
 
   componentDidMount() {
     const kitName = "808"; // hard coded for now, will be filter/drop down interface.
-    this.setState({ kit: getDrumKitByName(kitName) });
+    this.setState({ kit: getDrumKitByName(kitName) }); // yeah hooks next iteration
   }
 
   getAppData = () => {
@@ -27,7 +27,10 @@ class App extends Component {
     const { kit } = this.getAppData();
     return (
       <div className="app">
-        <header className="app-header">React Drums</header>
+        <header className="app-header">
+          <h1>React Drums</h1>
+          <h2>808 Drum</h2>
+        </header>
         <section className="app-panel">
           <DrumPads kit={kit} />
         </section>
