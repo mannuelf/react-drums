@@ -1,6 +1,5 @@
-import React, { Component, Fragment } from "react";
+import React from "react";
 import Sound from "react-sound";
-import _ from "lodash";
 import styled from "styled-components";
 
 const Button = styled.button`
@@ -16,35 +15,38 @@ const Button = styled.button`
   box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.4);
 `;
 
-export interface PadProps {
-  id: number;
-  name: string;
-  url: string;
-  keyboard: string;
+interface PadProps {
   sounds: object;
-  onKeyDown?: () => void;
-  onClick?: () => void;
 }
 
-const Pad = ({ id, name, url, keyboard, sounds }: PadProps) => {
-  return <Button className="button">.</Button>;
-  /* return Object.values(sounds).map((sound, index) => {
-      return (
-        <Fragment>
-          <Button
-            className="key"
-            key={sound.key}
-            data-key={sound.key}
-            onKeyDown={e => this.handleKeyPress(e)}
-            onClick={e => this.handleCick(e)}
-          >
-            <kbd>{sound.letter}</kbd>
-            <span className="pad-label">{sound.name}</span>
-          </Button>
-          <audio src={sound.clip} key={index} data-key={sound.key}></audio>
-        </Fragment>
-      );
-    });*/
+const handleClick = (e: any): void => {
+  console.log("🚀", e);
+};
+
+const Pad = ({ sounds }: PadProps) => {
+  const pads = sounds
+    ? Object.entries(sounds).map(([key, value], index) => {
+        return (
+          <>
+            <Button
+              onClick={e => handleClick(e)}
+              key={value["id"]}
+              data-key={value["key"]}
+            >
+              {" "}
+              {value["name"]}{" "}
+            </Button>
+            <Sound
+              key={index}
+              url={value["clip"]}
+              playStatus="STOPPED"
+              data-key={value["key"]}
+            />
+          </>
+        );
+      })
+    : "";
+  return <>{pads}</>;
 };
 
 export default Pad;
