@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Sound from "react-sound";
 import styled from "styled-components";
 
@@ -19,8 +19,12 @@ interface PadProps {
   sounds: object;
 }
 
+const handleAudio = useRef(null);
+
 const handleClick = (e: any): void => {
   console.log("🚀", e);
+  const audioElement = handleAudio.current;
+  console.log("audioEl", audioElement);
 };
 
 const Pad = ({ sounds }: PadProps) => {
@@ -41,6 +45,7 @@ const Pad = ({ sounds }: PadProps) => {
               url={value["clip"]}
               playStatus="PLAYING"
               data-key={value["key"]}
+              ref={handleAudio}
             />
           </>
         );
