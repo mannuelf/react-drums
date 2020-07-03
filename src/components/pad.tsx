@@ -39,7 +39,7 @@ const Pad = ({ sounds }: PadProps) => {
             <Sound
               key={index}
               url={value["clip"]}
-              playStatus="STOPPED"
+              playStatus="PLAYING"
               data-key={value["key"]}
             />
           </>
