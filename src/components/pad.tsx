@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
+import Sound from "react-sound";
 import _ from "lodash";
-import { getDrums } from "../data/drums";
 import styled from "styled-components";
 
 const Button = styled.button`
@@ -16,59 +16,35 @@ const Button = styled.button`
   box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.4);
 `;
 
-class Pad extends Component {
-  state = {
-    kit: {
-      id: 1,
-      name: "808",
-      sounds: {
-        boom: "../sounds/808/boom.wav",
-        clap: "../sounds/808/clap.wav",
-        hihat: "../sounds/808/hihat.wav",
-        kick: "../sounds/808/kick.wav",
-        openhat: "../sounds/808/openhat.wav",
-        ride: "../sounds/808/ride.wav",
-        snare: "../sounds/808/snare.wav",
-        tink: "../sounds/808/tink.wav",
-        tom: "../sounds/808/tom.wav"
-      }
-    }
-  };
+export interface PadProps {
+  id: number;
+  name: string;
+  url: string;
+  keyboard: string;
+  sounds: object;
+  onKeyDown?: () => void;
+  onClick?: () => void;
+}
 
-  componentDidMount() {}
-
-  playSound = (e: any) => {
-    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    const key = document.querySelector(`.key[data-key=${e.keyCode}]`);
-    console.log(typeof audio, audio);
-    /*if (!audio) return;
-    audio.currentTime = 0;
-    audio.play();
-    key.classList.add("playing");*/
-  };
-
-  render() {
-    const { kit } = this.state;
-    const sounds = kit.sounds;
-    const mainKit = kit;
-    const pad = Object.entries(mainKit).map(([key, value], index) => {});
-    const pads = Object.values(sounds).map((sound, index) => {
+const Pad = ({ id, name, url, keyboard, sounds }: PadProps) => {
+  return <Button className="button">.</Button>;
+  /* return Object.values(sounds).map((sound, index) => {
       return (
         <Fragment>
           <Button
-            key=""
-            data-key="65"
-            onKeyDown={e => this.playSound(e)}
-            onClick={e => this.playSound(e)}
+            className="key"
+            key={sound.key}
+            data-key={sound.key}
+            onKeyDown={e => this.handleKeyPress(e)}
+            onClick={e => this.handleCick(e)}
           >
-            a
+            <kbd>{sound.letter}</kbd>
+            <span className="pad-label">{sound.name}</span>
           </Button>
-          <audio src={sound} data-key="65" key={index}></audio>
+          <audio src={sound.clip} key={index} data-key={sound.key}></audio>
         </Fragment>
       );
-    });
-    return pads;
-  }
-}
+    });*/
+};
 
 export default Pad;
