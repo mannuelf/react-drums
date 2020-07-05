@@ -1,80 +1,127 @@
 export interface Drum {
   id: number;
   name: string;
-  sounds: {
-    [key: string]: object;
-  };
+  sounds: object[];
 }
 
 export const drums: Drum[] = [
   {
     id: 1,
     name: "808",
-    sounds: {
-      boom: {
+    sounds: [
+      {
         id: 1,
-        name: "boom",
-        clip: "./sounds/808/boom.wav",
-        key: 81,
-        letter: "q"
+        name: "Bass drum I",
+        src: "https://themwebs.me/drums/808/bass-drum/E808_BD[short]-01.wav",
+        keyCode: 86,
+        keyChar: "V"
       },
-      clap: {
+      {
         id: 2,
-        name: "clap",
-        clip: "./sounds/808/clap.wav",
-        key: 87,
-        letter: "w"
+        name: "Bass drum II",
+        src: "https://themwebs.me/drums/808/bass-drum/E808_BD[short]-02.wav",
+        keyCode: 66,
+        keyChar: "B"
       },
-      hihat: {
+      {
         id: 3,
-        name: "hihat",
-        clip: "./sounds/808/hihat.wav",
-        key: 69,
-        letter: "e"
+        name: "Cow bell",
+        src: "https://themwebs.me/drums/808/cowbell/E808_CB-01.wav",
+        keyCode: 78,
+        keyChar: "N"
       },
-      kick: {
+      {
         id: 4,
-        name: "kick",
-        clip: "./sounds/808/kick.wav",
-        key: 82,
-        letter: "r"
+        name: "Rimshot",
+        src: "https://themwebs.me/drums/808/rimshot/E808_RS-01.wav",
+        keyCode: 77,
+        keyChar: "M"
       },
-      openhat: {
+      {
         id: 5,
-        name: "openhat",
-        clip: "./sounds/808/openhat.wav",
-        key: 84,
-        letter: "t"
+        name: "Snare drum I",
+        src: "https://themwebs.me/drums/808/snare-drum/E808_SD-01.wav",
+        keyCode: 70,
+        keyChar: "F"
       },
-      ride: {
+      {
         id: 6,
-        name: "ride",
-        clip: "./sounds/808/ride.wav",
-        key: 89,
-        letter: "y"
+        name: "Snare drum II",
+        src: "https://themwebs.me/drums/808/snare-drum/E808_SD-02.wav",
+        keyCode: 71,
+        keyChar: "G"
       },
-      snare: {
+      {
         id: 7,
-        name: "snare",
-        clip: "./sounds/808/snare.wav",
-        key: 85,
-        letter: "u"
+        name: "Snare drum III",
+        src: "https://themwebs.me/drums/808/snare-drum/E808_SD-03.wav",
+        keyCode: 72,
+        keyChar: "H"
       },
-      tink: {
+      {
         id: 8,
-        name: "tink",
-        clip: "./sounds/808/tink.wav",
-        key: 73,
-        letter: "i"
+        name: "Snare drum IV",
+        src: "https://themwebs.me/drums/808/snare-drum/E808_SD-04.wav",
+        keyCode: 74,
+        keyChar: "J"
       },
-      tom: {
+      {
         id: 9,
-        name: "tom",
-        clip: "./sounds/808/tom.wav",
-        key: 79,
-        letter: "o"
+        name: "Closed hi hat I",
+        src: "https://themwebs.me/drums/808/closed-hi-hat/E808_CH-01.wav",
+        keyCode: 82,
+        keyChar: "R"
+      },
+      {
+        id: 10,
+        name: "Closed hi hat II",
+        src: "https://themwebs.me/drums/808/closed-hi-hat/E808_CH-02.wav",
+        keyCode: 84,
+        keyChar: "T"
+      },
+      {
+        id: 11,
+        name: "Open hi hat I",
+        src: "https://themwebs.me/drums/808/open-hi-hat/E808_OH-01.wav",
+        keyCode: 89,
+        keyChar: "Y"
+      },
+      {
+        id: 12,
+        name: "Open hi hat II",
+        src: "https://themwebs.me/drums/808/open-hi-hat/E808_OH-02.wav",
+        keyCode: 85,
+        keyChar: "U"
+      },
+      {
+        id: 13,
+        name: "Clap I",
+        src: "https://themwebs.me/drums/808/clap/E808_CP-01.wav",
+        keyCode: 52,
+        keyChar: "4"
+      },
+      {
+        id: 14,
+        name: "Clap II",
+        src: "https://themwebs.me/drums/808/clap/E808_CP-02.wav",
+        keyCode: 53,
+        keyChar: "5"
+      },
+      {
+        id: 15,
+        name: "Clave I",
+        src: "https://themwebs.me/drums/808/claves/E808_CL-01.wav",
+        keyCode: 54,
+        keyChar: "6"
+      },
+      {
+        id: 16,
+        name: "Clave II",
+        src: "https://themwebs.me/drums/808/claves/E808_CL-02.wav",
+        keyCode: 55,
+        keyChar: "7"
       }
-    }
+    ]
   }
 ];
 
