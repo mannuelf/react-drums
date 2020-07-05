@@ -17,41 +17,33 @@ const Button = styled.button`
 
 interface PadProps {
   sounds: object;
+  handleClick: () => void;
 }
 
-const handleAudio = useRef(null);
-
-const handleClick = (e: any): void => {
-  console.log("🚀", e);
-  const audioElement = handleAudio.current;
-  console.log("audioEl", audioElement);
-};
-
-const Pad = ({ sounds }: PadProps) => {
+const Pad = ({ sounds, handleClick }: PadProps) => {
   const pads = sounds
     ? Object.entries(sounds).map(([key, value], index) => {
         return (
           <>
             <Button
-              onClick={e => handleClick(e)}
               key={value["id"]}
               data-key={value["key"]}
+              className="drum-pad"
             >
               {" "}
               {value["name"]}{" "}
             </Button>
-            <Sound
+            <audio
               key={index}
-              url={value["clip"]}
-              playStatus="PLAYING"
+              src={value["clip"]}
               data-key={value["key"]}
-              ref={handleAudio}
+              className="drum-pad__audio"
             />
           </>
         );
       })
     : "";
-  return <>{pads}</>;
+  return <>pads</>;
 };
 
 export default Pad;
