@@ -127,7 +127,7 @@ body {
 .pad-button {
   position: relative;
 }
-/*
+
 .pad-button:nth-child(1) {
   background-color: red;
   order: 16;
@@ -192,7 +192,7 @@ body {
 .pad-button:nth-child(16) {
   background-color: lightpink;
   order: 1;
-}*/
+}
 
 .pad-button-name {
   font-size: 12px;
