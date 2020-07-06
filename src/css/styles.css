@@ -5,12 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url("../img/wood_pattern/wood_pattern_@2X.png") repeat;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  background: #e0a553 url("../img/purty_wood/purty_wood.png") repeat;
 }
 
 .app {
@@ -22,10 +17,8 @@ code {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   text-align: center;
-  background-color: #282c34;
-  background: #222 url("../img//stardust/stardust_@2X.png") repeat;
+  background: #222 url("../img/broken_noise/broken_noise.png") repeat center;
   padding: 1.5em;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
   border-radius: 4px;
@@ -34,11 +27,18 @@ code {
   border-top: 1px solid #555;
 }
 
+@media screen and (min-width: 767px) {
+  .app {
+    max-width: 640px;
+  }
+}
+
 .app::before {
   display: block;
   content: "";
   position: absolute;
   z-index: 1;
+  opacity: 0.6;
   top: 0;
   bottom: 0;
   left: 0;
@@ -59,7 +59,6 @@ code {
     rgba(22, 22, 22, 1) 0%,
     rgba(76, 76, 76, 1) 100%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#161616",endColorstr="#4c4c4c",GradientType=1);
 }
 
 .app-header {
@@ -84,11 +83,96 @@ code {
 
 .app-panel {
   display: grid;
-  grid: repeat(4, 64px) / auto-flow 64px;
-  grid-auto-columns: 1fr;
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+  grid-gap: 16px;
+  padding: 1.5em 0 0 0;
   height: auto;
   width: 100%;
   border-top: 1px solid #222;
   z-index: 5;
+}
+.pad-button {
+  position: relative;
+}
+/*
+.pad-button:nth-child(1) {
+  background-color: red;
+  order: 16;
+}
+
+.pad-button:nth-child(2) {
+  background-color: green;
+  order: 15;
+}
+.pad-button:nth-child(3) {
+  background-color: mediumblue;
+  order: 14;
+}
+.pad-button:nth-child(4) {
+  background-color: lime;
+  order: 13;
+}
+.pad-button:nth-child(5) {
+  background-color: darkblue;
+  order: 12;
+}
+.pad-button:nth-child(6) {
+  background-color: crimson;
+  order: 11;
+}
+.pad-button:nth-child(7) {
+  background-color: burlywood;
+  order: 10;
+}
+.pad-button:nth-child(8) {
+  background-color: fuchsia;
+  order: 9;
+}
+.pad-button:nth-child(9) {
+  background-color: lightgoldenrodyellow;
+  order: 8;
+}
+.pad-button:nth-child(10) {
+  background-color: yellowgreen;
+  order: 7;
+}
+.pad-button:nth-child(11) {
+  background-color: yellow;
+  order: 6;
+}
+.pad-button:nth-child(12) {
+  background-color: purple;
+  order: 5;
+}
+.pad-button:nth-child(13) {
+  background-color: purple;
+  order: 4;
+}
+.pad-button:nth-child(14) {
+  background-color: lightcoral;
+  order: 3;
+}
+.pad-button:nth-child(15) {
+  background-color: lightgreen;
+  order: 2;
+}
+.pad-button:nth-child(16) {
+  background-color: lightpink;
+  order: 1;
+}*/
+
+.pad-button-name {
+  font-size: 12px;
+}
+.pad-button-char {
+  font-size: 10px;
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+}
+.pad-button-id {
+  font-size: 10px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
 }

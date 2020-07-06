@@ -6,7 +6,6 @@ const Button = styled.button`
   background: #444;
   border-radius: 3px;
   color: yellow;
-  margin: 0 0.5em;
   padding: 1rem;
   border: none;
   height: auto;
@@ -34,6 +33,11 @@ class App extends Component {
     this.setState({ kit: getDrumKitByName(kitName) }); // yeah hooks next iteration
     document.addEventListener("keydown", this.handleKeyDown);
     document.addEventListener("click", this.handleClick);
+    document.addEventListener("transitionend", this.removeActiveClass);
+    const buttons = document.querySelectorAll(`.pad-button`);
+    buttons.forEach((button: any) => {
+      button.addEventListener("transitionend", this.removeActiveClass);
+    });
   }
 
   getAppData = () => {
@@ -41,7 +45,7 @@ class App extends Component {
   };
 
   handleClick = (e: any) => {
-    console.log("click", e.target);
+    console.log("click", e);
     const key = e.keyCode || e.charCode;
 
     const pad = document.querySelector(
@@ -74,6 +78,14 @@ class App extends Component {
     pad.classList.add("playing");
   };
 
+  removeActiveClass = (e: any) => {
+    if (e.propertyName !== "transform") {
+      return;
+    }
+    const button = e.target;
+    button.classList.remove("playing");
+  };
+
   render() {
     const { kit } = this.getAppData();
     const allSounds: object[] = Object.entries(kit).map(
@@ -101,6 +113,7 @@ class App extends Component {
                             data-key={item.keyCode}
                             className="pad-button"
                           >
+                            <span className="pad-button-id">{item.id}</span>
                             <span className="pad-button-char">
                               {item.keyChar}
                             </span>
