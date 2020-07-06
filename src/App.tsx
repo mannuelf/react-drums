@@ -42,8 +42,7 @@ class App extends Component {
   };
 
   handleClick = (e: any) => {
-    const key = e.keyCode || e.charCode;
-
+    const key = e.target.dataset.key;
     const pad = document.querySelector(
       `button[data-key="${key}"]`
     ) as HTMLButtonElement;
