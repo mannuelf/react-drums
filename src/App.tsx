@@ -113,11 +113,9 @@ class App extends Component {
                             data-key={item.keyCode}
                             className="pad-button"
                           >
-                            <span className="pad-button-id">{item.id}</span>
                             <span className="pad-button-char">
                               {item.keyChar}
                             </span>
-                            <span className="pad-button-name">{item.name}</span>
                             <audio
                               key={item.keyCode}
                               src={item.src}
