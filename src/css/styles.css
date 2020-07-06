@@ -81,6 +81,11 @@ body {
   font-size: 12px;
 }
 
+.logo {
+  width: 140px;
+  height: auto;
+}
+
 .app-panel {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import SVGLogo from "./img/maschinelogo.svg";
 import { getDrumKitByName } from "./data/drums";
 
 const Button = styled.button`
@@ -8,7 +9,7 @@ const Button = styled.button`
   color: yellow;
   padding: 1rem;
   border: none;
-  height: auto;
+  height: 68px;
   width: 100%;
   cursor: pointer;
   box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.4);
@@ -51,6 +52,7 @@ class App extends Component {
     const pad = document.querySelector(
       `button[data-key="${key}"]`
     ) as HTMLButtonElement;
+
     const audio = document.querySelector(
       `audio[data-key="${key}"]`
     ) as HTMLAudioElement;
@@ -94,8 +96,12 @@ class App extends Component {
     return (
       <div className="app">
         <header className="app-header">
-          <h1>React Drums</h1>
-          <h2>808 Drum</h2>
+          <div className="column">
+            <img src={SVGLogo} className="logo" alt="MASCHINE MIKRO" />
+          </div>
+          <div className="column">
+            <h1>React Drums</h1>
+          </div>
         </header>
         <section className="app-panel">
           {!allSounds
