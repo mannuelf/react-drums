@@ -5,19 +5,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #e0a553 url("../img/purty_wood/purty_wood.png") repeat;
+  background: #eac182 url("../img/purty_wood/purty_wood.png") repeat;
 }
 
 .app {
   position: relative;
   width: 100%;
-  max-width: 320px;
-  margin: 1em auto;
+  max-width: 310px;
+  margin: 3em auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   background: #222 url("../img/broken_noise/broken_noise.png") repeat center;
   padding: 1.5em;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
@@ -65,15 +64,44 @@ body {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  align-items: stretch;
+  justify-content: flex-start;
   width: 100%;
   height: 48px;
   border-bottom: 1px solid #555;
   z-index: 5;
 }
 
+.app-header div {
+  flex-grow: 1;
+}
+
+.app-header-lcd {
+  background-color: #222;
+  border: 1px solid #464646;
+  margin: -10px 0;
+  padding: 0.4em 1em;
+  border-radius: 3px;
+  box-shadow: inset 0 0 5px #111111;
+  border-bottom: 1px solid #666;
+}
+
+.app-header .column:nth-child(2) {
+  text-align: left;
+}
+
+.app-header .column:nth-child(2) div {
+  color: yellow;
+}
 .app-header h1 {
   color: #ccc;
-  font-size: 12px;
+  font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+  font-size: 8px;
+  font-weight: normal;
+  text-transform: uppercase;
 }
 
 .app-header h2 {

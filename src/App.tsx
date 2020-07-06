@@ -35,10 +35,6 @@ class App extends Component {
     document.addEventListener("keydown", this.handleKeyDown);
     document.addEventListener("click", this.handleClick);
     document.addEventListener("transitionend", this.removeActiveClass);
-    const buttons = document.querySelectorAll(`.pad-button`);
-    buttons.forEach((button: any) => {
-      button.addEventListener("transitionend", this.removeActiveClass);
-    });
   }
 
   getAppData = () => {
@@ -46,7 +42,6 @@ class App extends Component {
   };
 
   handleClick = (e: any) => {
-    console.log("click", e);
     const key = e.keyCode || e.charCode;
 
     const pad = document.querySelector(
@@ -100,7 +95,12 @@ class App extends Component {
             <img src={SVGLogo} className="logo" alt="MASCHINE MIKRO" />
           </div>
           <div className="column">
-            <h1>React Drums</h1>
+            <div className="app-header-lcd">
+              <h1>
+                React
+                <div>808 Drum</div>
+              </h1>
+            </div>
           </div>
         </header>
         <section className="app-panel">
@@ -115,6 +115,7 @@ class App extends Component {
                           <Button
                             onClick={e => this.handleClick(e)}
                             onKeyDown={e => this.handleKeyDown(e)}
+                            onKeyPress={e => this.handleKeyDown(e)}
                             key={item.id}
                             data-key={item.keyCode}
                             className="pad-button"
