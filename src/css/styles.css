@@ -11,8 +11,8 @@ body {
 .app {
   position: relative;
   width: 100%;
-  max-width: 310px;
-  margin: 3em auto;
+  max-width: 312px;
+  margin: 4em auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,6 +42,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+  border-radius: 4px;
   background: rgb(22, 22, 22);
   background: -moz-linear-gradient(
     353deg,
@@ -124,79 +125,114 @@ body {
   border-top: 1px solid #222;
   z-index: 5;
 }
+
 .pad-button {
   position: relative;
+  outline: none;
+  color: #fff;
 }
 
+.pad-button::before {
+  display: block;
+  content: "";
+  position: absolute;
+  z-index: 2;
+  opacity: 0.8;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 3px;
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+}
+.pad-button::after {
+  display: block;
+  content: "";
+  position: absolute;
+  z-index: 1;
+  opacity: 0.3;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 3px;
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
 .pad-button:nth-child(1) {
-  background-color: red;
+  background-color: #4d94fc;
   order: 16;
 }
 
 .pad-button:nth-child(2) {
-  background-color: green;
+  background-color: #4d94fc;
   order: 15;
 }
 .pad-button:nth-child(3) {
-  background-color: mediumblue;
+  background-color: #ff423e;
   order: 14;
 }
 .pad-button:nth-child(4) {
-  background-color: lime;
+  background-color: #ff423e;
   order: 13;
 }
 .pad-button:nth-child(5) {
-  background-color: darkblue;
+  background-color: #4d94fc;
   order: 12;
 }
 .pad-button:nth-child(6) {
-  background-color: crimson;
+  background-color: #19eaa3;
   order: 11;
 }
 .pad-button:nth-child(7) {
-  background-color: burlywood;
+  background-color: #ffdd2f;
   order: 10;
 }
 .pad-button:nth-child(8) {
-  background-color: fuchsia;
+  background-color: #ffdd2f;
   order: 9;
 }
 .pad-button:nth-child(9) {
-  background-color: lightgoldenrodyellow;
+  background-color: #fc9824;
   order: 8;
 }
 .pad-button:nth-child(10) {
-  background-color: yellowgreen;
+  background-color: #fc9824;
   order: 7;
 }
 .pad-button:nth-child(11) {
-  background-color: yellow;
+  background-color: #fc9824;
   order: 6;
 }
 .pad-button:nth-child(12) {
-  background-color: purple;
+  background-color: #fc9824;
   order: 5;
 }
 .pad-button:nth-child(13) {
-  background-color: purple;
+  background-color: #19eaa3;
   order: 4;
 }
 .pad-button:nth-child(14) {
-  background-color: lightcoral;
+  background-color: #19eaa3;
   order: 3;
 }
 .pad-button:nth-child(15) {
-  background-color: lightgreen;
+  background-color: #19eaa3;
   order: 2;
 }
 .pad-button:nth-child(16) {
-  background-color: lightpink;
+  background-color: #19eaa3;
   order: 1;
 }
 
 .pad-button-name {
   font-size: 12px;
 }
+
 .pad-button-char {
   font-size: 10px;
   position: absolute;

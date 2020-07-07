@@ -6,7 +6,6 @@ import { getDrumKitByName } from "./data/drums";
 const Button = styled.button`
   background: #444;
   border-radius: 3px;
-  color: yellow;
   padding: 1rem;
   border: none;
   height: 68px;
