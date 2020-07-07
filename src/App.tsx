@@ -1,9 +1,15 @@
 import React, { Component } from "react";
+import ReactGa from "react-ga";
 import styled from "styled-components";
 import SVGLogo from "./img/maschinelogo.svg";
 import { getDrumKitByName } from "./data/drums";
 import SiteFooter from "./components/footer";
 import Cable from "./components/common/cable";
+
+require("dotenv").config();
+
+ReactGa.initialize(`${process.env.REACT_APP_GOOGLE_ANALYTICS}`);
+ReactGa.pageview(window.location.pathname + window.location.search);
 
 const Button = styled.button`
   background: #444;
