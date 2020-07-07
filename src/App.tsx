@@ -3,6 +3,7 @@ import styled from "styled-components";
 import SVGLogo from "./img/maschinelogo.svg";
 import { getDrumKitByName } from "./data/drums";
 import SiteFooter from "./components/footer";
+import Cable from "./components/common/cable";
 
 const Button = styled.button`
   background: #444;
@@ -91,6 +92,7 @@ class App extends Component {
     return (
       <>
         <div className="app">
+          <Cable />
           <header className="app-header">
             <div className="column">
               <img src={SVGLogo} className="logo" alt="MASCHINE MIKRO" />
@@ -105,35 +107,40 @@ class App extends Component {
             </div>
           </header>
           <section className="app-panel">
-            {!allSounds
-              ? "Loading..."
-              : allSounds.map((sound: any, index) => {
-                  return !sound
-                    ? ""
-                    : sound.map((item: any) => {
-                        return (
-                          <>
-                            <Button
-                              onClick={e => this.handleClick(e)}
-                              onKeyDown={e => this.handleKeyDown(e)}
-                              onKeyPress={e => this.handleKeyDown(e)}
-                              key={item.id}
-                              data-key={item.keyCode}
-                              className="pad-button"
-                            >
-                              <span className="pad-button-char">
-                                {item.keyChar}
-                              </span>
-                              <audio
-                                key={item.keyCode}
-                                src={item.src}
-                                data-key={item.keyCode}
-                              />
-                            </Button>
-                          </>
-                        );
-                      });
-                })}
+            <div className="app-panel__controls">.</div>
+            <div className="app-panel__controls">
+              <div>
+                {!allSounds
+                  ? "Loading..."
+                  : allSounds.map((sound: any, index) => {
+                      return !sound
+                        ? ""
+                        : sound.map((item: any) => {
+                            return (
+                              <>
+                                <Button
+                                  onClick={e => this.handleClick(e)}
+                                  onKeyDown={e => this.handleKeyDown(e)}
+                                  onKeyPress={e => this.handleKeyDown(e)}
+                                  key={item.id}
+                                  data-key={item.keyCode}
+                                  className="pad-button"
+                                >
+                                  <span className="pad-button-char">
+                                    {item.keyChar}
+                                  </span>
+                                  <audio
+                                    key={item.keyCode}
+                                    src={item.src}
+                                    data-key={item.keyCode}
+                                  />
+                                </Button>
+                              </>
+                            );
+                          });
+                    })}
+              </div>
+            </div>
           </section>
         </div>
         <SiteFooter />

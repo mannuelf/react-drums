@@ -12,7 +12,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #eac182 url("../img/purty_wood/purty_wood.png") repeat;
+  background: #eac182 url("https://res.cloudinary.com/mannuel/image/upload/v1594123814/images/purty_wood/purty_wood__2X.png") repeat;
 }
 
 .app {
@@ -66,6 +66,8 @@ body {
     rgba(22, 22, 22, 1) 0%,
     rgba(76, 76, 76, 1) 100%
   );
+  border-top: 1px solid rgba(255,255,255,0.6);
+  border-left: 1px solid rgba(255,255,255,0.2);
 }
 
 .app-header {
@@ -103,6 +105,7 @@ body {
 .app-header .column:nth-child(2) div {
   color: yellow;
 }
+
 .app-header h1 {
   color: #ccc;
   font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
@@ -122,7 +125,7 @@ body {
   height: auto;
 }
 
-.app-panel {
+.app-panel__controls > div {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
   grid-gap: 16px;
@@ -131,6 +134,23 @@ body {
   width: 100%;
   border-top: 1px solid #222;
   z-index: 5;
+}
+
+.app-panel {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  z-index: 5;
+}
+
+.app-panel__controls {
+  flex-grow: 1;
+  &:first-child {
+    display: none;
+    @media (min-width: 767px) {
+      display: block;
+    }
+  }
 }
 
 .pad-button {
@@ -263,6 +283,7 @@ footer {
   padding: 0.2rem 0.5em;
   width: 100vw;
   text-align: center;
+  font-size: 12px;
 }
 
 a:link,
