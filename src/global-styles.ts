@@ -1,6 +1,10 @@
-html {
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+ html {
   touch-action: manipulation;
 }
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -264,4 +268,6 @@ footer {
 a:link,
 a:visited {
   color: #fff;
-}
+}`;
+
+export default GlobalStyle;
