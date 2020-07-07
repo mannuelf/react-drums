@@ -11,31 +11,31 @@ export const drums: Drum[] = [
     sounds: [
       {
         id: 1,
-        name: "Bass drum I",
-        src: "https://themwebs.me/drums/808/bass-drum/E808_BD[short]-01.wav",
-        keyCode: 86,
-        keyChar: "V"
+        name: "Rimshot",
+        src: "https://themwebs.me/drums/808/rimshot/E808_RS-01.wav",
+        keyCode: 77,
+        keyChar: "M"
       },
       {
         id: 2,
-        name: "Bass drum II",
-        src: "https://themwebs.me/drums/808/bass-drum/E808_BD[short]-02.wav",
-        keyCode: 66,
-        keyChar: "B"
-      },
-      {
-        id: 3,
         name: "Cow bell",
         src: "https://themwebs.me/drums/808/cowbell/E808_CB-01.wav",
         keyCode: 78,
         keyChar: "N"
       },
       {
+        id: 3,
+        name: "Bass drum II",
+        src: "https://themwebs.me/drums/808/bass-drum/E808_BD[short]-02.wav",
+        keyCode: 66,
+        keyChar: "B"
+      },
+      {
         id: 4,
-        name: "Rimshot",
-        src: "https://themwebs.me/drums/808/rimshot/E808_RS-01.wav",
-        keyCode: 77,
-        keyChar: "M"
+        name: "Bass drum I",
+        src: "https://themwebs.me/drums/808/bass-drum/E808_BD[short]-01.wav",
+        keyCode: 86,
+        keyChar: "V"
       },
       {
         id: 5,

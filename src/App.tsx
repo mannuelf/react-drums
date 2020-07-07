@@ -75,11 +75,12 @@ class App extends Component {
   };
 
   removeActiveClass = (e: any) => {
-    if (e.propertyName !== "transform") {
-      return;
-    }
-    const button = e.target;
-    button.classList.remove("playing");
+    const buttons = document.querySelectorAll(".pad-button");
+    buttons.forEach(button => {
+      console.log("button", button);
+      button.addEventListener("transitionend", this.removeActiveClass);
+      button.classList.remove("playing");
+    });
   };
 
   render() {
