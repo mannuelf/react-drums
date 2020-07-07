@@ -249,3 +249,19 @@ body {
   top: 4px;
   left: 4px;
 }
+
+footer {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  padding: 0.2rem 0.5em;
+  width: 100vw;
+  text-align: center;
+}
+
+a:link,
+a:visited {
+  color: #fff;
+}

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import SVGLogo from "./img/maschinelogo.svg";
 import { getDrumKitByName } from "./data/drums";
+import SiteFooter from "./components/footer";
 
 const Button = styled.button`
   background: #444;
@@ -88,52 +89,55 @@ class App extends Component {
       ([key, value]: any, index) => value["sounds"]
     );
     return (
-      <div className="app">
-        <header className="app-header">
-          <div className="column">
-            <img src={SVGLogo} className="logo" alt="MASCHINE MIKRO" />
-          </div>
-          <div className="column">
-            <div className="app-header-lcd">
-              <h1>
-                React
-                <div>808 Drum</div>
-              </h1>
+      <>
+        <div className="app">
+          <header className="app-header">
+            <div className="column">
+              <img src={SVGLogo} className="logo" alt="MASCHINE MIKRO" />
             </div>
-          </div>
-        </header>
-        <section className="app-panel">
-          {!allSounds
-            ? "Loading..."
-            : allSounds.map((sound: any, index) => {
-                return !sound
-                  ? ""
-                  : sound.map((item: any) => {
-                      return (
-                        <>
-                          <Button
-                            onClick={e => this.handleClick(e)}
-                            onKeyDown={e => this.handleKeyDown(e)}
-                            onKeyPress={e => this.handleKeyDown(e)}
-                            key={item.id}
-                            data-key={item.keyCode}
-                            className="pad-button"
-                          >
-                            <span className="pad-button-char">
-                              {item.keyChar}
-                            </span>
-                            <audio
-                              key={item.keyCode}
-                              src={item.src}
+            <div className="column">
+              <div className="app-header-lcd">
+                <h1>
+                  React
+                  <div>808 Drum</div>
+                </h1>
+              </div>
+            </div>
+          </header>
+          <section className="app-panel">
+            {!allSounds
+              ? "Loading..."
+              : allSounds.map((sound: any, index) => {
+                  return !sound
+                    ? ""
+                    : sound.map((item: any) => {
+                        return (
+                          <>
+                            <Button
+                              onClick={e => this.handleClick(e)}
+                              onKeyDown={e => this.handleKeyDown(e)}
+                              onKeyPress={e => this.handleKeyDown(e)}
+                              key={item.id}
                               data-key={item.keyCode}
-                            />
-                          </Button>
-                        </>
-                      );
-                    });
-              })}
-        </section>
-      </div>
+                              className="pad-button"
+                            >
+                              <span className="pad-button-char">
+                                {item.keyChar}
+                              </span>
+                              <audio
+                                key={item.keyCode}
+                                src={item.src}
+                                data-key={item.keyCode}
+                              />
+                            </Button>
+                          </>
+                        );
+                      });
+                })}
+          </section>
+        </div>
+        <SiteFooter />
+      </>
     );
   }
 }
