@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import ReactGa from "react-ga";
+import _ from "lodash";
 import styled from "styled-components";
-import SVGLogo from "./img/maschinelogo.svg";
 import { getDrumKitByName } from "./data/drums";
-import SiteFooter from "./components/footer";
+import Header from "./components/header";
+import Footer from "./components/footer";
 import Cable from "./components/common/cable";
 
 require("dotenv").config();
@@ -22,15 +23,20 @@ const Button = styled.button`
   box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.4);
 `;
 
-interface AppProps {
+export interface AppProps {
   kit: object[];
+  onClick: () => void;
+  onKeyDown: () => void;
+  onKeyPress: () => void;
+  sounds: object;
 }
 
 class App extends Component {
   constructor(props: AppProps) {
     super(props);
     this.state = {
-      kit: []
+      kit: [],
+      sounds: {}
     };
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -41,7 +47,6 @@ class App extends Component {
     this.setState({ kit: getDrumKitByName(kitName) }); // yeah hooks next iteration
     document.addEventListener("keydown", this.handleKeyDown);
     document.addEventListener("click", this.handleClick);
-    document.addEventListener("transitionend", this.removeActiveClass);
   }
 
   getAppData = () => {
@@ -81,43 +86,45 @@ class App extends Component {
     pad.classList.add("playing");
   };
 
-  removeActiveClass = (e: any) => {
-    const buttons = document.querySelectorAll(".pad-button");
-    buttons.forEach(button => {
-      button.addEventListener("transitionend", this.removeActiveClass);
-      button.classList.remove("playing");
-    });
+  removeActiveClass = (e: any, key: any) => {
+    /*const pads: object = document.querySelectorAll(
+      `button[data-key="${key}"]`
+    ) as HTMLButtonElement;
+
+    console.log("pad:", key, e.target.dataset.key);
+    pads.forEach(pad => {
+      if (e.target.dataset.key !== key) {
+        pad.classList.remove("playing");
+        console.log("remove class");
+      }
+    });*/
   };
 
-  render() {
+  setSoundPanel() {
     const { kit } = this.getAppData();
     const allSounds: object[] = Object.entries(kit).map(
-      ([key, value]: any, index) => value["sounds"]
+      ([key, value]: any, index) => {
+        return value["sounds"];
+      }
     );
+    const cleanedSounds = _.compact(allSounds);
+    return cleanedSounds;
+  }
+
+  render() {
+    const pads = this.setSoundPanel();
     return (
       <>
         <div className="app">
           <Cable />
-          <header className="app-header">
-            <div className="column">
-              <img src={SVGLogo} className="logo" alt="MASCHINE MIKRO" />
-            </div>
-            <div className="column">
-              <div className="app-header-lcd">
-                <h1>
-                  React
-                  <div>808 Drum</div>
-                </h1>
-              </div>
-            </div>
-          </header>
+          <Header />
           <section className="app-panel">
             <div className="app-panel__controls">.</div>
             <div className="app-panel__controls">
               <div>
-                {!allSounds
+                {!pads
                   ? "Loading..."
-                  : allSounds.map((sound: any, index) => {
+                  : pads.map((sound: any, index) => {
                       return !sound
                         ? ""
                         : sound.map((item: any) => {
@@ -148,7 +155,7 @@ class App extends Component {
             </div>
           </section>
         </div>
-        <SiteFooter />
+        <Footer />
       </>
     );
   }

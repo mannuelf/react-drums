@@ -1,14 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import GlobalStyle from "./global-styles";
+import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "./css/normalize.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <App />
+    <Router>
+      <GlobalStyle />
+      <App />
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );
