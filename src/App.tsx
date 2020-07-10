@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactGa from "react-ga";
+import LogRocket from "logrocket";
 import _ from "lodash";
 import styled from "styled-components";
 import { getDrumKitByName } from "./data/drums";
@@ -11,6 +12,7 @@ require("dotenv").config();
 
 ReactGa.initialize(`${process.env.REACT_APP_GOOGLE_ANALYTICS}`);
 ReactGa.pageview(window.location.pathname + window.location.search);
+LogRocket.init(`${process.env.REACT_LOG_ROCKET_ID}/react-drum-maschine`);
 
 const Button = styled.button`
   background: #444;
