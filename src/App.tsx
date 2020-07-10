@@ -45,8 +45,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const kitName = "808"; // hard coded for now, will be filter/drop down interface.
-    this.setState({ kit: getDrumKitByName(kitName) }); // yeah hooks next iteration
+    const kitName = "808";
+    this.setState({ kit: getDrumKitByName(kitName) });
     document.addEventListener("keydown", this.handleKeyDown);
     document.addEventListener("click", this.handleClick);
   }
@@ -86,20 +86,6 @@ class App extends Component {
     audio.currentTime = 0;
     audio.play();
     pad.classList.add("playing");
-  };
-
-  removeActiveClass = (e: any, key: any) => {
-    /*const pads: object = document.querySelectorAll(
-      `button[data-key="${key}"]`
-    ) as HTMLButtonElement;
-
-    console.log("pad:", key, e.target.dataset.key);
-    pads.forEach(pad => {
-      if (e.target.dataset.key !== key) {
-        pad.classList.remove("playing");
-        console.log("remove class");
-      }
-    });*/
   };
 
   setSoundPanel() {
