@@ -13,7 +13,7 @@ export const drums: Drum[] = [
         id: 1,
         name: "Rimshot",
         src:
-          ",https://res.cloudinary.com/mannuel/video/upload/v1594114020/drums/808/E808_RS-01.wavi",
+          "https://res.cloudinary.com/mannuel/video/upload/v1594114020/drums/808/E808_RS-01.wav",
         keyCode: 77,
         keyChar: "M"
       },
@@ -21,7 +21,7 @@ export const drums: Drum[] = [
         id: 2,
         name: "Cow bell",
         src:
-          ",https://res.cloudinary.com/mannuel/video/upload/v1594114033/drums/808/E808_CB-01.wav",
+          "https://res.cloudinary.com/mannuel/video/upload/v1594114033/drums/808/E808_CB-01.wav",
         keyCode: 78,
         keyChar: "N"
       },
@@ -37,7 +37,7 @@ export const drums: Drum[] = [
         id: 4,
         name: "Bass drum I",
         src:
-          ",https://res.cloudinary.com/mannuel/video/upload/v1594114683/drums/808/E808_BD_short_-01.wav",
+          "https://res.cloudinary.com/mannuel/video/upload/v1594114683/drums/808/E808_BD_short_-01.wav",
         keyCode: 86,
         keyChar: "V"
       },
@@ -45,7 +45,7 @@ export const drums: Drum[] = [
         id: 5,
         name: "Snare drum I",
         src:
-          ",https://res.cloudinary.com/mannuel/video/upload/v1594114696/drums/808/E808_SD-01.wav",
+          "https://res.cloudinary.com/mannuel/video/upload/v1594114696/drums/808/E808_SD-01.wav",
         keyCode: 70,
         keyChar: "F"
       },
@@ -53,7 +53,7 @@ export const drums: Drum[] = [
         id: 6,
         name: "Snare drum II",
         src:
-          ",https://res.cloudinary.com/mannuel/video/upload/v1594114725/drums/808/E808_SD-02.wav",
+          "https://res.cloudinary.com/mannuel/video/upload/v1594114725/drums/808/E808_SD-02.wav",
         keyCode: 71,
         keyChar: "G"
       },

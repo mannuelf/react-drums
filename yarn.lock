@@ -3129,6 +3129,19 @@ clone-deep@^4.0.1:
     kind-of "^6.0.2"
     shallow-clone "^3.0.0"
 
+cloudinary-core@^2.10.1:
+  version "2.10.2"
+  resolved "https://registry.yarnpkg.com/cloudinary-core/-/cloudinary-core-2.10.2.tgz#966bdd7e4545b83cf8253a2454a5f87fac673d6e"
+  integrity sha512-1JvgOCMRTke5S7/Nps8GW8gqmxq3unB4e6kDePuyG7VOFXrhFIOT0q9REiPBfFnHhkuyNYWLySSFaNIAZocOBw==
+
+cloudinary-react@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/cloudinary-react/-/cloudinary-react-1.6.0.tgz#a6099d2a2efcb943ccb89088104ac2b6b65ab1e5"
+  integrity sha512-l33tZ6uRRin6GtZvlNJ3l0+k05ht9khiR49ngx8+jIOn/mjxmUrW5U5BEQSNHq0nBb4kzjz34CasGLQaOP6RKQ==
+  dependencies:
+    cloudinary-core "^2.10.1"
+    prop-types "^15.6.2"
+
 co@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
