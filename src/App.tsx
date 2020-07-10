@@ -12,7 +12,7 @@ require("dotenv").config();
 
 ReactGa.initialize(`${process.env.REACT_APP_GOOGLE_ANALYTICS}`);
 ReactGa.pageview(window.location.pathname + window.location.search);
-LogRocket.init(`${process.env.REACT_LOG_ROCKET_ID}/react-drum-maschine`);
+LogRocket.init(`${process.env.REACT_APP__LOG_ROCKET_ID}/react-drum-maschine`);
 
 const Button = styled.button`
   background: #444;
