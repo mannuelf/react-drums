@@ -12,7 +12,7 @@ const Header = () => {
           <div className="app-header-lcd">
             <h1>
               React
-              <div>808 Drum</div>
+              <div>808 Drums</div>
             </h1>
           </div>
         </div>
