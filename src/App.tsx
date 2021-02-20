@@ -6,6 +6,7 @@ import _ from "lodash";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Cable from "./components/common/cable";
+import { Button } from "./components/common/button";
 
 ReactGa.initialize(`${process.env.REACT_APP_GOOGLE_ANALYTICS}`);
 ReactGa.pageview(window.location.pathname + window.location.search);
@@ -21,9 +22,27 @@ function App(): JSX.Element {
   }, [setKit]);
 
   if (kit) {
-    console.log(typeof kit, kit);
     const { name, sounds } = kit;
     console.log(name, sounds);
+    return (
+      <>
+        <div className="app">
+          <Cable />
+          <Header />
+          <section className="app-panel">
+            <div className="app-panel__controls">.</div>
+            <div className="app-panel__controls">
+              <div>
+                {!sounds
+                  ? "loading"
+                  : sounds.map((sound: any) => <Button key={sound.id} />)}
+              </div>
+            </div>
+          </section>
+        </div>
+        <Footer />
+      </>
+    );
   }
 
   return (
@@ -34,7 +53,7 @@ function App(): JSX.Element {
         <section className="app-panel">
           <div className="app-panel__controls">.</div>
           <div className="app-panel__controls">
-            <div>{!kit ? "Loading..." : "Loaded"}</div>
+            <div>No sounds loaded</div>
           </div>
         </section>
       </div>
