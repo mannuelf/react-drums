@@ -152,6 +152,5 @@ export function getDrums(): Kit[] {
 }
 
 export function getDrumKitByName(kitName: string): Kit | undefined {
-  console.log(drums.find((kit) => kit.name === kitName));
   return drums.find((kit) => kit.name === kitName);
 }
