@@ -5,6 +5,9 @@ import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "./css/normalize.css";
+import * as dotenv from "dotenv";
+
+dotenv.config({ path: __dirname + "./.env" });
 
 ReactDOM.render(
   <React.StrictMode>

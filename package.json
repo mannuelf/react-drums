@@ -17,6 +17,7 @@
     "@types/react-router-dom": "^5.1.7",
     "@types/react-sound": "^1.2.2",
     "@types/styled-components": "^5.1.7",
+    "axios": "^0.21.1",
     "cloudinary-react": "^1.6.8",
     "dotenv": "^8.2.0",
     "lodash": "^4.17.20",

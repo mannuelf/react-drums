@@ -24,7 +24,7 @@ const CordBase = styled.div`
   border-bottom: 2px solid #000;
 `;
 
-const cable = () => {
+const cable = (): JSX.Element => {
   return (
     <>
       <CordBase>

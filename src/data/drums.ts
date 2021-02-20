@@ -1,15 +1,3 @@
-type Kit = {
-  id: number;
-  name: string;
-  sounds: {
-    id: number;
-    name: string;
-    src: string;
-    keyCode: number;
-    keyChar: string;
-  }[];
-};
-
 export const drums: Kit[] = [
   {
     id: 1,
@@ -146,11 +134,3 @@ export const drums: Kit[] = [
     ],
   },
 ];
-
-export function getDrums(): Kit[] {
-  return drums;
-}
-
-export function getDrumKitByName(kitName: string): Kit | undefined {
-  return drums.find((kit) => kit.name === kitName);
-}
