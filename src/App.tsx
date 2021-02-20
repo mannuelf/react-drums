@@ -38,7 +38,7 @@ class App extends Component {
     super(props);
     this.state = {
       kit: [],
-      sounds: {}
+      sounds: {},
     };
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -119,9 +119,9 @@ class App extends Component {
                             return (
                               <>
                                 <Button
-                                  onClick={e => this.handleClick(e)}
-                                  onKeyDown={e => this.handleKeyDown(e)}
-                                  onKeyPress={e => this.handleKeyDown(e)}
+                                  onClick={(e) => this.handleClick(e)}
+                                  onKeyDown={(e) => this.handleKeyDown(e)}
+                                  onKeyPress={(e) => this.handleKeyDown(e)}
                                   key={item.id}
                                   data-key={item.keyCode}
                                   className="pad-button"
