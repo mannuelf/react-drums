@@ -1,13 +1,18 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import GlobalStyle from "./global-styles";
-import { BrowserRouter as Router } from "react-router-dom";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
 import "./css/normalize.css";
+import { BrowserRouter as Router } from "react-router-dom";
 import * as dotenv from "dotenv";
+import * as serviceWorker from "./serviceWorker";
+import App from "./App";
+import GlobalStyle from "./global-styles";
+import LogRocket from "logrocket";
+import ReactDOM from "react-dom";
+import ReactGa from "react-ga";
 
 dotenv.config({ path: __dirname + "./.env" });
+ReactGa.initialize(`${process.env.REACT_APP_GOOGLE_ANALYTICS}`);
+ReactGa.pageview(window.location.pathname + window.location.search);
+LogRocket.init(`${process.env.REACT_APP_LOG_ROCKET_ID}/react-drum-maschine`);
 
 ReactDOM.render(
   <React.StrictMode>

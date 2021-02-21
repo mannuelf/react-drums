@@ -1,29 +1,32 @@
-import React, { useState, useEffect } from "react";
-import ReactGa from "react-ga";
-import LogRocket from "logrocket";
+import React, { useState, useEffect, useRef, createRef } from "react";
 import { getDrumKitByName } from "./utils/getDrums";
-import _ from "lodash";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Cable from "./components/common/cable";
 import { Button } from "./components/common/button";
 
-ReactGa.initialize(`${process.env.REACT_APP_GOOGLE_ANALYTICS}`);
-ReactGa.pageview(window.location.pathname + window.location.search);
-LogRocket.init(`${process.env.REACT_APP_LOG_ROCKET_ID}/react-drum-maschine`);
-
 function App(): JSX.Element {
-  const kitName = "808";
+  const kitName = "808"; // TODO: input to select different kits
   const [kit, setKit] = useState<Kit | undefined>();
+
+  const audioElement = createRef<HTMLAudioElement>()!;
+  const buttonElement = createRef<HTMLButtonElement>()!;
 
   useEffect(() => {
     const drumKit = getDrumKitByName(kitName);
     setKit(drumKit);
   }, [setKit]);
 
+  const handlePlaySound = (e: any) => {
+    if (audioElement) {
+      const audioEl = e.target.children[1];
+      audioEl.currentTime = 0;
+      audioEl.play();
+    }
+  };
+
   if (kit) {
-    const { name, sounds } = kit;
-    console.log(name, sounds);
+    const { sounds } = kit;
     return (
       <>
         <div className="app">
@@ -34,8 +37,24 @@ function App(): JSX.Element {
             <div className="app-panel__controls">
               <div>
                 {!sounds
-                  ? "loading"
-                  : sounds.map((sound: any) => <Button key={sound.id} />)}
+                  ? "loading..."
+                  : sounds.map((sound: any) => (
+                      <Button
+                        ref={buttonElement}
+                        key={sound.id}
+                        data-key={sound.keyCode}
+                        className="pad-button"
+                        onClick={(e: any) => handlePlaySound(e)}
+                      >
+                        <span className="pad-button-char">{sound.keyChar}</span>
+                        <audio
+                          ref={audioElement}
+                          key={sound.id}
+                          src={sound.src}
+                          data-key={sound.keyCode}
+                        />
+                      </Button>
+                    ))}
               </div>
             </div>
           </section>
@@ -51,10 +70,7 @@ function App(): JSX.Element {
         <Cable />
         <Header />
         <section className="app-panel">
-          <div className="app-panel__controls">.</div>
-          <div className="app-panel__controls">
-            <div>No sounds loaded</div>
-          </div>
+          <div>No sounds loaded</div>
         </section>
       </div>
       <Footer />

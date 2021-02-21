@@ -9,3 +9,13 @@ type Kit = {
     keyChar: string;
   }[];
 };
+
+type Sound = {
+  sounds: {
+    id: number;
+    name: string;
+    src: string;
+    keyCode: number;
+    keyChar: string;
+  };
+};
