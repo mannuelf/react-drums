@@ -7,3 +7,5 @@ https://www.musicradar.com/news/sampleradar-378-free-808-drum-samples
 https://javascript30.com/
 
 https://www.native-instruments.com/en/products/maschine/production-systems/maschine-mikro/
+
+https://github.com/typescript-cheatsheets/react#reacttypescript-cheatsheets

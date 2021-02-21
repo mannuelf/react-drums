@@ -1,10 +1,4 @@
-export interface Drum {
-  id: number;
-  name: string;
-  sounds: object[];
-}
-
-export const drums: Drum[] = [
+export const drums: Kit[] = [
   {
     id: 1,
     name: "808",
@@ -15,7 +9,7 @@ export const drums: Drum[] = [
         src:
           "https://res.cloudinary.com/mannuel/video/upload/v1594114020/drums/808/E808_RS-01.wav",
         keyCode: 77,
-        keyChar: "M"
+        keyChar: "M",
       },
       {
         id: 2,
@@ -23,7 +17,7 @@ export const drums: Drum[] = [
         src:
           "https://res.cloudinary.com/mannuel/video/upload/v1594114033/drums/808/E808_CB-01.wav",
         keyCode: 78,
-        keyChar: "N"
+        keyChar: "N",
       },
       {
         id: 3,
@@ -31,7 +25,7 @@ export const drums: Drum[] = [
         src:
           "https://res.cloudinary.com/mannuel/video/upload/v1594114674/drums/808/E808_BD_short_-02.wav",
         keyCode: 66,
-        keyChar: "B"
+        keyChar: "B",
       },
       {
         id: 4,
@@ -39,7 +33,7 @@ export const drums: Drum[] = [
         src:
           "https://res.cloudinary.com/mannuel/video/upload/v1594114683/drums/808/E808_BD_short_-01.wav",
         keyCode: 86,
-        keyChar: "V"
+        keyChar: "V",
       },
       {
         id: 5,
@@ -47,7 +41,7 @@ export const drums: Drum[] = [
         src:
           "https://res.cloudinary.com/mannuel/video/upload/v1594114696/drums/808/E808_SD-01.wav",
         keyCode: 70,
-        keyChar: "F"
+        keyChar: "F",
       },
       {
         id: 6,
@@ -55,7 +49,7 @@ export const drums: Drum[] = [
         src:
           "https://res.cloudinary.com/mannuel/video/upload/v1594114725/drums/808/E808_SD-02.wav",
         keyCode: 71,
-        keyChar: "G"
+        keyChar: "G",
       },
       {
         id: 7,
@@ -63,7 +57,7 @@ export const drums: Drum[] = [
         src:
           "https://res.cloudinary.com/mannuel/video/upload/v1594114753/drums/808/E808_SD-03.wav",
         keyCode: 72,
-        keyChar: "H"
+        keyChar: "H",
       },
       {
         id: 8,
@@ -71,7 +65,7 @@ export const drums: Drum[] = [
         src:
           "https://res.cloudinary.com/mannuel/video/upload/v1594114753/drums/808/E808_SD-04.wav",
         keyCode: 74,
-        keyChar: "J"
+        keyChar: "J",
       },
       {
         id: 9,
@@ -79,7 +73,7 @@ export const drums: Drum[] = [
         src:
           "https://res.cloudinary.com/mannuel/video/upload/v1594114771/drums/808/E808_CH-01.wav",
         keyCode: 82,
-        keyChar: "R"
+        keyChar: "R",
       },
       {
         id: 10,
@@ -87,7 +81,7 @@ export const drums: Drum[] = [
         src:
           "https://res.cloudinary.com/mannuel/video/upload/v1594114787/drums/808/E808_CH-02.wav",
         keyCode: 84,
-        keyChar: "T"
+        keyChar: "T",
       },
       {
         id: 11,
@@ -95,7 +89,7 @@ export const drums: Drum[] = [
         src:
           "https://res.cloudinary.com/mannuel/video/upload/v1594114803/drums/808/E808_OH-01.wav",
         keyCode: 89,
-        keyChar: "Y"
+        keyChar: "Y",
       },
       {
         id: 12,
@@ -103,7 +97,7 @@ export const drums: Drum[] = [
         src:
           "https://res.cloudinary.com/mannuel/video/upload/v1594114818/drums/808/E808_OH-02.wav",
         keyCode: 85,
-        keyChar: "U"
+        keyChar: "U",
       },
       {
         id: 13,
@@ -111,7 +105,7 @@ export const drums: Drum[] = [
         src:
           "https://res.cloudinary.com/mannuel/video/upload/v1594114833/drums/808/E808_CP-01.wav",
         keyCode: 52,
-        keyChar: "4"
+        keyChar: "4",
       },
       {
         id: 14,
@@ -119,7 +113,7 @@ export const drums: Drum[] = [
         src:
           "https://res.cloudinary.com/mannuel/video/upload/v1594114849/drums/808/E808_CP-02.wav",
         keyCode: 53,
-        keyChar: "5"
+        keyChar: "5",
       },
       {
         id: 15,
@@ -127,7 +121,7 @@ export const drums: Drum[] = [
         src:
           "https://res.cloudinary.com/mannuel/video/upload/v1594114866/drums/808/E808_CL-01.wav",
         keyCode: 54,
-        keyChar: "6"
+        keyChar: "6",
       },
       {
         id: 16,
@@ -135,16 +129,8 @@ export const drums: Drum[] = [
         src:
           "https://res.cloudinary.com/mannuel/video/upload/v1594114884/drums/808/E808_CL-02.wav",
         keyCode: 55,
-        keyChar: "7"
-      }
-    ]
-  }
+        keyChar: "7",
+      },
+    ],
+  },
 ];
-
-export function getDrums() {
-  return drums;
-}
-
-export function getDrumKitByName(kitName: string) {
-  return drums.find(kit => kit.name === kitName);
-}
