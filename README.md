@@ -6,43 +6,33 @@ Love for coding, music and learning new technology in one project.
 
 > [https://react-drum-maschine.netlify.app/](https://react-drum-maschine.netlify.app/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
+## Local dev
 
 ```bash
 yarn start
 ```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-```
+```bash
 yarn test
 ```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-```
+```bash
 yarn build
 ```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `build` folder.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+[deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## TODO
 
+- add tests
 - build a backend in [insert cool node backend]
-- build filter to swich out sound banks
+- build filter to switch out sound banks
 - midi device support to play with midi api
