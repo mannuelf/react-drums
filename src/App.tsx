@@ -45,6 +45,7 @@ function App(): JSX.Element {
                         data-key={sound.keyCode}
                         className="pad-button"
                         onClick={(e: any) => handlePlaySound(e)}
+                        onKeyPress={(e: any) => handlePlaySound(e)}
                       >
                         <span className="pad-button-char">{sound.keyChar}</span>
                         <audio
