@@ -2,13 +2,32 @@ import { ApolloServer } from "apollo-server";
 
 const typeDefs = `
   type Query {
-    info: String!
+    info: String!,
+    kit: [Kit!]!
+  }
+
+  type Kit {
+    id: ID!,
+    name: String!,
+    description: String!,
   }
 `;
 
+const aKit = {
+  id: 1,
+  name: "808",
+  description: "Classic drum machine",
+};
+
 const resolvers = {
   Query: {
-    info: () => `All the sounds`,
+    info: () => `API for all the sounds`,
+    kit: () => aKit,
+  },
+  Kit: {
+    id: (parent) => parent.id,
+    name: (parent) => parent.name,
+    description: (parent) => parent.description,
   },
 };
 
