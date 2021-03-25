@@ -8,21 +8,25 @@ const typeDefs = `
 
   type Kit {
     id: ID!,
-    name: String!,
+    kitName: String!,
     description: String!,
   }
 `;
 
 const aKit = {
   id: 1,
-  name: "808",
+  kitName: "808",
   description: "Classic drum machine",
 };
 
 const resolvers = {
   Query: {
     info: () => `API for all the sounds`,
-    kit: () => aKit,
+    kit: () => {
+      "id": 1,
+      "kitName": "808",
+      "description": "Classic drum machine"
+    }
   },
   Kit: {
     id: (parent) => parent.id,
