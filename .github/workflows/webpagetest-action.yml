@@ -1,16 +1,19 @@
 on: [pull_request]
 
 jobs:
-  build: ubuntu-latest
-  name: WebPageTest Action
-  steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+  build:
+    runs-on: ubuntu-latest
+    name: WebPageTest Action
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: WebPageTest
-      uses: WPO-Foundation/webpagetest-github-action@main
-      with:
-        apiKey: ${{ secrets.WPT_API_KEY }}
-        urls: https://react-drum-maschine.netlify.app
-        label: 'GitHub Action Test'
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+      - name: WebPageTest
+        uses: WPO-Foundation/webpagetest-github-action@main
+        with:
+          apiKey: ${{ secrets.WPT_API_KEY }}
+          urls: |
+            https://example.com/
+            https://example.com/about
+          label: 'GitHub Action Test'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
