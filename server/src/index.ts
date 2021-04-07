@@ -28,6 +28,7 @@ const resolvers = {
       "description": "Classic drum machine"
     }
   },
+
   Kit: {
     id: (parent) => parent.id,
     name: (parent) => parent.name,
