@@ -4,4 +4,4 @@
     X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
-    X-Content-Security-Policy = "default-src 'self' *.cloudinary.com"
+    X-Content-Security-Policy = "default-src 'self' *.cloudinary.com *.google.com *.gstatic.com"
