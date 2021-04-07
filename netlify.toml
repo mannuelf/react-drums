@@ -1,0 +1,7 @@
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    X-Content-Security-Policy = "default-src 'self' *cloudinary.com"
