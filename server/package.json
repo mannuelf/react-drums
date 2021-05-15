@@ -4,7 +4,7 @@
   "description": "API to store and capture user account and sound bank data.",
   "main": "src/index.ts",
   "prisma": {
-    "schema": "database/schema.prisma"
+    "schema": "src/database/schema.prisma"
   },
   "scripts": {
     "start": "nodemon src/index.js",
@@ -16,6 +16,7 @@
   "author": "Mannuel Ferreira",
   "license": "MIT",
   "dependencies": {
+    "@prisma/client": "^2.22.1",
     "apollo-server": "^2.24.0",
     "bcryptjs": "^2.4.3",
     "graphql": "^15.5.0",
