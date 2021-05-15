@@ -1,7 +1,9 @@
+import { Request } from 'express';
 import { ApolloServer } from 'apollo-server';
 import { PrismaClient } from '@prisma/client';
 import fs from 'fs';
 import path from 'path';
+import { getUserId } from './utils';
 
 const prisma: PrismaClient = new PrismaClient();
 
@@ -52,8 +54,12 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs: fs.readFileSync(path.join(__dirname, 'schema.graphql'), 'utf8'),
   resolvers,
-  context: {
-    prisma,
+  context: ({ req: Request }): Promise<any> => {
+    return {
+      ...req,
+      prisma,
+      userId: req && req.headers.authorization ? getUserId(req) : null,
+    };
   },
 });
 
