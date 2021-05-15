@@ -8,7 +8,9 @@ Love for coding, music and learning new technology in one project.
 
 ## Local dev
 
-This is a mono-repo and is using YARN workspaces.
+### Front-end
+
+This is a mono-repo and is using YARN workspaces, all yarn commands to be executed from the root of project using root package.json.
 
 ```bash
 yarn install
@@ -26,10 +28,27 @@ yarn test
 yarn build
 ```
 
+### Server
+
+using [Prisma](https://www.prisma.io/) ORM to handle database workflow.
+
+First time init, run migrations.
+
+```bash
+yarn migrate:db
+```
+
+Open Studio to view you database contents.
+
+```bash
+yarn studio:db
+```
+
+open: [http://localhost:5555/](http://localhost:5555/)
+
 ## TODO
 
 [x] mono repo, with yarn workspace
 [] add tests to frontend
-[] build a backend in [using GraphQL]
-[] frontend build filter to switch out sound banks
+[] build a backend in [using GraphQL][] frontend build filter to switch out sound banks
 [] frontend midi device support to play with midi api
