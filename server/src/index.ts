@@ -1,35 +1,9 @@
 import { ApolloServer } from 'apollo-server';
+import { PrismaClient } from '@prisma/client';
 import fs from 'fs';
 import path from 'path';
 
-const typeDefs = `  
-  type Query {
-    info: String!
-    users: [User!]!
-    user(id: ID!): User
-  }
-  
-  type User {
-    id: ID!
-    firstName: String!
-    lastName: String!
-    email: String!
-    password: String!
-  }
-  
-  type Mutation {
-    user(
-        firstName: String!, 
-        lastName: String!, 
-        email: String!, 
-        password: String!
-    ): User!
-
-    updateUser(firstName: String, lastName: String, email: String, password: String): User
-
-    deleteUser(id: ID!): User
-  }
-`;
+const prisma: PrismaClient = new PrismaClient();
 
 const users = [
   {
@@ -38,6 +12,7 @@ const users = [
     lastName: 'Ferreira',
     email: 'mannuel@email.com',
     password: 'password',
+    createdAt: new Date(),
   },
   {
     id: 2,
@@ -45,6 +20,7 @@ const users = [
     lastName: 'Ferreira',
     email: 'jack@email.com',
     password: 'password',
+    createdAt: new Date(),
   },
 ];
 
@@ -63,6 +39,7 @@ const resolvers = {
         lastName: args.lastName,
         email: args.email,
         password: args.password,
+        createdAt: new Date(),
       };
       users.push(user);
       return user;
@@ -71,8 +48,11 @@ const resolvers = {
 };
 
 const server = new ApolloServer({
-  typeDefs,
+  typeDefs: fs.readFileSync(path.join(__dirname, 'schema.graphql'), 'utf8'),
   resolvers,
+  context: {
+    prisma,
+  },
 });
 
 server.listen().then(({ url }) => {
