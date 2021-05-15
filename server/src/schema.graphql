@@ -12,6 +12,11 @@ type User {
   password: String!
 }
 
+type AuthPayload {
+  token: String
+  user: User
+}
+
 type Mutation {
   user(
     firstName: String!
