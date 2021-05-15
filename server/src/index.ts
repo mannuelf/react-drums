@@ -29,7 +29,9 @@ let idCount = users.length;
 const resolvers = {
   Query: {
     info: () => `API for all the sounds`,
-    users: () => users,
+    users: async (parent: any, args: any, context: any) => {
+      return context.prisma.user.findMany();
+    },
   },
   Mutation: {
     user: (parent: any, args: any) => {
@@ -55,6 +57,11 @@ const server = new ApolloServer({
   },
 });
 
-server.listen().then(({ url }) => {
-  console.log(`Server is running on ${url}`);
-});
+server
+  .listen()
+  .then(({ url }) => {
+    console.log(`Server is running on ${url}`);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
