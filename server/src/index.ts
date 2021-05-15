@@ -26,6 +26,8 @@ const typeDefs = `
     ): User!
 
     updateUser(firstName: String, lastName: String, email: String, password: String): User
+
+    deleteUser(id: ID!): User
   }
 `;
 
