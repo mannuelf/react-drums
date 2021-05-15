@@ -7,7 +7,7 @@
     "schema": "src/database/schema.prisma"
   },
   "scripts": {
-    "start": "nodemon src/index.js",
+    "start": "nodemon src/index.ts",
     "prisma:studio": "npx prisma studio",
     "prisma:migrate": "npx prisma migrate dev",
     "test": "echo \"Error: no test specified\" && exit 1"

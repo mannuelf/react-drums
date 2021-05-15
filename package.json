@@ -1,19 +1,15 @@
 {
   "private": true,
   "scripts": {
-    "start": "concurrently \"yarn start:server\"  \"yarn start:client\"",
     "start:server": "yarn --cwd server start",
     "start:client": "yarn --cwd client start",
     "build:client": "yarn --cwd client build",
     "migrate:db": "yarn --cwd server prisma:migrate",
     "studio:db": "yarn --cwd server prisma:studio",
+    "start": "concurrently \"yarn start:server\"   \"yarn start:client\"  \"yarn studio:db\" ",
     "test:client": "yarn --cwd client test"
   },
-  "workspaces": [
-    "client",
-    "server",
-    "packages/*"
-  ],
+  "workspaces": ["client", "server", "packages/*"],
   "dependencies": {
     "concurrently": "^6.0.0"
   }
