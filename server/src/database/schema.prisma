@@ -9,9 +9,9 @@ generator client {
 
 model User {
         id        Int      @id @default(autoincrement())
-        firstName String   @map(name: "first_name")
-        lastName  String   @map(name: "last_name")
+        firstName String
+        lastName  String
         email     String   @unique
         password  String
-        createdAt DateTime @default(now()) @map(name: "created_at")
+        createdAt DateTime @default(now())
 }
