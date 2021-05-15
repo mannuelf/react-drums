@@ -7,7 +7,11 @@
     "build:client": "yarn --cwd client build",
     "test:client": "yarn --cwd client test"
   },
-  "workspaces": ["client", "server", "packages/*"],
+  "workspaces": [
+    "client",
+    "server",
+    "packages/*"
+  ],
   "dependencies": {
     "concurrently": "^6.0.0"
   }
