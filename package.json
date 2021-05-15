@@ -5,6 +5,8 @@
     "start:server": "yarn --cwd server start",
     "start:client": "yarn --cwd client start",
     "build:client": "yarn --cwd client build",
+    "migrate:db": "yarn --cwd server prisma:migrate",
+    "studio:db": "yarn --cwd server prisma:studio",
     "test:client": "yarn --cwd client test"
   },
   "workspaces": [

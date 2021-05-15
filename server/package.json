@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "API to store and capture user account and sound bank data.",
   "main": "src/index.ts",
+  "prisma": {
+    "schema": "database/schema.prisma"
+  },
   "scripts": {
     "start": "nodemon src/index.js",
     "prisma:studio": "npx prisma studio",
