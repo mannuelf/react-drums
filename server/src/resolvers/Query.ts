@@ -1,3 +1,5 @@
-export function user(parent: any, args: any, context: any): any {
-  return context.prisma.user.findMany();
-}
+export const user = async (parent, args, context): Promise<any> => {
+  const user = await context.prisma.user.findMany();
+  console.log('Query: user', user, args);
+  return user;
+};
