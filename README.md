@@ -1,3 +1,5 @@
+# React-drums
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3bbcdd3c-4e8b-40ec-b4b4-30959f6893bf/deploy-status)](https://app.netlify.com/sites/fervent-goodall-afea11/deploys)
 
 Love for coding, music and learning new technology in one project.
@@ -7,8 +9,6 @@ Love for coding, music and learning new technology in one project.
 > [https://react-drum-maschine.netlify.app/](https://react-drum-maschine.netlify.app/)
 
 ## Local dev
-
-### Front-end
 
 This is a mono-repo and is using YARN workspaces, all yarn commands to be executed from the root of project using root package.json.
 
@@ -28,28 +28,14 @@ yarn test
 yarn build
 ```
 
-### Server
+### Front-end
 
-using [Prisma](https://www.prisma.io/) ORM to handle database workflow.
+[Click here](./client/README.md) to read documentation.
 
-First time init, run migrations.
+### GraphQL Server
 
-```bash
-yarn migrate:db
-```
-
-Open Studio to view you database contents.
-
-```bash
-yarn studio:db
-```
-
-open: [http://localhost:5555/](http://localhost:5555/)
+[Click here](./server/README.md) to read documentation.
 
 ## TODO
 
-[x] mono repo, with yarn workspace
-[] add tests to frontend
-[] build a backend in using GraphQL
-[] frontend build filter to switch out sound banks
-[] frontend midi device support to play with midi api
+[Click here](./todo.md) to read todos.
