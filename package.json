@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "start:dev": "yarn --cwd server dev",
     "start:server": "yarn --cwd server start",
     "start:client": "yarn --cwd client start",
     "build:client": "yarn --cwd client build",
@@ -9,7 +10,11 @@
     "start": "concurrently \"yarn start:server\"   \"yarn start:client\"  \"yarn studio:db\" ",
     "test:client": "yarn --cwd client test"
   },
-  "workspaces": ["client", "server", "packages/*"],
+  "workspaces": [
+    "client",
+    "server",
+    "packages/*"
+  ],
   "dependencies": {
     "concurrently": "^6.0.0"
   }
