@@ -25,12 +25,12 @@ type Mutation {
     password: String!
   ): User!
 
-  updateUser(
+  signup(
     firstName: String
     lastName: String
     email: String
     password: String
-  ): User
+  ): User!
 
-  deleteUser(id: ID!): User
+  login(email: String!, password: String!): AuthPayload
 }
