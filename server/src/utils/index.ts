@@ -1,12 +1,14 @@
+import * as jwt from 'jsonwebtoken';
 import { Request } from 'express';
-import jwt from 'jsonwebtoken';
 import { APP_SECRET } from '../constants';
 
+const { verify } = jwt;
+
 export function getTokenPayload(token: string): string | any {
-  return jwt.verify(token, APP_SECRET);
+  return verify(token, APP_SECRET);
 }
 
-export function getUserId(req: Request, authToken: string): string {
+export function getUserId(req: Request, authToken?: string): string {
   if (req) {
     const authHeader = req.headers.authorization;
     if (authHeader) {
