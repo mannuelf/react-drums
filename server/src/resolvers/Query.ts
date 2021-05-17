@@ -1,15 +1,4 @@
-interface IUser {
-  id: number;
-  firstName: string;
-  lastName: string;
-  email: string;
-  password?: string;
-  createdAt: string;
-}
-
-interface IUsers {
-  users: [IUser];
-}
+import { IUser, IUsers } from '../types';
 
 export const users = async (parent, args, context, info): Promise<IUsers> => {
   try {

@@ -1,10 +1,15 @@
 import * as jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import { APP_SECRET } from '../constants';
-
+import { AuthPayload, IUser } from '../types';
 const { sign } = jwt;
 
-export const signup = async (parent, args, context, info): Promise<any> => {
+export const signup = async (
+  parent,
+  args,
+  context,
+  info
+): Promise<AuthPayload> => {
   try {
     console.log('Mutation: signup', args);
     const password = await bcrypt.hash(args.password, 10);
@@ -20,7 +25,12 @@ export const signup = async (parent, args, context, info): Promise<any> => {
   }
 };
 
-export const login = async (parent, args, context, info): Promise<any> => {
+export const login = async (
+  parent,
+  args,
+  context,
+  info
+): Promise<AuthPayload> => {
   console.log('Mutation: login', args);
   const user = await context.prisma.user.findUnique({
     where: { email: args.email },
@@ -31,16 +41,16 @@ export const login = async (parent, args, context, info): Promise<any> => {
   }
 
   const valid = await bcrypt.compare(args.password, user.password);
+
   if (!valid) {
     throw new Error('Invalid password');
   }
 
   const token = sign({ userId: user.id }, APP_SECRET);
-
   return { token, user };
 };
 
-export const user = async (parent, args, context, info): Promise<any> => {
+export const user = async (parent, args, context, info): Promise<IUser> => {
   try {
     console.log('Mutation: user', args);
     const { userId } = context;

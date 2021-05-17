@@ -6,7 +6,7 @@ import { PrismaClient } from '@prisma/client';
 import * as Query from './resolvers/Query';
 import * as Mutation from './resolvers/Mutation';
 
-import { getUserId } from './utils';
+import { getUserId } from './utils/auth';
 
 const prisma: PrismaClient = new PrismaClient();
 
