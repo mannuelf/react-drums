@@ -4,7 +4,7 @@ import { APP_SECRET } from '../constants';
 
 const { sign } = jwt;
 
-export const signup = async (parent, args, context): Promise<any> => {
+export const signup = async (parent, args, context, info): Promise<any> => {
   console.log('Mutation: signup', args);
   const password = await bcrypt.hash(args.password, 10);
 
@@ -42,10 +42,12 @@ export const user = async (parent, args, context, info): Promise<any> => {
   const { userId } = context;
   return await context.prisma.user.create({
     data: {
+      id: args.id,
       firstName: args.firstName,
       lastName: args.lastName,
       email: args.email,
       password: args.password,
+      createdAt: args.createdAt,
     },
   });
 };
