@@ -2,6 +2,12 @@
   "name": "react-drums",
   "version": "0.0.2",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
@@ -31,11 +37,10 @@
     "styled-components": "^5.2.1",
     "typescript": "^4.1.5"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,9 +53,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-plugin-prettier": "^3.3.1",
-    "prettier": "^2.2.1"
-  }
+  "node": ">=10.0.0"
 }
