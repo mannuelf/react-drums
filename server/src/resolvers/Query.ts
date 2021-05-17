@@ -10,17 +10,21 @@ interface IUser {
 interface IUsers {
   users: [IUser];
 }
+
 export const users = async (parent, args, context, info): Promise<IUsers> => {
-  console.log('USERS', typeof args, args);
-  const users = await context.prisma.user.findMany();
-  console.log(users);
-  return users;
+  try {
+    return await context.prisma.user.findMany();
+  } catch (error) {
+    throw new Error(error);
+  }
 };
 
 export const user = async (parent, args, context, info): Promise<IUser> => {
-  console.log('USER', typeof args.id, args.id);
-  const user = await context.prisma.user.findUnique({
-    where: { id: Number(args.id) },
-  });
-  return user;
+  try {
+    return await context.prisma.user.findUnique({
+      where: { id: Number(args.id) },
+    });
+  } catch (error) {
+    throw new Error(error);
+  }
 };

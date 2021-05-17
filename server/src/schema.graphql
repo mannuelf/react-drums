@@ -10,7 +10,7 @@ type User {
   lastName: String!
   email: String!
   password: String!
-  createdAt: String
+  createdAt: DateTime!
 }
 
 type AuthPayload {
@@ -31,7 +31,9 @@ type Mutation {
     lastName: String
     email: String
     password: String
-  ): User!
+  ): AuthPayload
 
   login(email: String!, password: String!): AuthPayload
 }
+
+scalar DateTime
