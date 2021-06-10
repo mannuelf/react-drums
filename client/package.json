@@ -27,6 +27,7 @@
     "axios": "^0.21.1",
     "cloudinary-react": "^1.6.8",
     "dotenv": "^8.2.0",
+    "jest": "^27.0.4",
     "lodash": "^4.17.20",
     "logrocket": "^1.0.14",
     "react": "^17.0.1",
@@ -46,7 +47,11 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
