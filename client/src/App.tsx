@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef, createRef } from "react";
+import { useState, useEffect, useRef, createRef } from "react";
 import { getDrumKitByName } from "./utils/getDrums";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Cable from "./components/common/cable";
 import { Button } from "./components/common/button";
 
-function App(): JSX.Element {
+function App() {
   const kitName = "808"; // TODO: input to select different kits
   const [kit, setKit] = useState<Kit | undefined>();
 

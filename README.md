@@ -1,3 +1,5 @@
+# React-drums
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3bbcdd3c-4e8b-40ec-b4b4-30959f6893bf/deploy-status)](https://app.netlify.com/sites/fervent-goodall-afea11/deploys)
 
 Love for coding, music and learning new technology in one project.
@@ -8,31 +10,32 @@ Love for coding, music and learning new technology in one project.
 
 ## Local dev
 
+This is a mono-repo and is using YARN workspaces, all yarn commands to be executed from the root of project using root package.json.
+
+```bash
+yarn install
+```
+
 ```bash
 yarn start
 ```
-
-Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view.
 
 ```bash
 yarn test
 ```
 
-[running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ```bash
 yarn build
 ```
 
-Builds the app for production to the `build` folder.
+### Front-end
 
-[deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[Click here](./client/README.md) to read documentation.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### GraphQL Server
+
+[Click here](./server/README.md) to read documentation.
 
 ## TODO
 
-- add tests
-- build a backend in [insert cool node backend]
-- build filter to switch out sound banks
-- midi device support to play with midi api
+[Click here](./todo.md) to read todos.
