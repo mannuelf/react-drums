@@ -16,19 +16,25 @@ This is a mono-repo and is using YARN workspaces, all yarn commands to be execut
 yarn 
 ```
 
+### Run in development mode
+
+This will start the react client, GraphQL server and prisma db studio using concurrently.
+
 ```bash
 yarn dev 
 ```
 
+### Test react client
+
 ```bash
-yarn test
+yarn test:client
 ```
 
-### Front-end
+### Front-end docs
 
 [Click here](./client/README.md) to read documentation.
 
-### GraphQL Server
+### GraphQL Server docs
 
 [Click here](./server/README.md) to read documentation.
 
