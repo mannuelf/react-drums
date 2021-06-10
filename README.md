@@ -13,19 +13,15 @@ Love for coding, music and learning new technology in one project.
 This is a mono-repo and is using YARN workspaces, all yarn commands to be executed from the root of project using root package.json.
 
 ```bash
-yarn install
+yarn 
 ```
 
 ```bash
-yarn start
+yarn dev 
 ```
 
 ```bash
 yarn test
-```
-
-```bash
-yarn build
 ```
 
 ### Front-end
@@ -38,4 +34,4 @@ yarn build
 
 ## TODO
 
-[Click here](./todo.md) to read todos.
+[Click here](./todo.md) to read todo list.
