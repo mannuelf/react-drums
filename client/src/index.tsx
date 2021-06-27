@@ -1,15 +1,16 @@
 import React from 'react';
-import './css/normalize.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import * as dotenv from 'dotenv';
 import * as serviceWorker from './serviceWorker';
-import App from './components/app/App';
-import GlobalStyle from './global-styles';
 import LogRocket from 'logrocket';
 import ReactDOM from 'react-dom';
 import ReactGa from 'react-ga';
+
+import App from './components/app/App';
 import { AuthProvider } from './context/AuthContext';
 import isProduction from './utils/isProduction';
+import GlobalStyle from './global-styles';
+import './css/normalize.css';
 
 dotenv.config({ path: __dirname + './.env' });
 
@@ -31,7 +32,4 @@ ReactDOM.render(
   document.getElementById('root'),
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
