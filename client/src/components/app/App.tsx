@@ -1,12 +1,13 @@
-import { useState, useEffect, useRef, createRef } from "react";
-import { getDrumKitByName } from "./utils/getDrums";
-import Header from "./components/header";
-import Footer from "./components/footer";
-import Cable from "./components/common/cable";
-import { Button } from "./components/common/button";
+import { createContext, useState, useEffect, useRef, createRef } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { getDrumKitByName } from '../../utils/getDrums';
+import Header from '../header';
+import Footer from '../footer';
+import Cable from '../common/cable';
+import { Button } from '../common/button';
 
 function App() {
-  const kitName = "808"; // TODO: input to select different kits
+  const kitName = '808'; // TODO: input to select different kits
   const [kit, setKit] = useState<Kit | undefined>();
 
   const audioElement = createRef<HTMLAudioElement>()!;
@@ -29,25 +30,25 @@ function App() {
     const { sounds } = kit;
     return (
       <>
-        <div className="app">
+        <div className='app'>
           <Cable />
           <Header />
-          <section className="app-panel">
-            <div className="app-panel__controls">.</div>
-            <div className="app-panel__controls">
+          <section className='app-panel'>
+            <div className='app-panel__controls'>.</div>
+            <div className='app-panel__controls'>
               <div>
                 {!sounds
-                  ? "loading..."
+                  ? 'loading...'
                   : sounds.map((sound: any) => (
                       <Button
                         ref={buttonElement}
                         key={sound.id}
                         data-key={sound.keyCode}
-                        className="pad-button"
+                        className='pad-button'
                         onClick={(e: any) => handlePlaySound(e)}
                         onKeyPress={(e: any) => handlePlaySound(e)}
                       >
-                        <span className="pad-button-char">{sound.keyChar}</span>
+                        <span className='pad-button-char'>{sound.keyChar}</span>
                         <audio
                           ref={audioElement}
                           key={sound.id}
@@ -67,10 +68,10 @@ function App() {
 
   return (
     <>
-      <div className="app">
+      <div className='app'>
         <Cable />
         <Header />
-        <section className="app-panel">
+        <section className='app-panel'>
           <div>No sounds loaded</div>
         </section>
       </div>
