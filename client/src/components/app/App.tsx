@@ -1,10 +1,9 @@
-import { createContext, useState, useEffect, useRef, createRef } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { useState, useEffect, createRef } from 'react';
 import { getDrumKitByName } from '../../utils/getDrums';
-import Header from '../header';
-import Footer from '../footer';
-import Cable from '../common/cable';
-import { Button } from '../common/button';
+import Header from '../Header';
+import Footer from '../Footer';
+import Cable from '../common/Cable';
+import { Button } from '../common/Button';
 
 function App() {
   const kitName = '808'; // TODO: input to select different kits

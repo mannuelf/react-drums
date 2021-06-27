@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "baseUrl": "./src",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -8,7 +9,7 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
+    "module": "ESNext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -20,5 +21,8 @@
     "sourceMap": true
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "build"]
+  "exclude": ["node_modules", "build"],
+  "typeAcquisition": {
+    "include": ["jest"]
+  }
 }
