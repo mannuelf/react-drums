@@ -4,6 +4,8 @@
 
 Love for coding, music and learning new technology in one project.
 
+Inspired by: [JavaScript30](https://javascript30.com/)
+
 ## Demo URL
 
 > [https://react-drum-maschine.netlify.app/](https://react-drum-maschine.netlify.app/)
