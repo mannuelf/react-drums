@@ -1,27 +1,30 @@
-import React from "react";
-import "./css/normalize.css";
-import { BrowserRouter as Router } from "react-router-dom";
-import * as dotenv from "dotenv";
-import * as serviceWorker from "./serviceWorker";
-import App from "./App";
-import GlobalStyle from "./global-styles";
-import LogRocket from "logrocket";
-import ReactDOM from "react-dom";
-import ReactGa from "react-ga";
+import React from 'react';
+import './css/normalize.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import * as dotenv from 'dotenv';
+import * as serviceWorker from './serviceWorker';
+import App from './components/app/App';
+import GlobalStyle from './global-styles';
+import LogRocket from 'logrocket';
+import ReactDOM from 'react-dom';
+import ReactGa from 'react-ga';
+import { AuthProvider } from './context/AuthContext';
 
-dotenv.config({ path: __dirname + "./.env" });
+dotenv.config({ path: __dirname + './.env' });
 ReactGa.initialize(`${process.env.REACT_APP_GOOGLE_ANALYTICS}`);
 ReactGa.pageview(window.location.pathname + window.location.search);
 LogRocket.init(`${process.env.REACT_APP_LOG_ROCKET_ID}/react-drum-maschine`);
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <GlobalStyle />
-      <App />
-    </Router>
+    <AuthProvider>
+      <Router>
+        <GlobalStyle />
+        <App />
+      </Router>
+    </AuthProvider>
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change
