@@ -17,9 +17,15 @@
     "start": "concurrently \"yarn start:server\"   \"yarn build:client\"",
     "test:client": "yarn --cwd client test"
   },
-  "workspaces": ["client", "server", "packages/*"],
+  "workspaces": [
+    "client",
+    "server",
+    "packages/*"
+  ],
   "dependencies": {
-    "concurrently": "^6.0.0"
+    "concurrently": "^6.0.0",
+    "g": "^2.0.1",
+    "netlify-cli": "^3.38.10"
   },
   "node": ">=10.0.0",
   "proxy": "http://localhost:4000/"
