@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Cord = styled.div`
   background-color: #000000;
@@ -27,7 +27,7 @@ const cable = (): JSX.Element => {
   return (
     <>
       <CordBase>
-        {" "}
+        {' '}
         <Cord />
       </CordBase>
     </>
