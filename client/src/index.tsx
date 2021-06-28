@@ -6,11 +6,15 @@ import LogRocket from 'logrocket';
 import ReactDOM from 'react-dom';
 import ReactGa from 'react-ga';
 
+import {
+  ApolloProvider,
+  ApolloClient,
+  createHttpLink,
+  InMemoryCache,
+} from '@apollo/client';
+import { API_URL } from './constants';
 import App from './components/app/App';
-import { AuthProvider } from './context/AuthContext';
 import isProduction from './utils/isProduction';
-import GlobalStyle from './global-styles';
-import './css/normalize.css';
 
 dotenv.config({ path: __dirname + './.env' });
 
@@ -20,14 +24,22 @@ if (isProduction()) {
   LogRocket.init(`${process.env.REACT_APP_LOG_ROCKET_ID}/react-drum-maschine`);
 }
 
+const httpLink = createHttpLink({
+  uri: API_URL,
+});
+
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache(),
+});
+
 ReactDOM.render(
   <React.StrictMode>
-    <AuthProvider>
-      <Router>
-        <GlobalStyle />
+    <Router>
+      <ApolloProvider client={client}>
         <App />
-      </Router>
-    </AuthProvider>
+      </ApolloProvider>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root'),
 );
