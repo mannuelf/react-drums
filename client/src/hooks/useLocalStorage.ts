@@ -1,6 +1,9 @@
 import { useState } from 'react';
 
-export default function useLocalStorage(key: string, initialValue: null) {
+export default function useLocalStorage(
+  key: string,
+  initialValue: null,
+): any[] {
   console.log('🚧', key, initialValue);
   const [jwtValue, setJwtValue] = useState(() => {
     try {
