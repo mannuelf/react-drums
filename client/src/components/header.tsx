@@ -1,7 +1,7 @@
 import version from '../../package.json';
 import { LOGO } from '../constants';
 
-const Header = () => {
+const Header = (): JSX.Element => {
   return (
     <>
       <header className='app-header'>

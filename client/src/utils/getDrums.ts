@@ -1,4 +1,4 @@
-import { drums } from "../data/drums";
+import { drums } from '../data/drums';
 
 export function getDrums(): Kit[] {
   return drums;
