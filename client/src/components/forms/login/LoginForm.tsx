@@ -1,7 +1,7 @@
 import { SyntheticEvent, useState } from 'react';
 import { useHistory } from 'react-router';
-import { useQuery, gql } from '@apollo/client';
-import { API_URL } from '../../../constants';
+import { gql, useMutation } from '@apollo/client';
+import { AUTH_JWT } from '../../../constants';
 
 const SIGNUP_MUTATION = gql`
   mutation SignupMutation(
@@ -32,9 +32,32 @@ const LoginForm = (): JSX.Element => {
     password: '',
   });
 
+  const [login] = useMutation(LOGIN_MUTATION, {
+    variables: {
+      email: formState.email,
+      password: formState.password,
+    },
+    onCompleted: ({ login }) => {
+      localStorage.setItem(AUTH_JWT, login.token);
+      history.push('/');
+    },
+  });
+
+  const [signup] = useMutation(SIGNUP_MUTATION, {
+    variables: {
+      name: formState.firstName,
+      email: formState.email,
+      password: formState.password,
+    },
+    onCompleted: ({ signup }) => {
+      localStorage.setItem(AUTH_JWT, signup.token);
+      history.push('/');
+    },
+  });
+
   const handleSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
-    console.log('submitting');
+    console.log('submitting', e.timeStamp);
   };
 
   return (
@@ -82,7 +105,10 @@ const LoginForm = (): JSX.Element => {
           />
         </div>
         <div>
-          <button onClick={formState.login ? login : signup} type='submit'>
+          <button
+            onClick={() => (formState.login ? login : signup)}
+            type='submit'
+          >
             {formState.login ? 'Login' : 'Sign Up'}
           </button>
           <button
