@@ -12,7 +12,8 @@ import {
   createHttpLink,
   InMemoryCache,
 } from '@apollo/client';
-import { API_URL } from './constants';
+import { setContext } from '@apollo/client/link/context';
+import { API_URL, AUTH_JWT } from './constants';
 import App from './components/app/App';
 import isProduction from './utils/isProduction';
 
@@ -26,6 +27,23 @@ if (isProduction()) {
 
 const httpLink = createHttpLink({
   uri: API_URL,
+});
+
+/**
+ * Middleware: passes auth set in local storage
+ * to the to the GraphQL Server
+ * TODO:
+ * find better way to hide secrets:
+ * https://www.rdegges.com/2018/please-stop-using-local-storage/
+ */
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem(AUTH_JWT);
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
 });
 
 const client = new ApolloClient({
