@@ -1,14 +1,13 @@
 import * as jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import { APP_SECRET } from '../constants';
-import { AuthPayload, IUser } from '../types';
 const { sign } = jwt;
 
 export const signup = async (
   parent,
   args,
   context,
-  info
+  info,
 ): Promise<AuthPayload> => {
   try {
     console.log('Mutation: signup', args);
@@ -16,11 +15,13 @@ export const signup = async (
     const user = await context.prisma.user.create({
       data: { ...args, password },
     });
-    console.log('>>', user);
+    console.log('signup', user);
     const token = sign({ userId: user.id }, APP_SECRET);
+    console.log('🔥', token);
 
     return { token, user };
   } catch (error) {
+    console.log('💥', error);
     throw new Error(error);
   }
 };
@@ -29,7 +30,7 @@ export const login = async (
   parent,
   args,
   context,
-  info
+  info,
 ): Promise<AuthPayload> => {
   console.log('Mutation: login', args);
   const user = await context.prisma.user.findUnique({

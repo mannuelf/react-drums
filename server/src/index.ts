@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import * as dotenv from 'dotenv';
 import { ApolloServer } from 'apollo-server';
 import { PrismaClient } from '@prisma/client';
 
@@ -7,6 +8,8 @@ import * as Query from './resolvers/Query';
 import * as Mutation from './resolvers/Mutation';
 
 import { getUserId } from './utils/auth';
+
+dotenv.config({ path: __dirname + './.env' });
 
 const prisma: PrismaClient = new PrismaClient();
 
