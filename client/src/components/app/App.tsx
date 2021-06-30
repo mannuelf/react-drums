@@ -1,4 +1,5 @@
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Welcome from 'components/welcome/Welcome';
 import LoginForm from 'components/forms/login/LoginForm';
 import Machine from 'components/machine/Machine';
 import Footer from '../Footer';
@@ -8,13 +9,15 @@ import '../../css/normalize.css';
 const App = (): JSX.Element => {
   return (
     <>
-      <GlobalStyle />
-      <Switch>
-        <Route exact path='/' />
-        <Route exact path='/machine' component={Machine} />
-        <Route exact path='/login' component={LoginForm} />
-      </Switch>
-      <Footer />
+      <Router>
+        <GlobalStyle />
+        <Switch>
+          <Route exact path='/' component={Welcome} />
+          <Route exact path='/machine' component={Machine} />
+          <Route exact path='/login' component={LoginForm} />
+        </Switch>
+        <Footer />
+      </Router>
     </>
   );
 };

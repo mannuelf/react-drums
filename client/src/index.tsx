@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import * as dotenv from 'dotenv';
 import * as serviceWorker from './serviceWorker';
 import LogRocket from 'logrocket';
@@ -58,11 +57,9 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <ApolloProvider client={client}>
-        <App />
-      </ApolloProvider>
-    </Router>
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );

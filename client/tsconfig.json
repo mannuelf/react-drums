@@ -2,6 +2,9 @@
   "compilerOptions": {
     "target": "es5",
     "baseUrl": "./src",
+    "paths": {
+      "test-utils": ["./test/testUtils"]
+    },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
