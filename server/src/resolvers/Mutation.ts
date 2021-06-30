@@ -10,14 +10,11 @@ export const signup = async (
   info,
 ): Promise<AuthPayload> => {
   try {
-    console.log('Mutation signup', args);
     const password = await bcrypt.hash(args.password, 10);
     const user = await context.prisma.user.create({
       data: { ...args, password },
     });
-    console.log('signup', user);
     const token = sign({ userId: user.id }, APP_SECRET);
-    console.log('🔥', token);
 
     return { token, user };
   } catch (error) {
@@ -32,7 +29,6 @@ export const login = async (
   context,
   info,
 ): Promise<AuthPayload> => {
-  console.log('Mutation: login', args);
   const user = await context.prisma.user.findUnique({
     where: { email: args.email },
   });
@@ -52,7 +48,6 @@ export const login = async (
 };
 
 export const user = async (parent, args, context, info): Promise<IUser> => {
-  console.log('Mutation: user', args);
   try {
     const { userId } = context;
     return await context.prisma.user.create({

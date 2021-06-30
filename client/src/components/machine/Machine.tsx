@@ -8,7 +8,7 @@ import { Button } from '../common/Button';
 const Machine = (): JSX.Element => {
   console.log('🎹 Machine');
 
-  const kitName = '808'; // TODO: input to select different kits
+  const kitName = '808';
   const [kit, setKit] = useState<Kit | undefined>();
 
   const audioElement = createRef<HTMLAudioElement>()!;

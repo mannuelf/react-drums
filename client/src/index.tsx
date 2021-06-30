@@ -39,7 +39,6 @@ const httpLink = createHttpLink({
 const authLink = setContext(async (_, { headers }) => {
   try {
     const token = await localStorage.getItem(AUTH_JWT);
-    console.log('authLink', token);
     return {
       headers: {
         ...headers,
@@ -48,6 +47,7 @@ const authLink = setContext(async (_, { headers }) => {
     };
   } catch (error) {
     console.log('🔥', error);
+    throw new Error(`Ooops, ${error}`);
   }
 });
 

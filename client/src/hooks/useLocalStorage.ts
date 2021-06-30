@@ -4,7 +4,6 @@ export default function useLocalStorage(
   key: string,
   initialValue: null,
 ): any[] {
-  console.log('🚧', key, initialValue);
   const [jwtValue, setJwtValue] = useState(() => {
     try {
       const item = window.localStorage.getItem(key);

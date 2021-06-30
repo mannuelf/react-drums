@@ -6,7 +6,6 @@ import AuthContext from '../context/AuthContext';
 
 const useAxios = (): AxiosInstance => {
   const [auth] = useContext(AuthContext);
-  console.log('useAxios', auth);
 
   const apiClient = axios.create({
     baseURL: API_URL,

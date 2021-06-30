@@ -58,7 +58,6 @@ const LoginForm = (): JSX.Element => {
       password: formState.password,
     },
     onCompleted: ({ signup }) => {
-      console.log('useMutation >', signup);
       localStorage.setItem(AUTH_JWT, signup.token);
       history.push('/machine');
     },
