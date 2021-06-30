@@ -1,36 +1,43 @@
-import { SyntheticEvent, useState } from 'react';
+import { useState } from 'react';
 import { useHistory } from 'react-router';
 import { gql, useMutation } from '@apollo/client';
 import { AUTH_JWT } from '../../../constants';
-
-const SIGNUP_MUTATION = gql`
-  mutation SignupMutation(
-    $email: String!
-    $password: String!
-    $firstName: String!
-  ) {
-    signup(email: $email, password: $password, firstName: $firstName) {
-      token
-    }
-  }
-`;
-
-const LOGIN_MUTATION = gql`
-  mutation LoginMutation($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
-      token
-    }
-  }
-`;
 
 const LoginForm = (): JSX.Element => {
   const history = useHistory();
   const [formState, setFormState] = useState({
     login: true,
     firstName: '',
+    lastName: '',
     email: '',
     password: '',
   });
+
+  const SIGNUP_MUTATION = gql`
+    mutation SignupMutation(
+      $email: String!
+      $password: String!
+      $firstName: String!
+      $lastName: String!
+    ) {
+      signup(
+        email: $email
+        password: $password
+        firstName: $firstName
+        lastName: $lastName
+      ) {
+        token
+      }
+    }
+  `;
+
+  const LOGIN_MUTATION = gql`
+    mutation LoginMutation($email: String!, $password: String!) {
+      login(email: $email, password: $password) {
+        token
+      }
+    }
+  `;
 
   const [login] = useMutation(LOGIN_MUTATION, {
     variables: {
@@ -45,38 +52,50 @@ const LoginForm = (): JSX.Element => {
 
   const [signup] = useMutation(SIGNUP_MUTATION, {
     variables: {
-      name: formState.firstName,
+      firstName: formState.firstName,
+      lastName: formState.lastName,
       email: formState.email,
       password: formState.password,
     },
     onCompleted: ({ signup }) => {
+      console.log('useMutation >', signup);
       localStorage.setItem(AUTH_JWT, signup.token);
-      history.push('/');
+      history.push('/machine');
     },
   });
 
-  const handleSubmit = async (e: SyntheticEvent) => {
-    e.preventDefault();
-    console.log('submitting', e.timeStamp);
-  };
-
   return (
     <>
-      <form onSubmit={handleSubmit} className='form'>
+      <form onSubmit={(e) => e.preventDefault()} className='form'>
         <h3>{formState.login ? 'Login' : 'Sign Up'}</h3>
         {!formState.login && (
           <div>
-            <label htmlFor='firstName'>First Name</label>
-            <input
-              value={formState.firstName}
-              onChange={(e) =>
-                setFormState({ ...formState, firstName: e.target.value })
-              }
-              name='firstName'
-              id='firstName'
-              type='text'
-              placeholder='Enter first name'
-            />
+            <div>
+              <label htmlFor='firstName'>First Name</label>
+              <input
+                value={formState.firstName}
+                onChange={(e) =>
+                  setFormState({ ...formState, firstName: e.target.value })
+                }
+                name='firstName'
+                id='firstName'
+                type='text'
+                placeholder='Enter first name'
+              />
+            </div>
+            <div>
+              <label htmlFor='lastName'>Last Name</label>
+              <input
+                value={formState.lastName}
+                onChange={(e) =>
+                  setFormState({ ...formState, lastName: e.target.value })
+                }
+                name='firstName'
+                id='firstName'
+                type='text'
+                placeholder='Enter first name'
+              />
+            </div>
           </div>
         )}
         <div>
@@ -106,14 +125,14 @@ const LoginForm = (): JSX.Element => {
         </div>
         <div>
           <button
-            onClick={() => (formState.login ? login : signup)}
+            onClick={() => (formState.login ? login() : signup())}
             type='submit'
           >
             {formState.login ? 'Login' : 'Sign Up'}
           </button>
           <button
             className='pointer button'
-            onClick={(e) =>
+            onClick={() =>
               setFormState({
                 ...formState,
                 login: !formState.login,
@@ -121,8 +140,8 @@ const LoginForm = (): JSX.Element => {
             }
           >
             {formState.login
-              ? 'need to create an account?'
-              : 'already have an account?'}
+              ? 'Create an account?'
+              : 'Already have an account?'}
           </button>
         </div>
       </form>

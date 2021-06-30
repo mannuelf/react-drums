@@ -30,24 +30,29 @@ const httpLink = createHttpLink({
 });
 
 /**
- * Middleware: passes auth set in local storage
- * to the to the GraphQL Server
+ * Middleware: passes token auth set in local storage
+ * to the to the GraphQL Server.
  * TODO:
- * find better way to hide secrets:
+ * find better way to hide secrets
  * https://www.rdegges.com/2018/please-stop-using-local-storage/
  */
-const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem(AUTH_JWT);
-  return {
-    headers: {
-      ...headers,
-      authorization: token ? `Bearer ${token}` : '',
-    },
-  };
+const authLink = setContext(async (_, { headers }) => {
+  try {
+    const token = await localStorage.getItem(AUTH_JWT);
+    console.log('authLink', token);
+    return {
+      headers: {
+        ...headers,
+        authorization: token ? `Bearer ${token}` : '',
+      },
+    };
+  } catch (error) {
+    console.log('🔥', error);
+  }
 });
 
 const client = new ApolloClient({
-  link: httpLink,
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 

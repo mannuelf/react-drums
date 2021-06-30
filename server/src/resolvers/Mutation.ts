@@ -10,7 +10,7 @@ export const signup = async (
   info,
 ): Promise<AuthPayload> => {
   try {
-    console.log('Mutation: signup', args);
+    console.log('Mutation signup', args);
     const password = await bcrypt.hash(args.password, 10);
     const user = await context.prisma.user.create({
       data: { ...args, password },
@@ -22,7 +22,7 @@ export const signup = async (
     return { token, user };
   } catch (error) {
     console.log('💥', error);
-    throw new Error(error);
+    throw new Error(`signup: ${error}`);
   }
 };
 
@@ -52,8 +52,8 @@ export const login = async (
 };
 
 export const user = async (parent, args, context, info): Promise<IUser> => {
+  console.log('Mutation: user', args);
   try {
-    console.log('Mutation: user', args);
     const { userId } = context;
     return await context.prisma.user.create({
       data: {
@@ -66,6 +66,6 @@ export const user = async (parent, args, context, info): Promise<IUser> => {
       },
     });
   } catch (error) {
-    throw new Error(error);
+    throw new Error(`user: ${error}`);
   }
 };
