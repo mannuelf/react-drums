@@ -4,6 +4,7 @@ import * as serviceWorker from './serviceWorker';
 import LogRocket from 'logrocket';
 import ReactDOM from 'react-dom';
 import ReactGa from 'react-ga';
+import { Provider } from 'react-redux';
 
 import {
   ApolloProvider,
@@ -11,10 +12,11 @@ import {
   createHttpLink,
   InMemoryCache,
 } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
-import { API_URL, AUTH_JWT } from './constants';
 import App from './components/app/App';
 import isProduction from './utils/isProduction';
+import { setContext } from '@apollo/client/link/context';
+import { API_URL, AUTH_JWT } from './constants';
+import { store } from './store/store';
 
 dotenv.config({ path: __dirname + './.env' });
 
@@ -57,9 +59,11 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
-      <App />
-    </ApolloProvider>
+    <Provider store={store}>
+      <ApolloProvider client={client}>
+        <App />
+      </ApolloProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
