@@ -1,16 +1,20 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
 import { gql, useMutation } from '@apollo/client';
 import { AUTH_JWT } from '../../../constants';
 
 const LoginForm = (): JSX.Element => {
+  const user = useSelector((state: any) => state.user);
+  const dispatch = useDispatch();
   const history = useHistory();
+
   const [formState, setFormState] = useState({
-    login: true,
     firstName: '',
     lastName: '',
     email: '',
     password: '',
+    loggedIn: true,
   });
 
   const SIGNUP_MUTATION = gql`
@@ -46,6 +50,7 @@ const LoginForm = (): JSX.Element => {
     },
     onCompleted: ({ login }) => {
       localStorage.setItem(AUTH_JWT, login.token);
+      dispatch({ type: 'store/LOGIN' });
       history.push('/');
     },
   });
@@ -66,8 +71,8 @@ const LoginForm = (): JSX.Element => {
   return (
     <>
       <form onSubmit={(e) => e.preventDefault()} className='form'>
-        <h3>{formState.login ? 'Login' : 'Sign Up'}</h3>
-        {!formState.login && (
+        <h3>{formState.loggedIn ? 'Login' : 'Sign Up'}</h3>
+        {!formState.loggedIn && (
           <div>
             <div>
               <label htmlFor='firstName'>First Name</label>
@@ -124,21 +129,21 @@ const LoginForm = (): JSX.Element => {
         </div>
         <div>
           <button
-            onClick={() => (formState.login ? login() : signup())}
+            onClick={() => (formState.loggedIn ? login() : signup())}
             type='submit'
           >
-            {formState.login ? 'Login' : 'Sign Up'}
+            {formState.loggedIn ? 'Login' : 'Sign Up'}
           </button>
           <button
             className='pointer button'
             onClick={() =>
               setFormState({
                 ...formState,
-                login: !formState.login,
+                loggedIn: !formState.loggedIn,
               })
             }
           >
-            {formState.login
+            {formState.loggedIn
               ? 'Create an account?'
               : 'Already have an account?'}
           </button>

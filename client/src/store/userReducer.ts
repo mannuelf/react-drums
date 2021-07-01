@@ -12,5 +12,12 @@ export function userReducer(
   state: typeof initialState = initialState,
   action: ACTIONTYPE,
 ): IUser {
-  return state;
+  switch (action.type) {
+    case 'LOGIN':
+      return { ...state, loggedIn: true };
+    case 'LOGOUT':
+      return { ...state, loggedIn: false };
+    default:
+      return state;
+  }
 }
