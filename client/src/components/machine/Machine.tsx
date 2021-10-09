@@ -1,15 +1,17 @@
 import { useState, useEffect, createRef } from 'react';
 import { getDrumKitByName } from '../../utils/getDrums';
-import Header from '../Header';
-import Footer from '../Footer';
-import Cable from '../common/Cable';
+import { MachineHeader } from './MachineHeader';
+import { MachineCable } from './MachineCable';
 import { Button } from '../common/Button';
+import Footer from '../Footer';
+import { MachinePad } from './MachinePad';
+import { MachineBody } from './MachineBody';
 
-const Machine = (): JSX.Element => {
+const Machine: React.FC = (): JSX.Element => {
   console.log('🎹 Machine');
 
   const kitName = '808';
-  const [kit, setKit] = useState<Kit | undefined>();
+  const [kit, setKit] = useState<Kit | undefined>({} as Kit);
 
   const audioElement = createRef<HTMLAudioElement>()!;
   const buttonElement = createRef<HTMLButtonElement>()!;
@@ -32,35 +34,30 @@ const Machine = (): JSX.Element => {
     return (
       <>
         <div className='app'>
-          <Cable />
-          <Header />
-          <section className='app-panel'>
-            <div className='app-panel__controls'>.</div>
-            <div className='app-panel__controls'>
-              <div>
-                {!sounds
-                  ? 'loading...'
-                  : sounds.map((sound: any) => (
-                      <Button
-                        ref={buttonElement}
-                        key={sound.id}
-                        data-key={sound.keyCode}
-                        className='pad-button'
-                        onClick={(e: any) => handlePlaySound(e)}
-                        onKeyPress={(e: any) => handlePlaySound(e)}
-                      >
-                        <span className='pad-button-char'>{sound.keyChar}</span>
-                        <audio
-                          ref={audioElement}
-                          key={sound.id}
-                          src={sound.src}
-                          data-key={sound.keyCode}
-                        />
-                      </Button>
-                    ))}
-              </div>
-            </div>
-          </section>
+          <MachineCable />
+          <MachineHeader />
+          <MachineBody>
+            {!sounds
+              ? 'loading...'
+              : sounds.map((sound: any) => (
+                  <MachinePad
+                    ref={buttonElement}
+                    key={sound.id}
+                    data-key={sound.keyCode}
+                    className='pad-button'
+                    onClick={(e: any) => handlePlaySound(e)}
+                    onKeyPress={(e: any) => handlePlaySound(e)}
+                  >
+                    <span className='pad-button-char'>{sound.keyChar}</span>
+                    <audio
+                      ref={audioElement}
+                      key={sound.id}
+                      src={sound.src}
+                      data-key={sound.keyCode}
+                    />
+                  </MachinePad>
+                ))}
+          </MachineBody>
         </div>
         <Footer />
       </>
@@ -70,8 +67,8 @@ const Machine = (): JSX.Element => {
   return (
     <>
       <div className='app'>
-        <Cable />
-        <Header />
+        <MachineCable />
+        <MachineHeader />
         <section className='app-panel'>
           <div>No sounds loaded</div>
         </section>

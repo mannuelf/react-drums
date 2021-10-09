@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Welcome from 'components/welcome/Welcome';
+import { Welcome } from 'components/welcome/Welcome';
 import LoginForm from 'components/forms/login/LoginForm';
 import Machine from 'components/machine/Machine';
 import Footer from '../Footer';
-import GlobalStyle from '../../global-styles';
+import GlobalStyle from '../../styles/global-styles';
 import '../../css/normalize.css';
 
-const App = (): JSX.Element => {
+export const App = (): JSX.Element => {
   return (
     <>
       <Router>
@@ -21,5 +21,3 @@ const App = (): JSX.Element => {
     </>
   );
 };
-
-export default App;

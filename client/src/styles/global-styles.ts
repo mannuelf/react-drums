@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
- html,body {
+ html, body {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }

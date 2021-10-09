@@ -11,11 +11,11 @@ export const signup = async (
 ): Promise<AuthPayload> => {
   try {
     const password = await bcrypt.hash(args.password, 10);
+    console.log('📟', password);
     const user = await context.prisma.user.create({
       data: { ...args, password },
     });
     const token = sign({ userId: user.id }, APP_SECRET);
-
     return { token, user };
   } catch (error) {
     console.log('💥', error);

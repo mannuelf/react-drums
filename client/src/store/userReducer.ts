@@ -1,6 +1,6 @@
 const initialState: IUser = {
-  firstName: 'Mannuel',
-  email: 'mannuel@email.com',
+  firstName: '',
+  email: '',
   loggedIn: false,
 };
 

@@ -1,18 +1,34 @@
-import { FC } from 'react';
+import LoginForm from 'components/forms/login/LoginForm';
+import styled from 'styled-components';
 
-const Welcome: FC = (): JSX.Element => {
+export const Welcome = (): JSX.Element => {
   return (
-    <>
-      <h1 role='heading'>Welcome to the sound machines</h1>
-      <p role='article'>
-        Login to play, don&apos;t worry this is test application I have already
-        created a user for you. admin, admin@email.com,
-      </p>
-      <a href='/login' role='link'>
-        Login
-      </a>
-    </>
+    <Section>
+      <div>
+        <img
+          width={'100%'}
+          src='https://res.cloudinary.com/mannuel/image/upload/v1633788761/images/screenshot.png'
+          alt='Maschine'
+        />
+      </div>
+      <div>
+        <h1 role='heading'>Masschine</h1>
+        <p role='article'>
+          Login to play, don&apos;t worry this is test application I have
+          already created a user for you. admin, admin@email.com,
+        </p>
+      </div>
+      <LoginForm />
+    </Section>
   );
 };
 
-export default Welcome;
+const Section = styled.section`
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  max-width: 640px;
+  margin: 1em auto;
+  border-radius: 1em;
+  padding: 1em;
+`;

@@ -2,12 +2,12 @@ import * as React from 'react';
 // import API mocking utilities from Mock Service Worker.
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
-import { render, fireEvent, waitFor, screen } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import LoginForm from './LoginForm';
 import { API_URL, AUTH_JWT } from '../../../constants';
 
-let fakeJwtToken = { token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9' };
+const fakeJwtToken = { token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9' };
 const server = setupServer(
   rest.post(API_URL, (req, res, ctx) => {
     return res(ctx.json(fakeJwtToken));

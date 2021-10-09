@@ -3,9 +3,12 @@ import { useHistory } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { gql, useMutation } from '@apollo/client';
 import { AUTH_JWT } from '../../../constants';
+import Label from '../Label';
+import Input from '../Input';
 
 const LoginForm = (): JSX.Element => {
   const user = useSelector((state: any) => state.user);
+  const error = useSelector((state: any) => state.error);
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -68,6 +71,10 @@ const LoginForm = (): JSX.Element => {
     },
   });
 
+  if (error) {
+    return <div>{error.message}</div>;
+  }
+
   return (
     <>
       <form onSubmit={(e) => e.preventDefault()} className='form'>
@@ -75,21 +82,25 @@ const LoginForm = (): JSX.Element => {
         {!formState.loggedIn && (
           <div>
             <div>
-              <label htmlFor='firstName'>First Name</label>
-              <input
-                value={formState.firstName}
-                onChange={(e) =>
-                  setFormState({ ...formState, firstName: e.target.value })
-                }
-                name='firstName'
+              <Label htmlFor='firstName' label='First Name' />
+              <Input
                 id='firstName'
                 type='text'
-                placeholder='Enter first name'
+                name='firstName'
+                placeholder='First Name'
+                value={formState.firstName}
+                onChange={(e) =>
+                  setFormState({
+                    ...formState,
+                    firstName: e.target.value,
+                  })
+                }
               />
+              {error ? 'First name required' : ''}
             </div>
             <div>
-              <label htmlFor='lastName'>Last Name</label>
-              <input
+              <Label htmlFor='lastName' label='Last Name' />
+              <Input
                 value={formState.lastName}
                 onChange={(e) =>
                   setFormState({ ...formState, lastName: e.target.value })
@@ -103,8 +114,8 @@ const LoginForm = (): JSX.Element => {
           </div>
         )}
         <div>
-          <label htmlFor='email'>Email</label>
-          <input
+          <Label htmlFor='email' label='Email' />
+          <Input
             value={formState.email}
             onChange={(e) =>
               setFormState({ ...formState, email: e.target.value })
@@ -116,8 +127,8 @@ const LoginForm = (): JSX.Element => {
           />
         </div>
         <div>
-          <label htmlFor='password'>Password</label>
-          <input
+          <Label htmlFor='password' label='Password' />
+          <Input
             onChange={(e) =>
               setFormState({ ...formState, password: e.target.value })
             }

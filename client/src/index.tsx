@@ -1,19 +1,18 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import * as dotenv from 'dotenv';
 import * as serviceWorker from './serviceWorker';
 import LogRocket from 'logrocket';
-import ReactDOM from 'react-dom';
 import ReactGa from 'react-ga';
 import { Provider } from 'react-redux';
-
 import {
   ApolloProvider,
   ApolloClient,
   createHttpLink,
   InMemoryCache,
 } from '@apollo/client';
-import App from './components/app/App';
-import isProduction from './utils/isProduction';
+import { App } from './components/app/App';
+import { isProduction } from './utils/isProduction';
 import { setContext } from '@apollo/client/link/context';
 import { API_URL, AUTH_JWT } from './constants';
 import { store } from './store/store';
@@ -48,7 +47,7 @@ const authLink = setContext(async (_, { headers }) => {
     };
   } catch (error) {
     console.log('🔥', error);
-    throw new Error(`Ooops, ${error}`);
+    throw new Error(`Oops, ${error}`);
   }
 });
 
