@@ -10,7 +10,7 @@ type Props = {
   onChange?: (e: any) => void;
 };
 
-const Input = ({ ...props }: Props): JSX.Element => {
+export const Input = ({ ...props }: Props): JSX.Element => {
   return <StyledInput {...props} />;
 };
 
@@ -25,5 +25,3 @@ const StyledInput = styled('input')({
     borderColor: '1px solid #4444',
   },
 });
-
-export default Input;

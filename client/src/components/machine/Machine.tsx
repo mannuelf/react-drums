@@ -2,17 +2,22 @@ import { useState, useEffect, createRef } from 'react';
 import { getDrumKitByName } from '../../utils/getDrums';
 import { MachineHeader } from './MachineHeader';
 import { MachineCable } from './MachineCable';
-import { Button } from '../common/Button';
-import Footer from '../Footer';
 import { MachinePad } from './MachinePad';
 import { MachineBody } from './MachineBody';
+import { MachineAudio } from './MachineAudio';
+import { MachineKey } from './MachineKey';
 
-const Machine: React.FC = (): JSX.Element => {
-  console.log('🎹 Machine');
+interface ISound {
+  id: number;
+  name: string;
+  src: string;
+  keyCode: number;
+  keyChar: string;
+}
 
+export const Machine: React.FC = (): JSX.Element => {
   const kitName = '808';
   const [kit, setKit] = useState<Kit | undefined>({} as Kit);
-
   const audioElement = createRef<HTMLAudioElement>()!;
   const buttonElement = createRef<HTMLButtonElement>()!;
 
@@ -29,53 +34,45 @@ const Machine: React.FC = (): JSX.Element => {
     }
   };
 
-  if (kit) {
-    const { sounds } = kit;
-    return (
-      <>
-        <div className='app'>
-          <MachineCable />
-          <MachineHeader />
-          <MachineBody>
-            {!sounds
-              ? 'loading...'
-              : sounds.map((sound: any) => (
-                  <MachinePad
-                    ref={buttonElement}
-                    key={sound.id}
-                    data-key={sound.keyCode}
-                    className='pad-button'
-                    onClick={(e: any) => handlePlaySound(e)}
-                    onKeyPress={(e: any) => handlePlaySound(e)}
-                  >
-                    <span className='pad-button-char'>{sound.keyChar}</span>
-                    <audio
-                      ref={audioElement}
-                      key={sound.id}
-                      src={sound.src}
-                      data-key={sound.keyCode}
-                    />
-                  </MachinePad>
-                ))}
-          </MachineBody>
-        </div>
-        <Footer />
-      </>
-    );
-  }
+  const handleKeyPress = (e: any) => {
+    if (audioElement) {
+      const audioEl = e.target.children[1];
+      audioEl.currentTime = 0;
+      audioEl.play();
+    }
+  };
 
-  return (
-    <>
+  if (!kit) {
+    return <div className='app'>Loading..</div>;
+  } else {
+    const { sounds } = kit as Kit;
+    return (
       <div className='app'>
         <MachineCable />
         <MachineHeader />
-        <section className='app-panel'>
-          <div>No sounds loaded</div>
-        </section>
+        <MachineBody>
+          {!sounds
+            ? 'loading...'
+            : sounds.map((sound: ISound) => (
+                <MachinePad
+                  ref={buttonElement}
+                  key={sound.id}
+                  data-key={sound.keyCode}
+                  onClick={(e: any) => handlePlaySound(e)}
+                  onKeyPress={(e: any) => handleKeyPress(e)}
+                  className='pad-button'
+                >
+                  <MachineKey keyChar={sound.keyChar} />
+                  <MachineAudio
+                    ref={audioElement}
+                    key={sound.id}
+                    src={sound.src}
+                    data-key={sound.keyCode}
+                  />
+                </MachinePad>
+              ))}
+        </MachineBody>
       </div>
-      <Footer />
-    </>
-  );
+    );
+  }
 };
-
-export default Machine;

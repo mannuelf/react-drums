@@ -1,16 +1,18 @@
-import { useState } from 'react';
-import { useHistory } from 'react-router';
-import { useDispatch, useSelector } from 'react-redux';
-import { gql, useMutation } from '@apollo/client';
 import { AUTH_JWT } from '../../../constants';
-import Label from '../Label';
-import Input from '../Input';
+import { gql, useMutation } from '@apollo/client';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
+import { useState } from 'react';
+import { Input } from '../Input';
+import { Label } from '../Label';
 
-const LoginForm = (): JSX.Element => {
+export const LoginForm = (): JSX.Element => {
   const user = useSelector((state: any) => state.user);
   const error = useSelector((state: any) => state.error);
   const dispatch = useDispatch();
   const history = useHistory();
+
+  console.log(user);
 
   const [formState, setFormState] = useState({
     firstName: '',
@@ -163,5 +165,3 @@ const LoginForm = (): JSX.Element => {
     </>
   );
 };
-
-export default LoginForm;

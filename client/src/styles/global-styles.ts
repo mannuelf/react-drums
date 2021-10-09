@@ -14,7 +14,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #eac182 url("https://res.cloudinary.com/mannuel/image/upload/v1594123814/images/purty_wood/purty_wood__2X.png") repeat;
+  background-color: #444;
+
 }
 
 .app {
@@ -38,7 +39,7 @@ body {
 
 @media screen and (min-width: 767px) {
   .app {
-    max-width: 640px;
+    max-width: 690px;
   }
 }
 

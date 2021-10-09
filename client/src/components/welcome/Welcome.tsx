@@ -1,4 +1,4 @@
-import LoginForm from 'components/forms/login/LoginForm';
+import { LoginForm } from 'components/forms/login/LoginForm';
 import styled from 'styled-components';
 
 export const Welcome = (): JSX.Element => {
@@ -12,11 +12,8 @@ export const Welcome = (): JSX.Element => {
         />
       </div>
       <div>
-        <h1 role='heading'>Masschine</h1>
-        <p role='article'>
-          Login to play, don&apos;t worry this is test application I have
-          already created a user for you. admin, admin@email.com,
-        </p>
+        <h1 role='heading'>Maschine</h1>
+        <p role='article'>Login to play, admin@admin.com, admin</p>
       </div>
       <LoginForm />
     </Section>

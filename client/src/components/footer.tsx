@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faCode } from '@fortawesome/free-solid-svg-icons';
 
-const SiteFooter = (): JSX.Element => {
+export const Footer = (): JSX.Element => {
   return (
     <footer>
       <p>
@@ -24,5 +24,3 @@ const SiteFooter = (): JSX.Element => {
     </footer>
   );
 };
-
-export default SiteFooter;

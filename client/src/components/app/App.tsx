@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Footer } from '../Footer';
+import { LoginForm } from 'components/forms/login/LoginForm';
+import { Machine } from 'components/machine/Machine';
 import { Welcome } from 'components/welcome/Welcome';
-import LoginForm from 'components/forms/login/LoginForm';
-import Machine from 'components/machine/Machine';
-import Footer from '../Footer';
+import '../../styles/normalize.css';
 import GlobalStyle from '../../styles/global-styles';
-import '../../css/normalize.css';
 
 export const App = (): JSX.Element => {
   return (
