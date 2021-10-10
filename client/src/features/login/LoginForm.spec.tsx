@@ -5,7 +5,7 @@ import { setupServer } from 'msw/node';
 import { render, fireEvent, screen } from '@testing-library/react';
 
 import LoginForm from './LoginForm';
-import { API_URL, AUTH_JWT } from '../../../constants';
+import { API_URL, AUTH_JWT } from '../../constants';
 
 const fakeJwtToken = { token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9' };
 const server = setupServer(

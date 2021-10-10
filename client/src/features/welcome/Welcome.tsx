@@ -1,4 +1,4 @@
-import { LoginForm } from 'components/forms/login/LoginForm';
+import { LoginForm } from 'features/login/LoginForm';
 import styled from 'styled-components';
 
 export const Welcome = (): JSX.Element => {

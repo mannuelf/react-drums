@@ -1,10 +1,11 @@
-import { AUTH_JWT } from '../../../constants';
+import { AUTH_JWT } from '../../constants';
 import { gql, useMutation } from '@apollo/client';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { useState } from 'react';
-import { Input } from '../Input';
-import { Label } from '../Label';
+import { ButtonSmall } from 'components/common/ButtonSmall';
+import { Input } from 'components/common/Input';
+import { Label } from 'components/common/Label';
 
 export const LoginForm = (): JSX.Element => {
   const user = useSelector((state: any) => state.user);
@@ -17,7 +18,7 @@ export const LoginForm = (): JSX.Element => {
     lastName: '',
     email: '',
     password: '',
-    loggedIn: true,
+    loggedIn: false,
   });
 
   const SIGNUP_MUTATION = gql`
@@ -54,6 +55,7 @@ export const LoginForm = (): JSX.Element => {
     onCompleted: ({ login }) => {
       localStorage.setItem(AUTH_JWT, login.token);
       dispatch({ type: 'store/LOGIN' });
+      formState.loggedIn = true;
       history.push('/');
     },
   });
@@ -82,12 +84,11 @@ export const LoginForm = (): JSX.Element => {
         {!formState.loggedIn && (
           <div>
             <div>
-              <Label htmlFor='firstName' label='First Name' />
+              <Label htmlFor='firstName' label='First Name *' />
               <Input
                 id='firstName'
-                type='text'
                 name='firstName'
-                placeholder='First Name'
+                type='text'
                 value={formState.firstName}
                 onChange={(e) =>
                   setFormState({
@@ -101,52 +102,50 @@ export const LoginForm = (): JSX.Element => {
             <div>
               <Label htmlFor='lastName' label='Last Name' />
               <Input
+                id='lastName'
+                name='lastName'
+                type='text'
                 value={formState.lastName}
                 onChange={(e) =>
                   setFormState({ ...formState, lastName: e.target.value })
                 }
-                name='firstName'
-                id='firstName'
-                type='text'
-                placeholder='Enter first name'
               />
             </div>
           </div>
         )}
         <div>
-          <Label htmlFor='email' label='Email' />
+          <Label htmlFor='email' label='Email *' />
           <Input
+            id='email'
+            name='email'
+            type='text'
             value={formState.email}
             onChange={(e) =>
               setFormState({ ...formState, email: e.target.value })
             }
-            name='email'
-            id='email'
-            type='text'
-            placeholder='Enter valid email address'
           />
         </div>
         <div>
-          <Label htmlFor='password' label='Password' />
+          <Label htmlFor='password' label='Password *' />
           <Input
+            id='password'
+            name='password'
+            type='password'
+            value={formState.password}
             onChange={(e) =>
               setFormState({ ...formState, password: e.target.value })
             }
-            name='password'
-            id='password'
-            type='password'
-            placeholder='Enter safe password'
           />
         </div>
         <div>
-          <button
-            onClick={() => (formState.loggedIn ? login() : signup())}
+          <ButtonSmall
             type='submit'
+            onClick={() => (formState.loggedIn ? login() : signup())}
           >
             {formState.loggedIn ? 'Login' : 'Sign Up'}
-          </button>
-          <button
-            className='pointer button'
+          </ButtonSmall>
+          <ButtonSmall
+            type='submit'
             onClick={() =>
               setFormState({
                 ...formState,
@@ -157,7 +156,7 @@ export const LoginForm = (): JSX.Element => {
             {formState.loggedIn
               ? 'Create an account?'
               : 'Already have an account?'}
-          </button>
+          </ButtonSmall>
         </div>
       </form>
     </>
