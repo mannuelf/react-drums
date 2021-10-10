@@ -1,0 +1,17 @@
+{
+  "name": "React-Drums-Documentation",
+  "version": "0.0.0",
+  "description": "React drums documentation project.",
+  "main": "index.js",
+  "author": "Mannuel Ferreira",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "docz:build": "docz build",
+    "docz:dev": "docz dev",
+    "docz:serve": "docz build && docz serve"
+  },
+  "dependencies": {
+    "docz": "^2.3.1"
+  }
+}
