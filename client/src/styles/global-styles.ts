@@ -268,9 +268,10 @@ body {
 .pad-button-char {
   font-size: 10px;
   position: absolute;
-  bottom: 4px;
+  top: 4px;
   right: 4px;
 }
+
 .pad-button-id {
   font-size: 10px;
   position: absolute;
