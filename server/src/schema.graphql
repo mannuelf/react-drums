@@ -11,6 +11,7 @@ type User {
   email: String!
   password: String!
   createdAt: DateTime!
+  updatedAt: DateTime!
 }
 
 type AuthPayload {

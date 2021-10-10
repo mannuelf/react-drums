@@ -10,6 +10,7 @@ async function main() {
       email: 'jackblack@email.com',
       password: 'password',
       createdAt: new Date(),
+      updatedAt: new Date(),
     },
   });
   const allUsers = await prisma.user.findMany();
