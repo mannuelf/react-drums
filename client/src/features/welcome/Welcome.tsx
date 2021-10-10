@@ -1,7 +1,7 @@
-import { LoginForm } from 'features/login/LoginForm';
+import LoginForm from 'features/login/LoginForm';
 import styled from 'styled-components';
 
-export const Welcome = (): JSX.Element => {
+const Welcome = (): JSX.Element => {
   return (
     <Section>
       <div>
@@ -25,3 +25,5 @@ const Section = styled('section')({
     margin: '0 1em',
   },
 });
+
+export default Welcome;

@@ -1,6 +1,6 @@
 {
   "name": "react-drums",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Monorepo, client and server. Front-end drum machine built with React. Graph QL server and API to store and capture user account and sound bank data.",
   "repository": "https://github.com/mannuelf/react-drums",
   "author": "Mannuel Ferreira",
@@ -11,6 +11,9 @@
     "dev:client": "yarn --cwd client start",
     "dev:server": "yarn --cwd server dev",
     "dev": "concurrently \"yarn dev:server\"   \"yarn dev:client\"  \"yarn studio\" ",
+    "docz:build": "yarn --cwd documentation docz:build",
+    "docz:dev": "yarn --cwd documentation docz:dev",
+    "docz:serve": "yarn --cwd documentation docz:serve",
     "migrate": "yarn --cwd server prisma:migrate",
     "server": "yarn --cwd server start",
     "start": "concurrently \"yarn server\"   \"yarn build:client\"",

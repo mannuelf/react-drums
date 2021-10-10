@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MachinePad = styled.button`
+const MachinePad = styled.button`
   background: #444;
   border-radius: 3px;
   padding: 1rem;
@@ -10,3 +10,5 @@ export const MachinePad = styled.button`
   cursor: pointer;
   box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.4);
 `;
+
+export default MachinePad;

@@ -12,7 +12,7 @@ import {
   InMemoryCache,
 } from '@apollo/client';
 import { App } from './components/app/App';
-import { isProduction } from './utils/isProduction';
+import isProduction from './utils/isProduction';
 import { setContext } from '@apollo/client/link/context';
 import { API_URL, AUTH_JWT } from './constants';
 import { store } from './store/store';
@@ -36,9 +36,9 @@ const httpLink = createHttpLink({
  * find better way to hide secrets
  * https://www.rdegges.com/2018/please-stop-using-local-storage/
  */
-const authLink = setContext(async (_, { headers }) => {
+const authLink = setContext((_, { headers }) => {
   try {
-    const token = await localStorage.getItem(AUTH_JWT);
+    const token = localStorage.getItem(AUTH_JWT);
     return {
       headers: {
         ...headers,

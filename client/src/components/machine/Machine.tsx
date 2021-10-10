@@ -1,11 +1,11 @@
 import { useState, useEffect, createRef, useRef } from 'react';
 import { getDrumKitByName } from '../../utils/getDrums';
-import { MachineHeader } from './MachineHeader';
-import { MachineCable } from './MachineCable';
-import { MachinePad } from './MachinePad';
-import { MachineBody } from './MachineBody';
+import MachineHeader from './MachineHeader';
+import MachineCable from './MachineCable';
+import MachinePad from './MachinePad';
+import MachineBody from './MachineBody';
 import MachineAudio from './MachineAudio';
-import { MachineKey } from './MachineKey';
+import MachineKey from './MachineKey';
 
 interface ISound {
   id: number;
@@ -15,7 +15,7 @@ interface ISound {
   keyChar: string;
 }
 
-export const Machine: React.FC = (): JSX.Element => {
+const Machine: React.FC = (): JSX.Element => {
   const kitName = '808';
   const [kit, setKit] = useState<Kit | undefined>({} as Kit);
   const audioElement = useRef<HTMLAudioElement>();
@@ -76,3 +76,5 @@ export const Machine: React.FC = (): JSX.Element => {
     );
   }
 };
+
+export default Machine;

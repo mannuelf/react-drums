@@ -1,10 +1,8 @@
-import React from 'react';
-
 type Children = {
   children: React.ReactNode;
 };
 
-export const MachineBody = ({ children }: Children): JSX.Element => {
+const MachineBody = ({ children }: Children): JSX.Element => {
   return (
     <section className='app-panel'>
       <div className='app-panel__controls'>.</div>
@@ -14,3 +12,5 @@ export const MachineBody = ({ children }: Children): JSX.Element => {
     </section>
   );
 };
+
+export default MachineBody;

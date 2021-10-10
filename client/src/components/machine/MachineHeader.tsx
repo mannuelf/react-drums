@@ -1,7 +1,7 @@
 import version from '../../../package.json';
 import { LOGO } from '../../constants';
 
-export const MachineHeader: React.FC = (): JSX.Element => {
+const MachineHeader: React.FC = (): JSX.Element => {
   return (
     <>
       <header className='app-header'>
@@ -20,3 +20,5 @@ export const MachineHeader: React.FC = (): JSX.Element => {
     </>
   );
 };
+
+export default MachineHeader;

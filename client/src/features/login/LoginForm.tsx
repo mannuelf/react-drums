@@ -3,11 +3,11 @@ import { gql, useMutation } from '@apollo/client';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { useState } from 'react';
-import { ButtonSmall } from 'components/common/ButtonSmall';
-import { Input } from 'components/common/Input';
-import { Label } from 'components/common/Label';
+import Button from 'components/common/Button';
+import Input from 'components/common/Input';
+import Label from 'components/common/Label';
 
-export const LoginForm = (): JSX.Element => {
+const LoginForm = (): JSX.Element => {
   const user = useSelector((state: any) => state.user);
   const error = useSelector((state: any) => state.error);
   const dispatch = useDispatch();
@@ -138,13 +138,17 @@ export const LoginForm = (): JSX.Element => {
           />
         </div>
         <div>
-          <ButtonSmall
+          <Button
+            btnWidth={'100px'}
+            btnPadding={'0px'}
             type='submit'
             onClick={() => (formState.loggedIn ? login() : signup())}
           >
             {formState.loggedIn ? 'Login' : 'Sign Up'}
-          </ButtonSmall>
-          <ButtonSmall
+          </Button>
+          <Button
+            btnWidth={'100px'}
+            btnPadding={'0px'}
             type='submit'
             onClick={() =>
               setFormState({
@@ -156,9 +160,11 @@ export const LoginForm = (): JSX.Element => {
             {formState.loggedIn
               ? 'Create an account?'
               : 'Already have an account?'}
-          </ButtonSmall>
+          </Button>
         </div>
       </form>
     </>
   );
 };
+
+export default LoginForm;

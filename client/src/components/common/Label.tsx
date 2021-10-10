@@ -5,7 +5,7 @@ type Props = {
   label: string;
 };
 
-export const Label = ({ ...props }: Props): JSX.Element => {
+const Label = ({ ...props }: Props): JSX.Element => {
   return <StyledLabel htmlFor={props.htmlFor}>{props.label}</StyledLabel>;
 };
 
@@ -15,3 +15,5 @@ const StyledLabel = styled('label')({
   fontSize: '1.2em',
   color: '#ccc',
 });
+
+export default Label;

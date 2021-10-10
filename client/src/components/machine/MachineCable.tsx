@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MachineCable = (): JSX.Element => {
+const MachineCable = (): JSX.Element => {
   return (
     <>
       <CordBase>
@@ -33,3 +33,5 @@ const CordBase = styled.div`
   border-radius: 3px 3px 0 0;
   border-bottom: 2px solid #000;
 `;
+
+export default MachineCable;
