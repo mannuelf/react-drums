@@ -7,15 +7,16 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start:dev-server": "yarn --cwd server dev",
-    "start:server": "yarn --cwd server start",
-    "start:dev-client": "yarn --cwd client start",
     "build:client": "yarn --cwd client build",
-    "migrate:db": "yarn --cwd server prisma:migrate",
-    "studio:db": "yarn --cwd server prisma:studio",
-    "dev": "concurrently \"yarn start:dev-server\"   \"yarn start:dev-client\"  \"yarn studio:db\" ",
-    "start": "concurrently \"yarn start:server\"   \"yarn build:client\"",
-    "test:client": "yarn --cwd client test"
+    "dev:client": "yarn --cwd client start",
+    "dev:server": "yarn --cwd server dev",
+    "dev": "concurrently \"yarn dev:server\"   \"yarn dev:client\"  \"yarn studio\" ",
+    "migrate": "yarn --cwd server prisma:migrate",
+    "server": "yarn --cwd server start",
+    "start": "concurrently \"yarn server\"   \"yarn build:client\"",
+    "studio": "yarn --cwd server prisma:studio",
+    "test:client": "yarn --cwd client test",
+    "test:server": "yarn --cwd server test"
   },
   "workspaces": [
     "client",

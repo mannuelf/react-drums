@@ -12,8 +12,6 @@ export const LoginForm = (): JSX.Element => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  console.log(user);
-
   const [formState, setFormState] = useState({
     firstName: '',
     lastName: '',
