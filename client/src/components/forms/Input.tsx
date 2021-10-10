@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 type Props = {
@@ -18,10 +17,11 @@ const StyledInput = styled('input')({
   width: '100%',
   marginBottom: '1em',
   padding: '.5em',
-  border: '1px solid #CCC',
-  fontSize: 16,
+  border: '1px solid #FFF',
+  fontSize: '1rem',
+  borderRadius: '4px',
   outline: 'none',
   ':focus': {
-    borderColor: '1px solid #4444',
+    borderColor: 'greenyellow',
   },
 });
