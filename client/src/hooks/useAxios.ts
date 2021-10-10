@@ -14,7 +14,7 @@ const useAxios = (): AxiosInstance => {
   apiClient.interceptors.request.use(
     (config: AxiosRequestConfig): AxiosRequestConfig => {
       const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
-      config.headers.Authorization = token ? `Bearer ${token}` : '';
+      config!.headers!.Authorization = token ? `Bearer ${token}` : '';
       return config;
     },
   );
