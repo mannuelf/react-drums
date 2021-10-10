@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Footer } from '../Footer';
+import { Footer } from '../footer/Footer';
 import { LoginForm } from 'components/forms/login/LoginForm';
 import { Machine } from 'components/machine/Machine';
 import { Welcome } from 'components/welcome/Welcome';

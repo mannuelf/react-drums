@@ -1,10 +1,10 @@
-import { useState, useEffect, createRef } from 'react';
+import { useState, useEffect, createRef, useRef } from 'react';
 import { getDrumKitByName } from '../../utils/getDrums';
 import { MachineHeader } from './MachineHeader';
 import { MachineCable } from './MachineCable';
 import { MachinePad } from './MachinePad';
 import { MachineBody } from './MachineBody';
-import { MachineAudio } from './MachineAudio';
+import MachineAudio from './MachineAudio';
 import { MachineKey } from './MachineKey';
 
 interface ISound {
@@ -18,8 +18,8 @@ interface ISound {
 export const Machine: React.FC = (): JSX.Element => {
   const kitName = '808';
   const [kit, setKit] = useState<Kit | undefined>({} as Kit);
-  const audioElement = createRef<HTMLAudioElement>()!;
-  const buttonElement = createRef<HTMLButtonElement>()!;
+  const audioElement = useRef<HTMLAudioElement>();
+  const buttonElement = createRef<HTMLButtonElement>();
 
   useEffect(() => {
     const drumKit = getDrumKitByName(kitName);

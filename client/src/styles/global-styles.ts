@@ -14,9 +14,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #444;
-
+  background-color:  #222;
 }
+
 
 .app {
   position: relative;
