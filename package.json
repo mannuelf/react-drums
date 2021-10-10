@@ -23,9 +23,9 @@
     "packages/*"
   ],
   "dependencies": {
-    "concurrently": "^6.0.0",
+    "concurrently": "^6.3.0",
     "g": "^2.0.1",
-    "netlify-cli": "^3.38.10"
+    "netlify-cli": "^6.10.4"
   },
   "node": ">=10.0.0",
   "proxy": "http://localhost:4000/"
