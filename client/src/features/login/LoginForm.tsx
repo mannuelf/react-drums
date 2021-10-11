@@ -1,8 +1,8 @@
-import { AUTH_JWT } from '../../constants';
-import { gql, useMutation } from '@apollo/client';
 import { useDispatch, useSelector } from 'react-redux';
+import { gql, useMutation } from '@apollo/client';
 import { useHistory } from 'react-router';
 import { useState } from 'react';
+import { AUTH_JWT } from '../../constants';
 import Button from 'components/common/Button';
 import Input from 'components/common/Input';
 import Label from 'components/common/Label';
@@ -56,7 +56,7 @@ const LoginForm = (): JSX.Element => {
       localStorage.setItem(AUTH_JWT, login.token);
       dispatch({ type: 'store/LOGIN' });
       formState.loggedIn = true;
-      history.push('/');
+      history.push('/machine');
     },
   });
 
@@ -147,8 +147,7 @@ const LoginForm = (): JSX.Element => {
             {formState.loggedIn ? 'Login' : 'Sign Up'}
           </Button>
           <Button
-            btnWidth={'100px'}
-            btnPadding={'0px'}
+            btnWidth={'50%'}
             type='submit'
             onClick={() =>
               setFormState({

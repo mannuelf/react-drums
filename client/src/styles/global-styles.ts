@@ -14,7 +14,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:  #222;
+  background-image:  url('https://res.cloudinary.com/mannuel/image/upload/v1633978128/images/desk2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
   color: #ccc;
 }
 
