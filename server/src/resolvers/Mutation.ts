@@ -1,6 +1,7 @@
 import * as jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import { APP_SECRET } from '../constants';
+import { AuthPayload, IUser } from '../types';
 const { sign } = jwt;
 
 export const signup = async (
@@ -9,16 +10,18 @@ export const signup = async (
   context,
   info,
 ): Promise<AuthPayload> => {
+  console.log('📟', args);
   try {
+    console.log('📟', args);
+
     const password = await bcrypt.hash(args.password, 10);
-    console.log('📟', password);
     const user = await context.prisma.user.create({
       data: { ...args, password },
     });
     const token = sign({ userId: user.id }, APP_SECRET);
     return { token, user };
   } catch (error) {
-    console.log('💥', error);
+    console.log(`🚨 Mutation > signup: ${error}`);
     throw new Error(`signup: ${error}`);
   }
 };
@@ -50,6 +53,7 @@ export const login = async (
 export const user = async (parent, args, context, info): Promise<IUser> => {
   try {
     const { userId } = context;
+    console.log('###', args);
     return await context.prisma.user.create({
       data: {
         id: args.id,
@@ -58,9 +62,11 @@ export const user = async (parent, args, context, info): Promise<IUser> => {
         email: args.email,
         password: args.password,
         createdAt: args.createdAt,
+        updatedAt: args.updatedAt,
       },
     });
   } catch (error) {
+    console.log(`🚨 Mutation > user ${error}`);
     throw new Error(`user: ${error}`);
   }
 };

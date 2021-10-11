@@ -6,12 +6,12 @@ type Query {
 
 type User {
   id: ID!
-  firstName: String!
-  lastName: String!
+  firstName: String
+  lastName: String
   email: String!
   password: String!
   createdAt: DateTime!
-  updatedAt: DateTime!
+  updatedAt: DateTime
 }
 
 type AuthPayload {
@@ -21,8 +21,8 @@ type AuthPayload {
 
 type Mutation {
   user(
-    firstName: String!
-    lastName: String!
+    firstName: String
+    lastName: String
     email: String!
     password: String!
   ): User!
