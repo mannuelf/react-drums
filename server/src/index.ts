@@ -10,6 +10,8 @@ import { getUserId } from './utils/auth';
 
 const prisma: PrismaClient = new PrismaClient();
 
+console.log(`🦄 ${process}`);
+
 const resolvers = {
   Query,
   Mutation,
@@ -18,10 +20,11 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs: fs.readFileSync(path.join(__dirname, 'schema.graphql'), 'utf8'),
   resolvers,
+  debug: true,
   context: ({ req, res }) => {
     return {
-      ...req,
-      ...res,
+      req,
+      res,
       prisma,
       userId: req && req.headers.authorization ? getUserId(req) : null,
     };

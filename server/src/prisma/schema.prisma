@@ -1,13 +1,13 @@
 datasource db {
-        provider = "sqlite"
-        url      = "file:./dev.db"
+        provider = "postgresql"
+        url      = "postgres://root:root@192.168.64.12:30433/reactdrumsdb?schema=public"
 }
 
 generator client {
         provider = "prisma-client-js"
 }
 
-model User {
+model user {
         id        Int      @id @default(autoincrement())
         firstName String
         lastName  String
@@ -17,12 +17,12 @@ model User {
         updatedAt DateTime @updatedAt
 }
 
-model Kit {
+model kit {
         id   Int    @id @default(autoincrement())
         name String
 }
 
-model Sound {
+model sound {
         id      Int    @id @default(autoincrement())
         name    String
         src     String

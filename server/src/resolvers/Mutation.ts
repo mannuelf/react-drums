@@ -10,10 +10,8 @@ export const signup = async (
   context,
   info,
 ): Promise<AuthPayload> => {
-  console.log('📟', args);
   try {
     console.log('📟', args);
-
     const password = await bcrypt.hash(args.password, 10);
     const user = await context.prisma.user.create({
       data: { ...args, password },
@@ -53,7 +51,6 @@ export const login = async (
 export const user = async (parent, args, context, info): Promise<IUser> => {
   try {
     const { userId } = context;
-    console.log('###', args);
     return await context.prisma.user.create({
       data: {
         id: args.id,
