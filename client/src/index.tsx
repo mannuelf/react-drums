@@ -11,11 +11,11 @@ import {
   createHttpLink,
   InMemoryCache,
 } from '@apollo/client';
-import { App } from './components/app/App';
-import isProduction from './utils/isProduction';
 import { setContext } from '@apollo/client/link/context';
-import { API_URL, AUTH_JWT } from './constants';
+import { App } from './components/app/App';
 import { store } from './store/store';
+import { API_URL, AUTH_JWT } from './constants';
+import isProduction from './utils/isProduction';
 
 dotenv.config({ path: __dirname + './.env' });
 
@@ -30,10 +30,8 @@ const httpLink = createHttpLink({
 });
 
 /**
- * Middleware: passes token auth set in local storage
- * to the to the GraphQL Server.
- * TODO:
- * find better way to hide secrets
+ * Middleware
+ * - pass auth token auth set in localStorage to GraphQL Server.
  * https://www.rdegges.com/2018/please-stop-using-local-storage/
  */
 const authLink = setContext((_, { headers }) => {
@@ -51,6 +49,11 @@ const authLink = setContext((_, { headers }) => {
   }
 });
 
+/**
+ * Apollo Client
+ * - connect Apollo Client to GraphQL Server.
+ * - cache data in memory.
+ */
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),

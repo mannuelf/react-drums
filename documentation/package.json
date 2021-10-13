@@ -1,5 +1,5 @@
 {
-  "name": "React-Drums-Documentation",
+  "name": "documentation",
   "version": "0.0.0",
   "description": "React drums documentation project.",
   "main": "index.js",
@@ -8,8 +8,8 @@
   "private": true,
   "scripts": {
     "docz:build": "docz build",
-    "docz:dev": "docz dev",
-    "docz:serve": "docz build && docz serve"
+    "docz:dev": " docz dev --port 3010",
+    "docz:serve": "docz build && docz serve --port 3010"
   },
   "dependencies": {
     "docz": "^2.3.1"

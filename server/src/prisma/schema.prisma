@@ -1,31 +1,62 @@
 datasource db {
         provider = "postgresql"
-        url      = "postgres://root:root@192.168.64.12:30433/reactdrumsdb?schema=public"
+        url      = "postgres://root:root@192.168.64.12:30433/reactdrums?schema=public"
 }
 
 generator client {
         provider = "prisma-client-js"
 }
 
-model user {
-        id        Int      @id @default(autoincrement())
-        firstName String
-        lastName  String
-        email     String   @unique
+model User {
+        id        Int        @id @default(autoincrement())
+        firstName String?
+        lastName  String?
+        email     String     @unique
         password  String
-        createdAt DateTime @default(now())
-        updatedAt DateTime @updatedAt
+        isAdmin   Boolean?   @default(false)
+        createdAt DateTime   @default(now())
+        updatedAt DateTime   @updatedAt
+        profile   Profile?
+        recording Recording? @relation(fields: [recordingId], references: [id])
+
+        recordingId Int?
+        @@map("user")
 }
 
-model kit {
-        id   Int    @id @default(autoincrement())
-        name String
+model Profile {
+        id     Int     @id @default(autoincrement())
+        bio    String?
+        user   User    @relation(fields: [userId], references: [id])
+        userId Int     @unique
+
+        @@map("profile")
 }
 
-model sound {
+model Kits {
+        id      Int    @id @default(autoincrement())
+        name    String
+        sound   Sound? @relation(fields: [soundId], references: [id])
+        soundId Int
+
+        @@map("kits")
+}
+
+model Sound {
         id      Int    @id @default(autoincrement())
         name    String
         src     String
         keyCode Int
         keyChar String
+
+        Kits Kits[]
+        @@map("sound")
+}
+
+model Recording {
+        id     Int    @id @default(autoincrement())
+        name   String
+        userId Int
+
+        User User[]
+        @@map("recordings")
 }

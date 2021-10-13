@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --no-notify --respawn --transpile-only src/",
-    "start": "nodemon -e ts,graphql -x ts-node --no-cache -r dotenv/config src/index.ts",
+    "start": "nodemon -e ts,graphql -x ts-node -r dotenv/config src/index.ts",
     "build": "rm -rf dist && graphql codegen && tsc",
     "generate": "yarn -s run generate:prisma",
     "generate:prisma": "prisma generate",

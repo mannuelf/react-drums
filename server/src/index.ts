@@ -1,3 +1,6 @@
+/**
+ * @typedef { import("@prisma/client").PrismaClient } Prisma
+ */
 import fs from 'fs';
 import path from 'path';
 import { ApolloServer } from 'apollo-server';
@@ -10,9 +13,17 @@ import { getUserId } from './utils/auth';
 
 const prisma: PrismaClient = new PrismaClient();
 
-console.log(`🦄 ${process}`);
+console.log(`🦄 ${process.env}`);
 
 const resolvers = {
+  /**
+   *
+   * @param parent
+   * @param  {{ prisma: Prisma }} args
+   * @param {{ prisma: Prisma }} context
+   * @param info
+   * @returns
+   */
   Query,
   Mutation,
 };
