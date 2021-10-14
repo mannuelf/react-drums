@@ -26,6 +26,7 @@ interface IUser {
   email?: string;
   password?: string;
   loggedIn?: boolean;
+  isAdmin?: boolean;
 }
 
 interface IUsers {
@@ -35,4 +36,5 @@ interface IUsers {
 interface AuthPayload {
   token: string;
   user: [IUser];
+  error: Error;
 }

@@ -14,13 +14,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image:  url('https://res.cloudinary.com/mannuel/image/upload/v1633978128/images/desk2.jpg');
+  background-color: #583d29;
+  background-image: url('https://res.cloudinary.com/mannuel/image/upload/v1633978128/images/desk2.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: repeat;
-  color: #ccc;
+  color: #eee;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  color: #eee;
+}
 
 .app {
   position: relative;
@@ -34,9 +38,9 @@ body {
   padding: 1.5em;
   background-color: #181818;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23404040' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
+  box-shadow: 3px 2px 3px rgb(0 0 0 / 80%);
   border-radius: 4px;
-  border-bottom: 1px solid #222;
+  border-bottom: 2px solid #000;
   border-left: 1px solid #333;
   border-top: 1px solid #555;
 }
@@ -133,6 +137,10 @@ body {
   height: auto;
 }
 
+h1[role="heading"] .logo {
+  width: 220px;
+}
+
 .app-panel__controls > div {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
@@ -153,6 +161,7 @@ body {
 
 .app-panel__controls {
   flex-grow: 1;
+  color: #333;
   &:first-child {
     display: none;
     @media (min-width: 767px) {
@@ -199,17 +208,17 @@ body {
     rgba(0, 0, 0, 1) 100%
   );
 }
+
 .pad-button:nth-child(1) {
   background-color: #4d94fc;
   order: 16;
 }
-
 .pad-button:nth-child(2) {
   background-color: #4d94fc;
   order: 15;
 }
 .pad-button:nth-child(3) {
-  background-color: #ff423e;
+  background-color: #ffdd2f;
   order: 14;
 }
 .pad-button:nth-child(4) {

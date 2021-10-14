@@ -6,7 +6,7 @@ const MachineHeader: React.FC = (): JSX.Element => {
     <>
       <header className='app-header'>
         <div className='column'>
-          <img src={LOGO} className='logo' alt='MASCHINE Micro' />
+          <img src={LOGO} className='logo' alt='Machine Micro' />
         </div>
         <div className='column'>
           <div className='app-header-lcd'>

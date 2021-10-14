@@ -73,7 +73,7 @@ const LoginForm = (): JSX.Element => {
     },
   });
 
-  if (error) {
+  if (error && !user) {
     return <div>{error.message}</div>;
   }
 
@@ -139,15 +139,22 @@ const LoginForm = (): JSX.Element => {
         </div>
         <div>
           <Button
+            btnAlign={'left'}
+            btnBgColor={'green'}
+            btnPadding={'0.8rem 1rem'}
             btnWidth={'100px'}
-            btnPadding={'0px'}
+            btnRadius={'2rem'}
             type='submit'
             onClick={() => (formState.loggedIn ? login() : signup())}
           >
             {formState.loggedIn ? 'Login' : 'Sign Up'}
           </Button>
           <Button
-            btnWidth={'50%'}
+            btnAlign={'left'}
+            btnBgColor={'teal'}
+            btnPadding={'0.8rem 1rem'}
+            btnWidth={'auto'}
+            btnRadius={'2rem'}
             type='submit'
             onClick={() =>
               setFormState({

@@ -1,4 +1,4 @@
-import { createContext, FC } from 'react';
+import React, { createContext } from 'react';
 import { AUTH_JWT } from '../constants';
 import useLocalStorage from '../hooks/useLocalStorage';
 
@@ -8,7 +8,7 @@ type Props = {
   children?: React.ReactNode;
 };
 
-export const AuthProvider: FC = ({ children }: Props) => {
+export const AuthProvider: React.FC = ({ children }: Props) => {
   const [auth, setAuth] = useLocalStorage(AUTH_JWT, null);
 
   return (

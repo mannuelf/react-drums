@@ -1,5 +1,5 @@
 const isProduction = (): boolean => {
-  console.log(process.env.NODE_ENV);
+  console.log(process.env.NODE_ENV !== 'development');
   if (process.env.NODE_ENV !== 'development') return true;
   return false;
 };

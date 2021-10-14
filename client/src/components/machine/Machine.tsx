@@ -24,9 +24,17 @@ const Machine: React.FC = (): JSX.Element => {
   useEffect(() => {
     const drumKit = getDrumKitByName(kitName);
     setKit(drumKit);
+
+    document.addEventListener('keydown', handleKeyPress);
+    window.focus();
+    return () => {
+      console.log('removing keydown');
+      document.removeEventListener('keydown', handleKeyPress);
+    };
   }, [setKit]);
 
   const handlePlaySound = (e: any) => {
+    console.log('handlePlaySound: buttonElement >', buttonElement);
     if (audioElement) {
       const audioEl = e.target.children[1];
       audioEl.currentTime = 0;
@@ -34,11 +42,23 @@ const Machine: React.FC = (): JSX.Element => {
     }
   };
 
-  const handleKeyPress = (e: any) => {
-    if (audioElement) {
-      const audioEl = e.target.children[1];
-      audioEl.currentTime = 0;
-      audioEl.play();
+  const handleKeyPress = (e: any): any => {
+    console.log(
+      'handleKeyPress',
+      e.keyCode,
+      Number(e.target.dataset.key),
+      audioElement.current?.dataset.key,
+      audioElement.current,
+    );
+    const audioEl = e.current?.children[1];
+    console.log(audioEl);
+
+    if (Number(e.keyCode) === Number(audioElement.current?.dataset.key)) {
+      audioElement!.current!.currentTime = 0;
+      console.log('playing...');
+      !audioElement.current!.play();
+      // audioEl.currentTime = 0;
+      // audioEl.play();
     }
   };
 
@@ -58,8 +78,8 @@ const Machine: React.FC = (): JSX.Element => {
                   ref={buttonElement}
                   key={sound.id}
                   data-key={sound.keyCode}
-                  onClick={(e: any) => handlePlaySound(e)}
-                  onKeyPress={(e: any) => handleKeyPress(e)}
+                  onClick={(e) => handlePlaySound(e)}
+                  onKeyPress={(e) => handleKeyPress(e)}
                   className='pad-button'
                 >
                   <MachineKey keyChar={sound.keyChar} />
@@ -67,6 +87,7 @@ const Machine: React.FC = (): JSX.Element => {
                     ref={audioElement}
                     key={sound.id}
                     src={sound.src}
+                    data-char={sound.keyChar}
                     data-key={sound.keyCode}
                   />
                 </MachinePad>
