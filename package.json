@@ -24,8 +24,8 @@
   },
   "workspaces": [
     "client",
-    "server",
-    "packages/*"
+    "documentation",
+    "server"
   ],
   "dependencies": {
     "concurrently": "^6.3.0",
