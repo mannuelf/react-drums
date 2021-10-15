@@ -1,4 +1,4 @@
-import { useState, useEffect, createRef, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { getDrumKitByName } from '../../utils/getDrums';
 import MachineHeader from './MachineHeader';
 import MachineCable from './MachineCable';
@@ -18,84 +18,63 @@ interface ISound {
 const Machine: React.FC = (): JSX.Element => {
   const kitName = '808';
   const [kit, setKit] = useState<Kit | undefined>({} as Kit);
-  const audioElement = useRef<HTMLAudioElement>();
-  const buttonElement = createRef<HTMLButtonElement>();
 
-  useEffect(() => {
-    const drumKit = getDrumKitByName(kitName);
-    setKit(drumKit);
-
-    document.addEventListener('keydown', handleKeyPress);
-    window.focus();
-    return () => {
-      console.log('removing keydown');
-      document.removeEventListener('keydown', handleKeyPress);
-    };
-  }, [setKit]);
-
-  const handlePlaySound = (e: any) => {
-    console.log('handlePlaySound: buttonElement >', buttonElement);
-    if (audioElement) {
-      const audioEl = e.target.children[1];
+  const handlePlaySound = (keyChar: string) => {
+    const audioEl = document.getElementById(keyChar) as HTMLAudioElement;
+    if (audioEl) {
       audioEl.currentTime = 0;
       audioEl.play();
     }
   };
 
-  const handleKeyPress = (e: any): any => {
-    console.log(
-      'handleKeyPress',
-      e.keyCode,
-      Number(e.target.dataset.key),
-      audioElement.current?.dataset.key,
-      audioElement.current,
-    );
-    const audioEl = e.current?.children[1];
-    console.log(audioEl);
-
-    if (Number(e.keyCode) === Number(audioElement.current?.dataset.key)) {
-      audioElement!.current!.currentTime = 0;
-      console.log('playing...');
-      !audioElement.current!.play();
-      // audioEl.currentTime = 0;
-      // audioEl.play();
+  function handleKeyDown(e: any, keyChar: string): void {
+    // TODO: make it right
+    const audioEl = document.getElementById(keyChar) as HTMLAudioElement;
+    if (e.key.toString().toUpperCase() === keyChar.toString().toUpperCase()) {
+      audioEl.currentTime = 0;
+      audioEl.play();
     }
-  };
+  }
+
+  useEffect(() => {
+    const drumKit = getDrumKitByName(kitName);
+    setKit(drumKit);
+    document.addEventListener('keydown', () => handleKeyDown);
+  }, [setKit]);
 
   if (!kit) {
     return <div className='app'>Loading..</div>;
-  } else {
-    const { sounds } = kit as Kit;
-    return (
-      <div className='app'>
-        <MachineCable />
-        <MachineHeader />
-        <MachineBody>
-          {!sounds
-            ? 'loading...'
-            : sounds.map((sound: ISound) => (
-                <MachinePad
-                  ref={buttonElement}
-                  key={sound.id}
-                  data-key={sound.keyCode}
-                  onClick={(e) => handlePlaySound(e)}
-                  onKeyPress={(e) => handleKeyPress(e)}
-                  className='pad-button'
-                >
-                  <MachineKey keyChar={sound.keyChar} />
-                  <MachineAudio
-                    ref={audioElement}
-                    key={sound.id}
-                    src={sound.src}
-                    data-char={sound.keyChar}
-                    data-key={sound.keyCode}
-                  />
-                </MachinePad>
-              ))}
-        </MachineBody>
-      </div>
-    );
   }
+
+  const { sounds } = kit as Kit;
+
+  return (
+    <div className='app'>
+      <MachineCable />
+      <MachineHeader />
+      <MachineBody>
+        {!sounds
+          ? 'Loading...'
+          : sounds.map((props: ISound) => (
+              <MachinePad
+                className='pad-button'
+                key={props.id}
+                title={props.name}
+                onClick={() => handlePlaySound(props.keyChar)}
+                onKeyDown={(e) => handleKeyDown(e, props.keyChar)}
+              >
+                <MachineKey keyChar={props.keyChar} />
+                <MachineAudio
+                  id={props.keyChar}
+                  key={props.id}
+                  src={props.src}
+                  title={props.name}
+                />
+              </MachinePad>
+            ))}
+      </MachineBody>
+    </div>
+  );
 };
 
 export default Machine;

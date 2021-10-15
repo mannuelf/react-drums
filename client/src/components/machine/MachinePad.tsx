@@ -11,5 +11,4 @@ const MachinePad = styled.button`
   box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.4);
 `;
 
-MachinePad.displayName = 'MachinePad';
 export default MachinePad;

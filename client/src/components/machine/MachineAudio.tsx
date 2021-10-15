@@ -1,14 +1,13 @@
-import { forwardRef } from 'react';
-
 type Props = {
-  ref?: any;
+  id: string;
+  keyChar?: string;
+  keyCode?: number;
   src: string;
+  title?: string;
 };
 
-const MachineAudio = forwardRef((props: Props, ref) => (
-  <audio ref={ref} {...props} />
-));
+const MachineAudio = (props: Props): JSX.Element => {
+  return <audio {...props} />;
+};
 
-// forwardRef
-MachineAudio.displayName = 'MachineAudio';
 export default MachineAudio;
