@@ -8,6 +8,7 @@ async function main() {
       firstName: 'Jack',
       lastName: 'Black',
       email: 'jackblack@email.com',
+      isAdmin: false,
       password: 'password',
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -19,7 +20,7 @@ async function main() {
 main()
   .catch((error) => {
     console.log(error);
-    throw new Error(`Ooops ${error}`);
+    throw new Error(`Oops ${error}`);
   })
   .finally(async () => {
     await prisma.$disconnect();

@@ -1,5 +1,5 @@
 type Props = {
-  keyChar: string;
+  keyChar?: string;
 };
 
 const MachineKey = ({ keyChar }: Props): JSX.Element => {

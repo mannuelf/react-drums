@@ -1,6 +1,3 @@
-/**
- * @typedef { import("@prisma/client").PrismaClient } Prisma
- */
 import fs from 'fs';
 import path from 'path';
 import { ApolloServer } from 'apollo-server';
