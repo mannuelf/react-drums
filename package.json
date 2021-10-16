@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build:client": "yarn --cwd client build",
+    "build:client": "yarn --cwd client build:client",
     "dev:client": "yarn --cwd client start",
     "dev:server": "yarn --cwd server dev",
     "dev": "concurrently \"yarn dev:server\"   \"yarn dev:client\"  \"yarn studio\" \"yarn docz:dev\" ",
