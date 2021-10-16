@@ -4,7 +4,6 @@ import GlobalStyle from '../../styles/global-styles';
 import Machine from 'components/machine/Machine';
 import Footer from 'features/footer/Footer';
 import LoginForm from 'features/login/LoginForm';
-import Welcome from 'features/welcome/Welcome';
 
 export const App = (): JSX.Element => {
   return (
@@ -12,7 +11,7 @@ export const App = (): JSX.Element => {
       <Router>
         <GlobalStyle />
         <Switch>
-          <Route exact path='/' component={Welcome} />
+          <Route exact path='/' component={Machine} />
           <Route exact path='/machine' component={Machine} />
           <Route exact path='/login' component={LoginForm} />
         </Switch>

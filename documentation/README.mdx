@@ -3,52 +3,51 @@ name: Home
 route: /
 ---
 
-import { ComponentsProvider, theme } from 'docz';
+# Home
 
-# Welcome
+## Introduction
 
-React-drums Machine is a drum machine built with [React](https://reactjs.org/). xIs a side project designed to be used a learning and experimationation tool.
+React-drums is a drum machine built with React and Node.js using an Apollo GraphQL server. I love coding, music, Native Instruments software & hardware. So why not build a virtual Drum Machine [^1] to play around with all of the tech.
 
-The code is in constant flux and extremely over engineered 😆. I use React drums to experiment with and keep my favourite technologies top of mind. So if you're keen to be enthralled, intrigued challenged and disgusted with me 😜 all at the same time, jump right in here are some links and docs to get you started.
+The code is in constant flux and is for sure overcooked and undercooked in places 😆. I hope you enjoy it as much as I have enjoyed building it.
 
-[Click here](https://react-drum-maschine.netlify.app/) to view live demo.
+## Screenshots
 
-[Click here](https://github.com/mannuelf/react-drums) to view source code.
+| Mobile                                 | Tablet/Desktop                          |
+| -------------------------------------- | --------------------------------------- |
+| ![mobile-cover](/img/cover-mobile.png) | ![mobile-cover](/img/cover-desktop.png) |
 
 ## Project Structure
 
-Three projects are managed as mono-repo with Yarn workspaces.
+The project is managed with Yarn and Yarn Workspaces. It is mono-repo housing 3 seperate projects, the React frontend, the docz[^2] documentation site and the server an Apollo GraphQL backend.
 
-📁 client
+Click links below to read documentation on how to get started.
+
+📁 [client](/client)
 
 📁 documentation
 
-📁 server
+📁 [server](/server)
 
-## Start
+## Getting started
+
+Download repository: [https://github.com/mannuelf/react-drums](https://github.com/mannuelf/react-drums)
 
 ### Local development
 
-### Yarn install
+#### Install Node.js dependencies
 
 ```bash
 yarn install
 ```
 
-### Start client
+#### Start local server
+
+This will simultaniously start the React fronted, Apollo GraphQL server, Prisma Studio and documentation site respectively.
 
 ```bash
 yarn dev
 ```
 
-### Test client
-
-```bash
-yarn test
-```
-
-## Build for production
-
-```bash
-yarn build
-```
+[^1]: This project was insired by the WesBos [JavaScript 30](https://javascript30.com) course.
+[^2]: docz is an awesome open source documentation creation tool used to make this site. Get it [here](https://www.docz.site).
