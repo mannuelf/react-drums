@@ -1,6 +1,5 @@
 [build]
   base = "client/"
-  ignore = "git diff --quiet $COMMIT_REF $CACHED_COMMIT_REF -- documentation/ server/"
 
 [[headers]]
   for = "/*"
