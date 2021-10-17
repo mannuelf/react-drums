@@ -1,22 +1,20 @@
-import 'styles/normalize.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import GlobalStyle from 'styles/global-styles';
-import Machine from 'components/machine/Machine';
-import Footer from 'features/footer/Footer';
-import LoginForm from 'features/login/LoginForm';
+import Footer from '../footer/Footer';
+import GlobalStyle from '../../styles/global-styles';
+import LoginForm from '../../features/login/LoginForm';
+import Machine from '../../features/machine/Machine';
 
-export const App = (): JSX.Element => {
+const App: React.FC = (): JSX.Element => {
   return (
-    <>
-      <Router>
-        <GlobalStyle />
-        <Switch>
-          <Route exact path='/' component={Machine} />
-          <Route exact path='/machine' component={Machine} />
-          <Route exact path='/login' component={LoginForm} />
-        </Switch>
-        <Footer />
-      </Router>
-    </>
+    <Router>
+      <GlobalStyle />
+      <Switch>
+        <Route exact path='/' component={Machine} />
+        <Route exact path='/login' component={LoginForm} />
+      </Switch>
+      <Footer />
+    </Router>
   );
 };
+
+export default App;

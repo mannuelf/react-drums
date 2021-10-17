@@ -1,3 +1,4 @@
+import './normalize.css';
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
@@ -6,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
   -webkit-tap-highlight-color: transparent;
 }
 
-body {
+body#app {
   overflow: hidden;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -19,11 +20,6 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: repeat;
-  color: #eee;
-}
-
-h1, h2, h3, h4, h5, h6, p {
-  color: #eee;
 }
 
 .app {
@@ -43,6 +39,7 @@ h1, h2, h3, h4, h5, h6, p {
   border-bottom: 2px solid #000;
   border-left: 1px solid #333;
   border-top: 1px solid #555;
+  color: #eee;
 }
 
 @media screen and (min-width: 767px) {
@@ -132,12 +129,12 @@ h1, h2, h3, h4, h5, h6, p {
   font-size: 12px;
 }
 
-.logo {
+#app .logo {
   width: 140px;
   height: auto;
 }
 
-h1[role="heading"] .logo {
+#app h1[role="heading"] .logo {
   width: 220px;
 }
 
@@ -290,23 +287,6 @@ h1[role="heading"] .logo {
   position: absolute;
   top: 4px;
   left: 4px;
-}
-
-footer {
-  background-color: rgba(0, 0, 0, 0.3);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  color: #fff;
-  padding: 0.2rem 0.5em;
-  width: 100vw;
-  text-align: center;
-  font-size: 12px;
-}
-
-a:link,
-a:visited {
-  color: #fff;
 }`;
 
 export default GlobalStyle;

@@ -12,10 +12,10 @@ import {
   InMemoryCache,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import { App } from './components/app/App';
-import { store } from './store/store';
-import { API_URL, AUTH_JWT } from './constants';
+import App from './components/app/App';
 import isProduction from './utils/isProduction';
+import { API_URL, AUTH_JWT } from './constants';
+import { store } from './store/store';
 
 dotenv.config({ path: __dirname + './.env' });
 

@@ -1,11 +1,11 @@
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { gql, useMutation } from '@apollo/client';
 import { useHistory } from 'react-router';
-import { useState } from 'react';
 import { AUTH_JWT } from '../../constants';
-import Button from 'components/common/Button';
-import Input from 'components/common/Input';
-import Label from 'components/common/Label';
+import Button from '../../components/common/Button';
+import Input from '../../components/common/Input';
+import Label from '../../components/common/Label';
 
 const LoginForm = (): JSX.Element => {
   const user = useSelector((state: any) => state.user);
