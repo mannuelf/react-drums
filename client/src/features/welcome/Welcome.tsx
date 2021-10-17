@@ -1,5 +1,5 @@
 import { LOGO } from '../../constants';
-import LoginForm from '../../features/login/LoginForm';
+import LoginForm from 'features/login/LoginForm';
 import styled from 'styled-components';
 
 const Welcome = (): JSX.Element => {
