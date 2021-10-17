@@ -1,0 +1,86 @@
+---
+name: Components
+---
+
+import { Playground, Props } from 'docz';
+import App from '../client/src/components/app/App';
+import Button from '../client/src/components/common/Button';
+import Input from '../client/src/components/common/Input';
+import Footer from '../client/src/components/footer/Footer';
+
+# Components
+
+Components are broken down to their simplest form or unit, do one thing and one thing well/only.
+
+The styling of components are done with [styled-components](https://styled-components.com).
+
+## Button
+
+A Generic Button uses styled-components API to change the appearance of it.
+
+### Usage
+
+```tsx
+import Button from 'components/common/Button';
+```
+
+<Props of={Button} />
+
+<Playground>
+  <Button
+    btnAlign='center'
+    btnBgColor='orange'
+    btnPadding='0.6'
+    btnRadius='4'
+    btnWidth='200'
+    btnBoxShadow={true}
+    className='some-class-here'
+    disabled={false}
+    onClick={() => console.log('Button was clicked')}
+  >
+    Signup
+  </Button>
+</Playground>
+
+<Playground>
+  <Button
+    btnAlign='center'
+    btnBgColor='yellowgreen'
+    btnPadding='0.6'
+    btnRadius='0.5'
+  >
+    Signup
+  </Button>
+</Playground>
+
+## Inputs
+
+A Generic purpose input element, uses styled-components API to change the appearance of it.
+
+### Usage
+
+```tsx
+import Input from 'components/common/Input';
+```
+
+<Props of={Input} />
+
+<Playground>
+  <Input />
+</Playground>
+
+## Footer
+
+A global footer, sits at the bottom of the page for every route.
+
+### Usage
+
+```tsx
+import Footer from 'components/common/Footer';
+```
+
+<Props of={Footer} />
+
+<Playground>
+  <Footer />
+</Playground>
