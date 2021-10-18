@@ -1,6 +1,6 @@
-import { LOGO } from '../../constants';
-import LoginForm from 'features/login/LoginForm';
 import styled from 'styled-components';
+import { LOGO } from '../../constants';
+import LoginForm from '../../features/login/LoginForm';
 
 const Welcome = (): JSX.Element => {
   return (
