@@ -32,9 +32,9 @@ export default {
   ],
   optimize: {
     /* Example: Bundle your final build: */
-    // bundle: true,
-    // minify: true,
-    // target: 'es2020',
+    bundle: true,
+    minify: true,
+    target: 'esnext',
   },
   packageOptions: {
     /* ... */
