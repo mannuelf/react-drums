@@ -3,6 +3,6 @@ import App from './Machine';
 
 test('renders without issues', () => {
   const { getByText } = render(<App />);
-  const headElement = getByText(/Micro v0.0.2/i);
+  const headElement = getByText(/Micro v0.0.3/i);
   expect(headElement).toBeInTheDocument();
 });

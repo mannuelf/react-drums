@@ -3,10 +3,11 @@
     "module": "esnext",
     "target": "esnext",
     "baseUrl": "./",
+    "outDir": "dist/",
     "paths": {
       "*": [".snowpack/types/*"]
     },
-    "types": ["snowpack-env"],
+    "types": ["snowpack-env", "jest"],
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -24,8 +25,8 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true
   },
-  "include": ["src/**/*", "types/"],
-  "exclude": ["node_modules", "build"],
+  "include": ["src/**/*", "src/types/**/*"],
+  "exclude": ["node_modules", "build", "**/*.spec.ts"],
   "typeAcquisition": {
     "include": ["jest"]
   }
