@@ -6,6 +6,7 @@
     "paths": {
       "*": [".snowpack/types/*"]
     },
+    "types": ["snowpack-env"],
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -29,4 +30,3 @@
     "include": ["jest"]
   }
 }
-src/types
