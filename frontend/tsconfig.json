@@ -7,7 +7,7 @@
     "paths": {
       "*": [".snowpack/types/*"]
     },
-    "types": ["snowpack-env", "jest"],
+    "types": ["snowpack-env", "jest", "node", "@testing-library/jest-dom"],
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
