@@ -18,7 +18,7 @@
     "cloudinary-react": "^1.6.8",
     "dotenv": "^10.0.0",
     "graphql": "^15.6.1",
-    "jest": "^27.2.5",
+    "jest": "^27.3.1",
     "lodash": "^4.17.20",
     "logrocket": "^2.1.0",
     "prop-types": "^15.7.2",
