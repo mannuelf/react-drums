@@ -1,16 +1,16 @@
 {
   "name": "react-drums",
   "version": "0.0.3",
-  "description": "Monorepo, client and server. Front-end drum machine built with React. Graph QL server and API to store and capture user account and sound bank data.",
+  "description": "Monorepo, frontend and server. Front-end drum machine built with React. Graph QL server and API to store and capture user account and sound bank data.",
   "repository": "https://github.com/mannuelf/react-drums",
   "author": "Mannuel Ferreira",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build:client": "yarn --cwd client build:client",
-    "dev:client": "yarn --cwd client start",
+    "build:frontend": "yarn --cwd frontend build",
+    "dev:frontend": "yarn --cwd frontend start",
     "dev:server": "yarn --cwd server dev",
-    "dev": "concurrently \"yarn dev:server\"   \"yarn dev:client\"  \"yarn studio\" \"yarn docz:dev\" ",
+    "dev": "concurrently \"yarn dev:server\"   \"yarn dev:frontend\"  \"yarn studio\" \"yarn docz:dev\" ",
     "docz:build": "yarn --cwd documentation docz:build",
     "docz:clean": "yarn --cwd documentation docz:clean",
     "docz:dev": "yarn --cwd documentation docz:dev",
@@ -18,13 +18,13 @@
     "migrate": "yarn --cwd server prisma:migrate",
     "prisma:generate": "yarn --cwd server prisma generate",
     "server": "yarn --cwd server start",
-    "start": "concurrently \"yarn docz:serve\" \"yarn server\" \"yarn build:client\" ",
+    "start": "concurrently \"yarn docz:serve\" \"yarn server\" \"yarn build:frontend\" ",
     "studio": "yarn --cwd server prisma:studio",
-    "test:client": "yarn --cwd client test",
+    "test:frontend": "yarn --cwd frontend test",
     "test:server": "yarn --cwd server test"
   },
   "workspaces": [
-    "client",
+    "frontend",
     "documentation",
     "server"
   ],
