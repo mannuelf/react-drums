@@ -1,14 +1,12 @@
 # React-drums
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/3bbcdd3c-4e8b-40ec-b4b4-30959f6893bf/deploy-status)](https://app.netlify.com/sites/fervent-goodall-afea11/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b1e813fa-c4ab-404f-b0a2-002f87f6e8bd/deploy-status)](https://app.netlify.com/sites/react-drum-machine/deploys)
 
 Love for coding, music and learning new technology in one project.
 
-Inspired by: [JavaScript30](https://javascript30.com/)
-
 ## Demo URL
 
-> [https://react-drum-maschine.netlify.app/](https://react-drum-maschine.netlify.app/)
+> [https://react-drum-machine.netlify.app/](https://react-drum-machine.netlify.app/)
 
 ## Local dev
 
@@ -43,3 +41,5 @@ yarn test:client
 ## TODO
 
 [Click here](./todo.md) to read todo list.
+
+Inspired by: [JavaScript30](https://javascript30.com/)
