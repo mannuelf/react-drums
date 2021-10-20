@@ -8,7 +8,7 @@ export default {
     '@': './src',
   },
   env: {
-    REACT_AUTH_TOKEN: 'aalskhdklashdklshd',
+    /* */
   },
   plugins: [
     '@snowpack/plugin-react-refresh',
@@ -17,12 +17,9 @@ export default {
     [
       '@snowpack/plugin-webpack',
       {
-        /**
-         * Plugin Options
-         *
-         * https://github.com/snowpackjs/snowpack/tree/main/plugins/plugin-webpack#readme
-         *
-         * */
+        sourceMap: true,
+        htmlMinifierOptions: true,
+        /*https://github.com/snowpackjs/snowpack/tree/main/plugins/plugin-webpack#readme*/
       },
     ],
   ],

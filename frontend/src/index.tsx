@@ -1,5 +1,9 @@
+import.meta.hot;
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ReactGa from 'react-ga';
+import LogRocket from 'logrocket';
+import * as dotenv from 'dotenv';
 import { Provider } from 'react-redux';
 import {
   ApolloProvider,
@@ -9,15 +13,17 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import App from './components/app/App';
-import { API_URL, AUTH_JWT } from './constants';
+import { API_URL, AUTH_JWT, __PROD__ } from './constants';
 import { store } from './store/store';
 
-// dotenv.config({ path: __dirname + './.env' });
+dotenv.config();
 
-// if (isProduction()) {
-//   ReactGa.initialize(`${process.env.REACT_APP_GOOGLE_ANALYTICS}`);
+// if (__PROD__) {
+//   ReactGa.initialize(`${process.env.SNOWPACK_PUBLIC_APP_GOOGLE_ANALYTICS}`);
 //   ReactGa.pageview(window.location.pathname + window.location.search);
-//   LogRocket.init(`${process.env.REACT_APP_LOG_ROCKET_ID}/react-drum-maschine`);
+//   LogRocket.init(
+//     `${process.env.SNOWPACK_PUBLIC_APP_LOG_ROCKET_ID}/react-drum-maschine`,
+//   );
 // }
 
 const httpLink = createHttpLink({
