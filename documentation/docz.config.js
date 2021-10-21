@@ -1,3 +1,3 @@
 module.exports = {
-  menu: ['Home', 'Client', 'Server'],
+  menu: ['Home', 'Front-end', 'Components', 'Server'],
 };

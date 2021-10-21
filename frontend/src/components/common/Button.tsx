@@ -3,6 +3,9 @@ import t from 'prop-types';
 import styled from 'styled-components';
 
 interface ButtonProps {
+  /*
+   * Align the button centered | left | righ t
+   * */
   btnAlign?: string;
   btnBgColor?: string;
   btnPadding?: string;

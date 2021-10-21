@@ -1,0 +1,90 @@
+---
+name: Front-end
+---
+
+# Client
+
+React-drums Machine is a SPA built using `React` and Snowpack.dev.
+
+It is housed in a monorepo and is using Yarn workspaces, all yarn commands to be executed from the root of project using the root `package.json` as an entry point.
+
+## Getting started
+
+First install all the Node.js dependencies.
+
+```bash
+yarn install
+```
+
+## Local development
+
+### Step 1: Run migrations
+
+```bash
+yarn migrate
+```
+
+### Step 2: Start servers
+
+```bash
+yarn dev
+```
+
+yarn dev will start all the services.
+
+- [React](https://reactjs.org) SPA
+- [Apollo Server](https://github.com/apollographql/apollo-server)
+- [Prisma Studio](https://www.prisma.io/studio) (database visualizing tool, nice way to see your tables thanks [Prisma](https://www.prisma.io))
+
+## All commands
+
+### Start frontend only
+
+```bash
+yarn dev:frontend
+```
+
+### Start server only
+
+```bash
+yarn dev:server
+```
+
+### Start Prisma Studio
+
+```bash
+yarn prisma
+```
+
+### Unit test frontend
+
+```bash
+test:frontend
+```
+
+### Unit test server
+
+```bash
+test:server
+```
+
+### Start docz documentation site only
+
+```bash
+yarn docz:dev
+
+```
+
+Build for production.
+
+```bash
+yarn docz:build
+
+```
+
+Serve on localhost
+
+```bash
+yarn docz:serve
+```
+
