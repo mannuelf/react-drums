@@ -1,7 +1,8 @@
 # TODO
 
-- [x] mono repo, with yarn workspace
-- [] add tests to frontend
+- [ ] documentation site with docz
+- [x] monorepo with yarn workspace
+- [ ] add tests to frontend
 - [x] build a backend in using GraphQL
-- [] frontend build filter to switch out sound banks
-- [] frontend midi device support to play with midi api
+- [ ] front-end build filter to switch out sound banks
+- [ ] front-end midi device support to play with midi api

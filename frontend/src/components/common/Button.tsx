@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 interface ButtonProps {
   /*
-   * Align the button centered | left | righ t
+   * Align the button centered | left | right
    * */
   btnAlign?: string;
   btnBgColor?: string;

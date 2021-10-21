@@ -13,7 +13,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import App from './components/app/App';
-import { API_URL, AUTH_JWT, __PROD__ } from './constants';
+import { API_URL, AUTH_JWT } from './constants';
 import { store } from './store/store';
 
 dotenv.config();
@@ -72,6 +72,6 @@ ReactDOM.render(
 );
 // Hot Module Replacement (HMR) - Remove this snippet to remove HMR.
 // Learn more: https://snowpack.dev/concepts/hot-module-replacement
-// if (import.meta.hot) {
-//   import.meta.hot.accept();
-// }
+if (import.meta.hot) {
+  import.meta.hot.accept();
+}
