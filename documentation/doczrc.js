@@ -1,5 +1,6 @@
 export default {
   typescript: true,
+  propsParser: true,
   themeConfig: {
     mode: 'dark',
     logo: {
@@ -36,7 +37,7 @@ export default {
     },
     {
       name: 'Introduction',
-      menu: ['']
+      menu: [''],
     },
     {
       name: 'Components',
