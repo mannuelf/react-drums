@@ -1,7 +1,7 @@
 {
-  "name": "react-drums-machine",
+  "name": "react-drum-machine",
   "version": "0.0.1",
-  "description": "React drums machine documentation project.",
+  "description": "Machine: Documentation project.",
   "main": "index.js",
   "author": "Mannuel Ferreira",
   "license": "MIT",

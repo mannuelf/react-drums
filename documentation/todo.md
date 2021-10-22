@@ -1,5 +1,7 @@
 # TODO
 
+A wish list of things I will be doing.
+
 - [ ] documentation site with docz
 - [x] monorepo with yarn workspace
 - [ ] add tests to frontend

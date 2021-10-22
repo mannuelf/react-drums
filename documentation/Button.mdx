@@ -1,23 +1,21 @@
 ---
-name: Components
-route: /components
+name: Button
+route: /frontend/button
+parent: Frontend
+menu: Components
 ---
 
 import { Playground, Props } from 'docz';
 import Button from '../frontend/src/components/common/Button';
-import Input from '../frontend/src/components/common/Input';
 
-# Components
 
-Components are broken down to their simplest form or unit, do one thing and one thing well/only.
-
-The styling of components are done with [styled-components](https://styled-components.com).
-
-## Button
+# Button
 
 A Generic Button uses styled-components API to change the appearance of it.
 
-### Usage
+The styling of components are done with [styled-components](https://styled-components.com).
+
+## Usage
 
 ```tsx
 import Button from 'components/common/Button';
@@ -52,28 +50,3 @@ import Button from 'components/common/Button';
   </Button>
 </Playground>
 
-## Inputs
-
-A Generic purpose input element, uses styled-components API to change the appearance of it.
-
-### Usage
-
-```tsx
-import Input from 'components/common/Input';
-```
-
-<Props of={Input} />
-
-<Playground>
-  <Input />
-</Playground>
-
-## Footer
-
-A global footer, sits at the bottom of the page for every route.
-
-### Usage
-
-```tsx
-import Footer from 'components/common/Footer';
-```
