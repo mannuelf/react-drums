@@ -8,15 +8,15 @@
   "private": true,
   "scripts": {
     "docz:build": "docz build",
-    "docz:dev": " docz dev --port 3002",
-    "docz:serve": "docz build && docz serve --port 3003",
+    "docz:dev": " docz dev -=3002",
+    "docz:serve": "docz build && docz serve --port=3003",
     "docz:clean": "rimraf .docz && docz clean"
   },
   "dependencies": {
     "@nejcm/docz-theme-extended": "^2.0.14",
     "docz": "^2.3.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "latest",
+    "react-dom": "latest",
     "rimraf": "^3.0.2"
   }
 }
