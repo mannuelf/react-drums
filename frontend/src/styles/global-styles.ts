@@ -287,6 +287,8 @@ body#app {
   position: absolute;
   top: 4px;
   left: 4px;
-}`;
+}
+
+`;
 
 export default GlobalStyle;

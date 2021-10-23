@@ -13,15 +13,15 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import App from './components/app/App';
-import { API_URL, AUTH_JWT } from './constants';
+import { ENV, AUTH_JWT, API_URL } from './constants';
 import { store } from './store/store';
 
 dotenv.config();
 
-if (import.meta.env.NODE_ENV !== 'development') {
-  ReactGa.initialize(`${SNOWPACK_PUBLIC_GOOGLE_ANALYTICS}`);
+if (ENV && ENV.NODE_ENV !== 'development') {
+  ReactGa.initialize(`${ENV.SNOWPACK_PUBLIC_GOOGLE_ANALYTICS}`);
   ReactGa.pageview(window.location.pathname + window.location.search);
-  LogRocket.init(`${SNOWPACK_PUBLIC_APP_LOG_ROCKET_ID}/react-drum-maschine`);
+  LogRocket.init(`${ENV.SNOWPACK_PUBLIC_APP_LOG_ROCKET_ID}/react-drum-maschine`);
 }
 
 const httpLink = createHttpLink({

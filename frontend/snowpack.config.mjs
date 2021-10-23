@@ -7,14 +7,16 @@ export default {
   alias: {
     '@': './src',
   },
-  env: {
-    /* */
-  },
+  env: {},
   plugins: [
     '@snowpack/plugin-react-refresh',
     '@snowpack/plugin-dotenv',
-    '@snowpack/plugin-typescript',
     [
+      '@snowpack/plugin-typescript',
+      {
+        /* Yarn PnP workaround: see https://www.npmjs.com/package/@snowpack/plugin-typescript */
+        ...(process.versions.pnp ? { tsc: 'yarn pnpify tsc' } : {}),
+      },
       '@snowpack/plugin-webpack',
       {
         /*https://github.com/snowpackjs/snowpack/tree/main/plugins/plugin-webpack#readme*/

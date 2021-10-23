@@ -12,7 +12,7 @@ const MachineHeader: React.FC = (): JSX.Element => {
           <div className='app-header-lcd'>
             <h1>
               Micro v.0.0.3
-              <div>808 Drums</div>
+              <div>KIT: 808</div>
             </h1>
           </div>
         </div>
