@@ -18,13 +18,9 @@ import { store } from './store/store';
 
 dotenv.config();
 
-// if (__PROD__) {
-//   ReactGa.initialize(`${process.env.SNOWPACK_PUBLIC_APP_GOOGLE_ANALYTICS}`);
-//   ReactGa.pageview(window.location.pathname + window.location.search);
-//   LogRocket.init(
-//     `${process.env.SNOWPACK_PUBLIC_APP_LOG_ROCKET_ID}/react-drum-maschine`,
-//   );
-// }
+ReactGa.initialize(`${process.env.SNOWPACK_PUBLIC_GOOGLE_ANALYTICS}`);
+ReactGa.pageview(window.location.pathname + window.location.search);
+LogRocket.init(`${process.env.SNOWPACK_PUBLIC_APP_LOG_ROCKET_ID}/react-drum-maschine`);
 
 const httpLink = createHttpLink({
   uri: API_URL,
