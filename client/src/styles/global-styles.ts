@@ -9,7 +9,6 @@ const GlobalStyle = createGlobalStyle`
 
 body#app {
   overflow: hidden;
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -44,7 +43,7 @@ body#app {
 
 @media screen and (min-width: 767px) {
   .app {
-    max-width: 690px;
+    max-width: 680px;
   }
 }
 
@@ -113,6 +112,10 @@ body#app {
 
 .app-header .column:nth-child(2) div {
   color: yellow;
+  @media screen and (min-width: 767px) {
+    width: 336px;
+    float: right;
+  }
 }
 
 .app-header h1 {

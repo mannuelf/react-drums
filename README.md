@@ -4,7 +4,7 @@
 
 Love for coding, music and learning new technology in one project.
 
-## Demo URL
+## Demo
 
 > [www.react-drum-machine.netlify.app](https://react-drum-machine.netlify.app/)
 
