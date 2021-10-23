@@ -17,8 +17,6 @@ export default {
     [
       '@snowpack/plugin-webpack',
       {
-        sourceMap: true,
-        htmlMinifierOptions: true,
         /*https://github.com/snowpackjs/snowpack/tree/main/plugins/plugin-webpack#readme*/
       },
       '@snowpack/plugin-babel',

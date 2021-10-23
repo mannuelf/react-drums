@@ -1,4 +1,4 @@
-import.meta.hot;
+import.meta;
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactGa from 'react-ga';
@@ -18,9 +18,11 @@ import { store } from './store/store';
 
 dotenv.config();
 
-ReactGa.initialize(`${process.env.SNOWPACK_PUBLIC_GOOGLE_ANALYTICS}`);
-ReactGa.pageview(window.location.pathname + window.location.search);
-LogRocket.init(`${process.env.SNOWPACK_PUBLIC_APP_LOG_ROCKET_ID}/react-drum-maschine`);
+if (import.meta.env.NODE_ENV !== 'development') {
+  ReactGa.initialize(`${SNOWPACK_PUBLIC_GOOGLE_ANALYTICS}`);
+  ReactGa.pageview(window.location.pathname + window.location.search);
+  LogRocket.init(`${SNOWPACK_PUBLIC_APP_LOG_ROCKET_ID}/react-drum-maschine`);
+}
 
 const httpLink = createHttpLink({
   uri: API_URL,
