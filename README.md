@@ -6,40 +6,10 @@ Love for coding, music and learning new technology in one project.
 
 ## Demo URL
 
-> [https://react-drum-machine.netlify.app/](https://react-drum-machine.netlify.app/)
+> [www.react-drum-machine.netlify.app](https://react-drum-machine.netlify.app/)
 
-## Local dev
+## Getting started
 
-This is a mono-repo and is using YARN workspaces, all yarn commands to be executed from the root of project using root package.json.
+Read the documentation on how to get started here:
 
-```bash
-yarn 
-```
-
-### Run in development mode
-
-This will start the react client, GraphQL server and prisma db studio using concurrently.
-
-```bash
-yarn dev 
-```
-
-### Test react client
-
-```bash
-yarn test:client
-```
-
-### Front-end docs
-
-[Click here](./client/README.md) to read documentation.
-
-### GraphQL Server docs
-
-[Click here](./server/README.md) to read documentation.
-
-## TODO
-
-[Click here](./todo.md) to read todo list.
-
-Inspired by: [JavaScript30](https://javascript30.com/)
+> [www.react-drum-docz.netlify.app](https://react-drum-docz.netlify.app/)
