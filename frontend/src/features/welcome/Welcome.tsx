@@ -8,7 +8,7 @@ const Welcome = (): JSX.Element => {
     <Section>
       <div>
         <h1 role='heading'>
-          <img src={LOGO} className='logo' alt='Machine Micro' width='220' />
+          <img src={LOGO.light} className='logo' alt='Machine Micro' width='220' />
         </h1>
         <p>
           Welcome to Machine Micro. A drum machine inspired by Native

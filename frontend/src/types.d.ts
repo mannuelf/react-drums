@@ -38,3 +38,8 @@ interface AuthPayload {
   user: [IUser];
   error: Error;
 }
+
+interface ILogo {
+  light: string;
+  dark: string;
+}
