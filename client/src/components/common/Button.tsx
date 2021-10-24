@@ -1,25 +1,58 @@
 import React from 'react';
+import t from 'prop-types'
 import styled from 'styled-components';
 
 type ButtonProps = {
   /*
-   * Align the button centered | left | right
-   * */
+   * Align the button: left | right
+   */
   btnAlign?: string | null;
   /*
-   * Background colour
-   * */
+   * Background colour: orange | #FF9900
+   */
   btnBgColor?: string;
+  /*
+   * Padding customisation: 0 | 10 
+   */
   btnPadding?: string;
+  /*
+   * Round or square button: 0 | 10 
+   */
   btnRadius?: string;
-  btnWidth?: string;
+  /*
+   * Customise button width: 100px | 0.5rem
+   */
+  btnWidth?: string
+  /*
+   * Shadow: frue | false
+   */
   btnBoxShadow?: boolean;
+  /*
+   * ClassName customisation: string | null
+   */
   className?: string;
+  /*
+   * Disabled: true | false | null
+   */
   disabled?: boolean;
+  /*
+   * Type: button | submit | reset
+   */
   type?: string;
+  /*
+   * Name: Submit | Reset
+   */
+  name?: string;
+  /*
+   * Text | React Component
+   */
   children?: React.ReactNode | React.ReactNode[];
+  /*
+   * Click: Function
+   */
   onClick?: () => void;
 };
+
 
 const Button = styled.button<ButtonProps>`
   background-color: ${(props) =>

@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 interface InputProps {
   id?: string;
+  /*
+   * Name:  string
+   * */
   name?: string;
   placeholder?: string;
   type?: string;
