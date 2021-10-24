@@ -10,7 +10,7 @@ export default {
         dark:
           'https://res.cloudinary.com/mannuel/image/upload/v1634473279/images/logo-light.svg',
       },
-      width: 260,
+      width: 200,
     },
     menu: {
       search: false,
@@ -27,7 +27,7 @@ export default {
   },
   groups: {
     START: ['Welcome'],
-    FRONTEND: ['Introduction', 'Components'],
+    CLIENT: ['Introduction', 'Components'],
     SERVER: ['Server'],
   },
   menu: [
