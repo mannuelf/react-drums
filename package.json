@@ -20,6 +20,7 @@
     "server": "yarn --cwd server start",
     "start": "concurrently \"yarn docz:serve\" \"yarn server\" \"yarn build:client\" ",
     "studio": "yarn --cwd server prisma:studio",
+    "snyk:all": "snyk test --all-projects",
     "test:client": "yarn --cwd client test",
     "test:server": "yarn --cwd server test"
   },
