@@ -1,5 +1,5 @@
 import React from 'react';
-import t from 'prop-types'
+import t from 'prop-types';
 import styled from 'styled-components';
 
 type ButtonProps = {
@@ -12,17 +12,17 @@ type ButtonProps = {
    */
   btnBgColor?: string;
   /*
-   * Padding customisation: 0 | 10 
+   * Padding customisation: 0 | 10
    */
   btnPadding?: string;
   /*
-   * Round or square button: 0 | 10 
+   * Round or square button: 0 | 10
    */
   btnRadius?: string;
   /*
    * Customise button width: 100px | 0.5rem
    */
-  btnWidth?: string
+  btnWidth?: string;
   /*
    * Shadow: frue | false
    */
@@ -52,7 +52,6 @@ type ButtonProps = {
    */
   onClick?: () => void;
 };
-
 
 const Button = styled.button<ButtonProps>`
   background-color: ${(props) =>
