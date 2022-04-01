@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { gql, useMutation } from '@apollo/client';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import { AUTH_JWT } from '../../constants';
 import Button from '../../components/common/Button';
 import Input from '../../components/common/Input';
@@ -11,7 +11,7 @@ const LoginForm = (): JSX.Element => {
   const user = useSelector((state: any) => state.user);
   const error = useSelector((state: any) => state.error);
   const dispatch = useDispatch();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const [formState, setFormState] = useState({
     firstName: '',
@@ -56,7 +56,7 @@ const LoginForm = (): JSX.Element => {
       localStorage.setItem(AUTH_JWT, login.token);
       dispatch({ type: 'store/LOGIN' });
       formState.loggedIn = true;
-      history.push('/machine');
+      navigate('/machine');
     },
   });
 
@@ -69,7 +69,7 @@ const LoginForm = (): JSX.Element => {
     },
     onCompleted: ({ signup }) => {
       localStorage.setItem(AUTH_JWT, signup.token);
-      history.push('/machine');
+      navigate('/machine');
     },
   });
 
