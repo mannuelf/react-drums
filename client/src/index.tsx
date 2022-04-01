@@ -21,7 +21,7 @@ import ReactGa from 'react-ga';
 
 dotenv.config();
 
-if (ENV && ENV.NODE_ENV !== 'development') {
+if (ENV && ENV.NODE_ENV) {
   ReactGa.initialize(`${ENV.SNOWPACK_PUBLIC_GOOGLE_ANALYTICS}`);
   ReactGa.pageview(window.location.pathname + window.location.search);
   LogRocket.init(
