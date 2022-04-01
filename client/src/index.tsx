@@ -17,13 +17,13 @@ import { Provider } from 'react-redux';
 import { setContext } from '@apollo/client/link/context';
 import { store } from './store/store';
 import LogRocket from 'logrocket';
-import ReactGa from 'react-ga';
+import ReactGA from 'react-ga4';
 
 dotenv.config();
 
 if (ENV && ENV.NODE_ENV) {
-  ReactGa.initialize(`${ENV.SNOWPACK_PUBLIC_GOOGLE_ANALYTICS}`);
-  ReactGa.pageview(window.location.pathname + window.location.search);
+  ReactGA.initialize(`${ENV.SNOWPACK_PUBLIC_GOOGLE_ANALYTICS}`);
+  ReactGA.send({ hitType: 'pageview', page: `${window.location.pathname}` });
   LogRocket.init(
     `${ENV.SNOWPACK_PUBLIC_APP_LOG_ROCKET_ID}/react-drum-maschine`,
   );
