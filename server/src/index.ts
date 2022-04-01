@@ -10,8 +10,6 @@ import { getUserId } from './utils/auth';
 
 const prisma: PrismaClient = new PrismaClient();
 
-console.log(`🦄 ${process.env}`);
-
 const resolvers = {
   /**
    *
