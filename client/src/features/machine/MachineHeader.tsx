@@ -11,7 +11,7 @@ const MachineHeader: React.FC = (): JSX.Element => {
         <div className='column'>
           <div className='app-header-lcd'>
             <h1>
-              Micro v.0.0.3
+              Micro v1.0.0
               <div>KIT: 808</div>
             </h1>
           </div>
