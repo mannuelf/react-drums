@@ -30,9 +30,9 @@
     "server"
   ],
   "dependencies": {
-    "concurrently": "^6.3.0",
+    "concurrently": "^7.4.0",
     "g": "^2.0.1",
-    "netlify-cli": "^6.12.3"
+    "netlify-cli": "^12.0.7"
   },
   "node": ">=12.0.0",
   "proxy": "http://localhost:4000/"
