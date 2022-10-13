@@ -6,12 +6,7 @@ import * as dotenv from 'dotenv';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-import {
-  ApolloProvider,
-  ApolloClient,
-  createHttpLink,
-  InMemoryCache,
-} from '@apollo/client';
+import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
 import { ENV, AUTH_JWT, API_URL } from './constants';
 import { Provider } from 'react-redux';
 import { setContext } from '@apollo/client/link/context';
@@ -24,9 +19,7 @@ dotenv.config();
 if (ENV && ENV.NODE_ENV) {
   ReactGA.initialize(`${ENV.SNOWPACK_PUBLIC_GOOGLE_ANALYTICS}`);
   ReactGA.send({ hitType: 'pageview', page: `${window.location.pathname}` });
-  LogRocket.init(
-    `${ENV.SNOWPACK_PUBLIC_APP_LOG_ROCKET_ID}/react-drum-maschine`,
-  );
+  LogRocket.init(`${ENV.SNOWPACK_PUBLIC_APP_LOG_ROCKET_ID}/react-drum-maschine`);
 }
 
 const httpLink = createHttpLink({
