@@ -1,11 +1,9 @@
 {
   "compilerOptions": {
-    "module": "esnext",
-    "target": "ES2015",
-    "baseUrl": "./",
-    "outDir": "dist/",
-    "paths": {},
-    "types": ["node"],
+    "module": "CommonJS",
+    "target": "ESNext",
+    "baseUrl": "./src",
+    "outDir": "./public/js",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
