@@ -11,7 +11,7 @@ esbuild
     plugins: [],
   })
   .catch((error) => {
-    console.log('🏗️ error', error);
+    console.log('🔥 error', error);
     process.exit(1);
   })
   .finally(() => {
