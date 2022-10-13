@@ -24,11 +24,7 @@
     "test:client": "yarn --cwd client test",
     "test:server": "yarn --cwd server test"
   },
-  "workspaces": [
-    "client",
-    "documentation",
-    "server"
-  ],
+  "workspaces": ["client", "documentation", "server"],
   "dependencies": {
     "concurrently": "^7.4.0",
     "g": "^2.0.1",
