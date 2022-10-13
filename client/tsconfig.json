@@ -1,13 +1,11 @@
 {
   "compilerOptions": {
     "module": "esnext",
-    "target": "esnext",
+    "target": "ES2015",
     "baseUrl": "./",
     "outDir": "dist/",
-    "paths": {
-      "*": [".snowpack/types/*"]
-    },
-    "types": ["snowpack-env", "jest", "node", "@testing-library/jest-dom"],
+    "paths": {},
+    "types": ["node"],
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -27,7 +25,7 @@
   },
   "include": ["src/**/*", "src/types/**/*"],
   "exclude": ["node_modules", "build", "**/*.spec.ts"],
-  "typeAcquisition": {
-    "include": ["jest"]
+  "ts-node": {
+    "swc": true
   }
 }
