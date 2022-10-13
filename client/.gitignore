@@ -1,4 +1,4 @@
-.snowpack
+.dist
 build
 /node_modules
 /.pnp
