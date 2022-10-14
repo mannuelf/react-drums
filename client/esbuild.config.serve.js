@@ -10,17 +10,17 @@ esbuild
       bundle: false,
       entryPoints: ['./src/index.tsx'],
       logLevel: 'error',
-      minify: false,
+      minify: true,
       outdir: './public/js',
-      platform: 'node',
+      platform: 'browser',
       plugins: [],
       sourcemap: true,
       absWorkingDir: process.cwd(),
-      target: ['esnext'],
+      target: ['chrome100', 'edge100', 'firefox99', 'ios13', 'safari13'],
     },
   )
   .then((server) => {
-    console.info(`🖥️ Server running on port: ${server.port}`);
+    console.info(`🖥️  Server running on port: ${server.port}`);
     // server.stop();
   })
   .catch((error) => {
@@ -28,5 +28,5 @@ esbuild
     process.exit(1);
   })
   .finally(() => {
-    console.log(`🏗️   esbuild'ing complete.`);
+    console.log(`🏗️  build complete.`);
   });
