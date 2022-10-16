@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build:dev": "node ./esbuild.config.build.js",
-    "serve:dev": "node ./esbuild.config.serve.js"
+    "build:dev": "ts-node ./esbuild.config.build.js",
+    "serve:dev": "ts-node ./esbuild.config.serve.js"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.15.8",
@@ -53,6 +53,7 @@
     "core-js": "^3.25.5",
     "dotenv": "^16.0.0",
     "esbuild": "^0.15.10",
+    "esbuild-plugin-inline-image": "^0.0.8",
     "eslint-plugin-jest-dom": "^4.0.2",
     "graphql": "^16.3.0",
     "lodash": "^4.17.21",

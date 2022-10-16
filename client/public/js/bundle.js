@@ -825,6 +825,9 @@
     }
   });
 
+  // src/index.tsx
+  var import_react5 = __toESM(__require("react"), 1);
+
   // src/components/app/App.tsx
   var import_react_router_dom = __require("react-router-dom");
 
@@ -1194,7 +1197,6 @@ body#app {
   // src/constants.ts
   var import_meta = {};
   var { env } = import_meta;
-  var ENV = env;
   var AUTH_JWT = "AUTH";
   var API_URL = "http://localhost:4000";
   var LOGO = {
@@ -1782,7 +1784,6 @@ body#app {
 
   // src/index.tsx
   var dotenv = __toESM(__require("dotenv"), 1);
-  var import_react5 = __toESM(__require("react"), 1);
   var import_client2 = __require("react-dom/client");
   var import_client3 = __require("@apollo/client");
   var import_react_redux2 = __require("react-redux");
@@ -1818,16 +1819,8 @@ body#app {
   );
 
   // src/index.tsx
-  var import_logrocket = __toESM(__require("logrocket"), 1);
-  var import_react_ga4 = __toESM(__require("react-ga4"), 1);
   var import_jsx_runtime12 = __require("react/jsx-runtime");
-  var import_meta2 = {};
   dotenv.config();
-  if (ENV && ENV.NODE_ENV) {
-    import_react_ga4.default.initialize(`${ENV.SNOWPACK_PUBLIC_GOOGLE_ANALYTICS}`);
-    import_react_ga4.default.send({ hitType: "pageview", page: `${window.location.pathname}` });
-    import_logrocket.default.init(`${ENV.SNOWPACK_PUBLIC_APP_LOG_ROCKET_ID}/react-drum-maschine`);
-  }
   var httpLink = (0, import_client3.createHttpLink)({
     uri: API_URL
   });
@@ -1862,9 +1855,6 @@ body#app {
       })
     })
   );
-  if (import_meta2.hot) {
-    import_meta2.hot.accept();
-  }
 })();
 /*
 object-assign

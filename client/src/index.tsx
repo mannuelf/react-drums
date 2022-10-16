@@ -1,9 +1,7 @@
-import.meta;
-
+import React from 'react';
 import App from './components/app/App';
 
 import * as dotenv from 'dotenv';
-import React from 'react';
 import { createRoot } from 'react-dom/client';
 
 import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
@@ -16,11 +14,11 @@ import ReactGA from 'react-ga4';
 
 dotenv.config();
 
-if (ENV && ENV.NODE_ENV) {
-  ReactGA.initialize(`${ENV.SNOWPACK_PUBLIC_GOOGLE_ANALYTICS}`);
-  ReactGA.send({ hitType: 'pageview', page: `${window.location.pathname}` });
-  LogRocket.init(`${ENV.SNOWPACK_PUBLIC_APP_LOG_ROCKET_ID}/react-drum-maschine`);
-}
+// if (ENV && ENV.NODE_ENV) {
+//   ReactGA.initialize(`${ENV.SNOWPACK_PUBLIC_GOOGLE_ANALYTICS}`);
+//   ReactGA.send({ hitType: 'pageview', page: `${window.location.pathname}` });
+//   LogRocket.init(`${ENV.SNOWPACK_PUBLIC_APP_LOG_ROCKET_ID}/react-drum-maschine`);
+// }
 
 const httpLink = createHttpLink({
   uri: API_URL,
@@ -68,9 +66,3 @@ root.render(
     </Provider>
   </React.StrictMode>,
 );
-
-// Hot Module Replacement (HMR) - Remove this snippet to remove HMR.
-// Learn more: https://snowpack.dev/concepts/hot-module-replacement
-if (import.meta.hot) {
-  import.meta.hot.accept();
-}

@@ -8607,6 +8607,11 @@ esbuild-openbsd-64@0.15.10:
   resolved "https://registry.yarnpkg.com/esbuild-openbsd-64/-/esbuild-openbsd-64-0.15.10.tgz#4daef5f5d8e74bbda53b65160029445d582570cf"
   integrity sha512-ftMMIwHWrnrYnvuJQRJs/Smlcb28F9ICGde/P3FUTCgDDM0N7WA0o9uOR38f5Xe2/OhNCgkjNeb7QeaE3cyWkQ==
 
+esbuild-plugin-inline-image@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/esbuild-plugin-inline-image/-/esbuild-plugin-inline-image-0.0.8.tgz#4ab20522a6fae033453b21172a4a2a3da02dad62"
+  integrity sha512-L2Wwq7z9HALpq2hfxYHfQrrIyl/ivfRgiAULohVC/WKrGydPzfANGCrt5wSlxxWW4fuiPOc3BIA9Yp00h2QPVQ==
+
 esbuild-sunos-64@0.15.10:
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/esbuild-sunos-64/-/esbuild-sunos-64-0.15.10.tgz#5fe7bef267a02f322fd249a8214d0274937388a7"

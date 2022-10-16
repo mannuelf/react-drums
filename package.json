@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "client:build:dev": "yarn --cwd client build:dev",
-    "client:serve": "yarn --cwd client serve:dev",
+    "client:serve:dev": "yarn --cwd client serve:dev",
     "dev:all": "concurrently \"yarn server:dev\"   \"yarn client:dev\"  \"yarn studio\" \"yarn docz:dev\" ",
     "docz:build": "yarn --cwd documentation docz:build",
     "docz:clean": "yarn --cwd documentation docz:clean",
