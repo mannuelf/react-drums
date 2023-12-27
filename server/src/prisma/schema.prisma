@@ -1,6 +1,6 @@
 datasource db {
         provider = "postgresql"
-        url      = "postgres://root:root@192.168.64.12:30433/reactdrums?schema=public"
+        url      = "postgresql://postgres:postgres@localhost:5432/postgres"
 }
 
 generator client {

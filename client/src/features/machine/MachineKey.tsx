@@ -4,7 +4,7 @@ type Props = {
   keyChar?: string;
 };
 
-const MachineKey = ({ keyChar }: Props): JSX.Element => {
+const MachineKey: React.FC = ({ keyChar }: Props) => {
   return <span className='pad-button-char'>{keyChar}</span>;
 };
 

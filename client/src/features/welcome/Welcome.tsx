@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { LOGO } from '../../constants';
 import LoginForm from '../../features/login/LoginForm';
 
-const Welcome = (): JSX.Element => {
+const Welcome: React.FC = () => {
   return (
     <Section>
       <div>

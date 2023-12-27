@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const MachineCable = (): JSX.Element => {
+const MachineCable: React.FC = () => {
   return (
     <>
       <CordBase>

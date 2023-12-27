@@ -8,7 +8,7 @@ type Props = {
   children?: React.ReactNode;
 };
 
-export const AuthProvider: React.FC = ({ children }: Props) => {
+export const AuthProvider: React.FC<Props> = ({ children }) => {
   const [auth, setAuth] = useLocalStorage(AUTH_JWT, null);
 
   return (

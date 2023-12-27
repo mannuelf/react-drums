@@ -1,32 +1,24 @@
-import.meta;
-
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import App from './components/app/App';
 
-import * as dotenv from 'dotenv';
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-
 import {
-  ApolloProvider,
   ApolloClient,
-  createHttpLink,
+  ApolloProvider,
   InMemoryCache,
+  createHttpLink,
 } from '@apollo/client';
-import { ENV, AUTH_JWT, API_URL } from './constants';
-import { Provider } from 'react-redux';
 import { setContext } from '@apollo/client/link/context';
-import { store } from './store/store';
 import LogRocket from 'logrocket';
 import ReactGA from 'react-ga4';
+import { Provider } from 'react-redux';
+import { API_URL, AUTH_JWT } from './constants';
+import { store } from './store/store';
 
-dotenv.config();
-
-if (ENV && ENV.NODE_ENV) {
-  ReactGA.initialize(`${ENV.SNOWPACK_PUBLIC_GOOGLE_ANALYTICS}`);
+if (import.meta.env.MODE !== 'development') {
+  ReactGA.initialize(`${import.meta.env.VITE_GOOGLE_ANALYTICS}`);
   ReactGA.send({ hitType: 'pageview', page: `${window.location.pathname}` });
-  LogRocket.init(
-    `${ENV.SNOWPACK_PUBLIC_APP_LOG_ROCKET_ID}/react-drum-maschine`,
-  );
+  LogRocket.init(`${import.meta.env.VITE_LOG_ROCKET_ID}/react-drum-maschine`);
 }
 
 const httpLink = createHttpLink({
@@ -63,10 +55,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const container = document.getElementById('root') as HTMLDivElement;
-const root = createRoot(container);
-
-root.render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider store={store}>
       <ApolloProvider client={client}>
@@ -75,9 +64,3 @@ root.render(
     </Provider>
   </React.StrictMode>,
 );
-
-// Hot Module Replacement (HMR) - Remove this snippet to remove HMR.
-// Learn more: https://snowpack.dev/concepts/hot-module-replacement
-if (import.meta.hot) {
-  import.meta.hot.accept();
-}

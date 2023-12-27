@@ -12,7 +12,7 @@ type Props = {
   name?: string;
 };
 
-const MachineDrumPad = (props: Props): JSX.Element => {
+const MachineDrumPad: React.FC<Props> = (props) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {

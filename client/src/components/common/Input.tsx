@@ -17,7 +17,7 @@ interface InputProps {
   onChange?: (e: any) => void;
 }
 
-const Input = ({ ...props }: InputProps): JSX.Element => {
+const Input: React.FC<InputProps> = ({ ...props }) => {
   return <StyledInput {...props} />;
 };
 

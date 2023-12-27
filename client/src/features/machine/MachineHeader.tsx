@@ -1,7 +1,7 @@
 import React from 'react';
 import { LOGO } from '../../constants';
 
-const MachineHeader: React.FC = (): JSX.Element => {
+const MachineHeader: React.FC = () => {
   return (
     <>
       <header className='app-header'>

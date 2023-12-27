@@ -5,16 +5,7 @@ import MachineCable from './MachineCable';
 import MachineDrumPad from './MachineDrumPad';
 import MachineBody from './MachineBody';
 
-interface ISound {
-  id?: number;
-  name?: string;
-  src?: string;
-  keyCode?: number;
-  keyChar?: string;
-  onClick?: () => void;
-}
-
-const Machine: React.FC = (): JSX.Element => {
+const Machine: React.FC = () => {
   const kitName = '808';
   const [kit, setKit] = useState<Kit | undefined>({} as Kit);
 
