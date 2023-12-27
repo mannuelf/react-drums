@@ -1,26 +1,30 @@
-# Front-end
+# React + TypeScript + Vite
 
-This is a mono-repo and is using YARN workspaces, all yarn commands to be executed from the root of project using root package.json.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-> ✨ Bootstrapped with Create Snowpack App (CSA).
+Currently, two official plugins are available:
 
-## Available Scripts
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-### npm start
+## Expanding the ESLint configuration
 
-Runs the app in the development mode.
-Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-The page will reload if you make edits.
-You will also see any lint errors in the console.
+- Configure the top-level `parserOptions` property like this:
 
-### npm run build
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+};
+```
 
-Builds a static copy of your site to the `build/` folder.
-Your app is ready to be deployed!
-
-**For the best production performance:** Add a build bundler plugin like [@snowpack/plugin-webpack](https://github.com/snowpackjs/snowpack/tree/main/plugins/plugin-webpack) or [snowpack-plugin-rollup-bundle](https://github.com/ParamagicDev/snowpack-plugin-rollup-bundle) to your `snowpack.config.mjs` config file.
-
-### Q: What about Eject?
-
-No eject needed! Snowpack guarantees zero lock-in, and CSA strives for the same.
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list

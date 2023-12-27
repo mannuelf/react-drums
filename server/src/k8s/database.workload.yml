@@ -19,6 +19,10 @@ spec:
           envFrom:
             - configMapRef:
                 name: postgres-config
+          resources:
+            limits:
+              cpu: "0.5"
+              memory: "512Mi"
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
               name: reactdrums-postgredb

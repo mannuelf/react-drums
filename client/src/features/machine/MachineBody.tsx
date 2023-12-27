@@ -4,7 +4,7 @@ type Children = {
   children: React.ReactNode;
 };
 
-const MachineBody = ({ children }: Children): JSX.Element => {
+const MachineBody: React.FC<Children> = ({ children }) => {
   return (
     <section className='app-panel'>
       <div className='app-panel__controls'>.</div>

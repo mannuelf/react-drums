@@ -6,7 +6,7 @@ type Props = {
   label: string;
 };
 
-const Label = ({ ...props }: Props): JSX.Element => {
+const Label: React.FC<Props> = ({ ...props }) => {
   return <StyledLabel htmlFor={props.htmlFor}>{props.label}</StyledLabel>;
 };
 

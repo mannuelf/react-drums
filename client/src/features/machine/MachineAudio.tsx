@@ -9,7 +9,7 @@ type Props = {
   ref?: any;
 };
 
-const MachineAudio = React.forwardRef((props: Props, ref): JSX.Element => {
+const MachineAudio: React.FC<Props> = React.forwardRef((props, ref) => {
   return <audio {...props} {...ref} />;
 });
 

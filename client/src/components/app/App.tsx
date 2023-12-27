@@ -1,11 +1,11 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Footer from '../footer/Footer';
-import GlobalStyle from '../../styles/global-styles';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LoginForm from '../../features/login/LoginForm';
 import Machine from '../../features/machine/Machine';
+import GlobalStyle from '../../styles/global-styles';
+import Footer from '../footer/Footer';
 
-const App: React.FC = (): JSX.Element => {
+const App: React.FC = () => {
   return (
     <BrowserRouter>
       <GlobalStyle />

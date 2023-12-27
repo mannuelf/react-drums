@@ -10,17 +10,20 @@ type Kit = {
   }[];
 };
 
-type Sound = {
-  sounds: {
-    id: number;
-    name: string;
-    src: string;
-    keyCode: number;
-    keyChar: string;
-  };
+interface Sound {
+  id: number;
+  name: string;
+  src: string;
+  keyCode: number;
+  keyChar: string;
+  onClick?: () => void;
+}
+
+type Sounds = {
+  sounds: Sound[];
 };
 
-interface IUser {
+interface User {
   firstName: string;
   lastName?: string;
   email?: string;
@@ -29,17 +32,17 @@ interface IUser {
   isAdmin?: boolean;
 }
 
-interface IUsers {
-  users: [IUser];
+interface Users {
+  users: [User];
 }
 
 interface AuthPayload {
   token: string;
-  user: [IUser];
+  user: [User];
   error: Error;
 }
 
-interface ILogo {
+interface Logo {
   light: string;
   dark: string;
 }

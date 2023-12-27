@@ -6,34 +6,32 @@
   "author": "Mannuel Ferreira",
   "license": "MIT",
   "private": true,
+  "engines": {
+    "node": "20.10.0",
+    "npm": "10.2.3"
+  },
   "scripts": {
-    "build:client": "yarn --cwd client build",
-    "dev:client": "yarn --cwd client start",
+    "build": "yarn --cwd client build",
+    "database:generate": "yarn --cwd server prisma generate",
+    "database:migrate": "yarn --cwd server prisma:migrate",
+    "dev:client": "yarn --cwd client dev",
+    "dev:prettier:fix": "yarn --cwd client prettier:fix",
+    "dev:preview": "yarn --cwd client preview",
     "dev:server": "yarn --cwd server dev",
-    "dev": "concurrently \"yarn dev:server\"   \"yarn dev:client\"  \"yarn studio\" \"yarn docz:dev\" ",
-    "docz:build": "yarn --cwd documentation docz:build",
-    "docz:clean": "yarn --cwd documentation docz:clean",
-    "docz:dev": "yarn --cwd documentation docz:dev",
-    "docz:serve": "yarn --cwd documentation docz:serve",
-    "migrate": "yarn --cwd server prisma:migrate",
-    "prisma:generate": "yarn --cwd server prisma generate",
+    "dev": "concurrently \"yarn dev:server\" \"yarn dev:client\" \"yarn studio\" ",
     "server": "yarn --cwd server start",
-    "start": "concurrently \"yarn docz:serve\" \"yarn server\" \"yarn build:client\" ",
-    "studio": "yarn --cwd server prisma:studio",
     "snyk:all": "snyk test --all-projects",
+    "start": "concurrently \"yarn server\" \"yarn build:client\" ",
+    "studio": "yarn --cwd server prisma:studio",
     "test:client": "yarn --cwd client test",
     "test:server": "yarn --cwd server test"
   },
   "workspaces": [
     "client",
-    "documentation",
     "server"
   ],
+  "proxy": "http://localhost:4000/",
   "dependencies": {
-    "concurrently": "^6.3.0",
-    "g": "^2.0.1",
-    "netlify-cli": "^6.12.3"
-  },
-  "node": ">=12.0.0",
-  "proxy": "http://localhost:4000/"
+    "concurrently": "^8.2.2"
+  }
 }

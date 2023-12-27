@@ -1,17 +1,17 @@
-const initialState: IUser = {
+const initialState: User = {
   firstName: '',
   email: '',
   loggedIn: false,
 };
 
 type ACTIONTYPE =
-  | { type: 'LOGIN'; payload: IUser }
-  | { type: 'LOGOUT'; payload: IUser };
+  | { type: 'LOGIN'; payload: User }
+  | { type: 'LOGOUT'; payload: User };
 
 export function userReducer(
   state: typeof initialState = initialState,
   action: ACTIONTYPE,
-): IUser {
+): User {
   switch (action.type) {
     case 'LOGIN':
       return { ...state, loggedIn: true };

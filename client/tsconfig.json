@@ -1,33 +1,25 @@
 {
   "compilerOptions": {
-    "module": "esnext",
-    "target": "esnext",
-    "baseUrl": "./",
-    "outDir": "dist/",
-    "paths": {
-      "*": [".snowpack/types/*"]
-    },
-    "types": ["snowpack-env", "jest", "node", "@testing-library/jest-dom"],
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "strictNullChecks": true,
-    "noImplicitAny": true,
     "jsx": "react-jsx",
-    "noFallthroughCasesInSwitch": true,
-    "sourceMap": true
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/**/*", "src/types/**/*"],
-  "exclude": ["node_modules", "build", "**/*.spec.ts"],
-  "typeAcquisition": {
-    "include": ["jest"]
-  }
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -2,10 +2,10 @@
   "compilerOptions": {
     "lib": ["esnext", "dom"],
     "target": "ESNext",
-    "module": "commonjs",
+    "module": "ESNext",
     "outDir": "dist",
     "rootDir": "src",
-    "strict": false,
+    "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "removeComments": true,

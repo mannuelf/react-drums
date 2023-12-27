@@ -1,10 +1,10 @@
 import React from 'react';
 
 type Props = {
-  keyChar?: string;
+  keyChar: string;
 };
 
-const MachineKey = ({ keyChar }: Props): JSX.Element => {
+const MachineKey: React.FC<Props> = ({ keyChar }) => {
   return <span className='pad-button-char'>{keyChar}</span>;
 };
 

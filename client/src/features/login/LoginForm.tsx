@@ -1,13 +1,13 @@
+import { gql, useMutation } from '@apollo/client';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { gql, useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router';
-import { AUTH_JWT } from '../../constants';
 import Button from '../../components/common/Button';
 import Input from '../../components/common/Input';
 import Label from '../../components/common/Label';
+import { AUTH_JWT } from '../../constants';
 
-const LoginForm = (): JSX.Element => {
+const LoginForm: React.FC = () => {
   const user = useSelector((state: any) => state.user);
   const error = useSelector((state: any) => state.error);
   const dispatch = useDispatch();
