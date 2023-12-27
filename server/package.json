@@ -6,6 +6,11 @@
   "repository": "https://github.com/mannuelf/react-drums",
   "author": "Mannuel Ferreira",
   "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": "20.10.0",
+    "npm": "10.2.3"
+  },
   "scripts": {
     "dev": "ts-node-dev --no-notify --respawn --transpile-only src/",
     "start": "nodemon -e ts,graphql -x ts-node -r dotenv/config src/index.ts",
@@ -40,6 +45,5 @@
   "type": "module",
   "prisma": {
     "schema": "src/prisma/schema.prisma"
-  },
-  "node": ">=12.0.0"
+  }
 }

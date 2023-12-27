@@ -5,6 +5,10 @@
   "author": "Mannuel Ferreira",
   "license": "MIT",
   "private": true,
+  "engines": {
+    "node": "20.10.0",
+    "npm": "10.2.3"
+  },
   "scripts": {
     "docz:build": "docz build",
     "docz:dev": " docz dev --port=3002",
