@@ -4,7 +4,7 @@ import MachineKey from './MachineKey';
 
 type Props = {
   id: string;
-  keyChar?: string;
+  keyChar: string;
   keyCode?: number;
   src: string;
   title?: string;
