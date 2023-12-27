@@ -11,7 +11,7 @@
     "npm": "10.2.3"
   },
   "scripts": {
-    "build:client": "yarn --cwd client build",
+    "build": "yarn --cwd client build",
     "database:generate": "yarn --cwd server prisma generate",
     "database:migrate": "yarn --cwd server prisma:migrate",
     "dev:client": "yarn --cwd client dev",
