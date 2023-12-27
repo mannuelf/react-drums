@@ -18,17 +18,16 @@
     "dev:prettier:fix": "yarn --cwd client prettier:fix",
     "dev:preview": "yarn --cwd client preview",
     "dev:server": "yarn --cwd server dev",
-    "dev": "concurrently \"yarn dev:server\"   \"yarn dev:client\"  \"yarn studio\" \"yarn docz:dev\" ",
+    "dev": "concurrently \"yarn dev:server\" \"yarn dev:client\" \"yarn studio\" ",
     "server": "yarn --cwd server start",
     "snyk:all": "snyk test --all-projects",
-    "start": "concurrently \"yarn docz:serve\" \"yarn server\" \"yarn build:client\" ",
+    "start": "concurrently \"yarn server\" \"yarn build:client\" ",
     "studio": "yarn --cwd server prisma:studio",
     "test:client": "yarn --cwd client test",
     "test:server": "yarn --cwd server test"
   },
   "workspaces": [
     "client",
-    "documentation",
     "server"
   ],
   "dependencies": {
