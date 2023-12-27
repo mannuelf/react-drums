@@ -6,6 +6,10 @@
   "author": "Mannuel Ferreira",
   "license": "MIT",
   "private": true,
+  "engines": {
+    "node": "20.10.0",
+    "npm": "10.2.3"
+  },
   "scripts": {
     "build:client": "yarn --cwd client build",
     "database:generate": "yarn --cwd server prisma generate",
@@ -14,7 +18,7 @@
     "dev:prettier:fix": "yarn --cwd client prettier:fix",
     "dev:preview": "yarn --cwd client preview",
     "dev:server": "yarn --cwd server dev",
-    "dev": "concurrently \"yarn dev:server\"   \"yarn dev:client\"  \"yarn studio\" ",
+    "dev": "concurrently \"yarn dev:server\"   \"yarn dev:client\"  \"yarn studio\" \"yarn docz:dev\" ",
     "docz:build": "yarn --cwd documentation docz:build",
     "docz:clean": "yarn --cwd documentation docz:clean",
     "docz:dev": "yarn --cwd documentation docz:dev",
@@ -36,6 +40,5 @@
     "g": "^2.0.1",
     "netlify-cli": "^6.12.3"
   },
-  "node": ">=12.0.0",
   "proxy": "http://localhost:4000/"
 }
