@@ -1,5 +1,5 @@
+import { style } from '@vanilla-extract/css';
 import React from 'react';
-import styled from 'styled-components';
 
 type Props = {
   htmlFor: string;
@@ -7,10 +7,10 @@ type Props = {
 };
 
 const Label: React.FC<Props> = ({ ...props }) => {
-  return <StyledLabel htmlFor={props.htmlFor}>{props.label}</StyledLabel>;
+  return <label className={label}  htmlFor={props.htmlFor}>{props.label}</label>;
 };
 
-const StyledLabel = styled('label')({
+const label = style({
   width: '100%',
   marginBottom: '1rem',
   fontSize: '1em',

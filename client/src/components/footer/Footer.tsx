@@ -1,12 +1,11 @@
 import { faCode, faHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { style } from '@vanilla-extract/css';
 import React from 'react';
-import styled from 'styled-components';
 
 const Footer: React.FC = () => {
   return (
-    <StyledFooter>
-      <footer>
+      <footer className={footerStyle}>
         Built with <FontAwesomeIcon icon={faHeart} /> by{' '}
         <a
           href='https://mannuelferreira.com'
@@ -23,29 +22,20 @@ const Footer: React.FC = () => {
           <FontAwesomeIcon icon={faCode} /> Fork it on github.
         </a>
       </footer>
-    </StyledFooter>
   );
 };
 
-const StyledFooter = styled('footer')({
+export const footerStyle = style({
   position: 'absolute',
   bottom: 0,
   left: 0,
   width: '100%',
-  backgroundColor: 'rgba(0, 0, 0, 0.3)',
+  backgroundColor: '#FF9900',
   color: '#fff',
   lineHeight: '30px',
   verticalAlign: 'middle',
   textAlign: 'center',
   fontSize: '12px',
-  '& a:link, & a:visited ': {
-    color: '#FFF',
-    textDecoration: 'none',
-  },
-  '& a:active, & a:hover': {
-    color: '#fb00ff',
-    textDecoration: 'underline',
-  },
 });
 
 export default Footer;

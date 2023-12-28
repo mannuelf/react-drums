@@ -1,5 +1,5 @@
+import { style } from '@vanilla-extract/css';
 import React, { useEffect, useRef } from 'react';
-import styled from 'styled-components';
 import MachineKey from './MachineKey';
 
 type Props = {
@@ -12,7 +12,13 @@ type Props = {
   name?: string;
 };
 
-const MachineDrumPad: React.FC<Props> = (props) => {
+const MachineDrumPad: React.FC<Props> = ({
+  id,
+  name,
+  keyChar,
+  keyCode,
+  src,
+}) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
@@ -23,7 +29,7 @@ const MachineDrumPad: React.FC<Props> = (props) => {
   }, []);
 
   const handleKeydown = (e: any): any => {
-    if (e.keyCode === props.keyCode) {
+    if (e.keyCode === keyCode) {
       audioRef!.current!.currentTime = 0;
       audioRef!.current!.play();
     }
@@ -37,33 +43,28 @@ const MachineDrumPad: React.FC<Props> = (props) => {
   };
 
   return (
-    <StyledButton
-      className='pad-button'
-      key={props.id}
-      title={props.name}
-      onClick={handlePlay}
-    >
-      <MachineKey keyChar={props.keyChar} />
+    <button className={buttonStyle} key={id} title={name} onClick={handlePlay}>
+      <MachineKey keyChar={keyChar} />
       <audio
         ref={audioRef}
-        id={props.keyChar}
-        key={props.id}
-        src={props.src}
-        title={props.name}
+        id={keyChar}
+        key={id}
+        src={src}
+        title={name}
       ></audio>
-    </StyledButton>
+    </button>
   );
 };
 
-const StyledButton = styled.button`
-  background: #444;
-  border-radius: 3px;
-  padding: 1rem;
-  border: none;
-  height: 68px;
-  width: 100%;
-  cursor: pointer;
-  box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.4);
-`;
+export const buttonStyle = style({
+  background: '#444',
+  borderRadius: '3px',
+  padding: '1rem',
+  border: 'none',
+  height: '68px',
+  width: '100%',
+  cursor: 'pointer',
+  boxShadow: '-2px 2px 2px rgba(0, 0, 0, 0.4)',
+});
 
 export default MachineDrumPad;
