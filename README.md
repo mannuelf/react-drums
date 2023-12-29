@@ -35,6 +35,22 @@ Install dependencies:
 yarn
 ```
 
+Development
+
+```bash
+yarn dev
+```
+
+Production
+
+```bash
+yarn build
+```
+
+```bash
+yarn start
+```
+
 ## Server
 
 Ensure Docker is on and start the Postgresql container first.
