@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getDrumKitByName } from '../../utils/getDrums';
-import MachineHeader from './MachineHeader';
+import { machine } from './Machine.css';
+import MachineBody from './MachineBody';
 import MachineCable from './MachineCable';
 import MachineDrumPad from './MachineDrumPad';
-import MachineBody from './MachineBody';
+import MachineHeader from './MachineHeader';
 
 const Machine: React.FC = () => {
   const kitName = '808';
@@ -19,19 +20,19 @@ const Machine: React.FC = () => {
   }
 
   if (!kit) {
-    return <div className='app'>Loading..</div>;
+    return <div className={machine}>Loading..</div>;
   }
 
   const { sounds } = kit as Kit;
 
   return (
-    <div className='app'>
+    <div className={machine}>
       <MachineCable />
       <MachineHeader />
       <MachineBody>
         {!sounds
           ? 'Loading...'
-          : sounds.map((sound: any) => (
+          : sounds.map((sound: Sound) => (
               <MachineDrumPad
                 {...sound}
                 key={sound.id}

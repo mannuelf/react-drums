@@ -1,19 +1,34 @@
 import React from 'react';
 import { LOGO } from '../../constants';
+import {
+  machineColumn,
+  machineHeader,
+  machineHeaderLcd,
+  machineHeaderLcdContainer,
+  machineHeaderLogo,
+  machineSubTitle,
+  machineTitle,
+} from './MachineHeader.css';
 
 const MachineHeader: React.FC = () => {
   return (
     <>
-      <header className='app-header'>
-        <div className='column'>
-          <img src={LOGO.light} className='logo' alt='Machine Micro' />
+      <header className={machineHeader}>
+        <div className={machineColumn}>
+          <img
+            src={LOGO.light}
+            className={machineHeaderLogo}
+            alt='Machine Micro'
+          />
         </div>
-        <div className='column'>
-          <div className='app-header-lcd'>
-            <h1>
-              Micro v1.0.0
-              <div>KIT: 808</div>
-            </h1>
+        <div className={machineColumn}>
+          <div className={machineHeaderLcd}>
+            <hgroup className={machineHeaderLcdContainer}>
+              <h1 className={machineTitle}>Micro v1.0.0</h1>
+              <h2 className={machineSubTitle}>
+                <span>KIT</span> 808
+              </h2>
+            </hgroup>
           </div>
         </div>
       </header>

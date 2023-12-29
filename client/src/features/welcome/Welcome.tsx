@@ -1,11 +1,26 @@
+import { style } from '@vanilla-extract/css';
 import React from 'react';
-import styled from 'styled-components';
 import { LOGO } from '../../constants';
 import LoginForm from '../../features/login/LoginForm';
 
+const sectionStyle = style({
+  display: 'flex',
+  flexDirection: 'row',
+  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  maxWidth: '620px',
+  margin: '2em auto',
+  borderRadius: '0.5em',
+  padding: '1em',
+  selectors: {
+    '& > div': {
+      margin: '0 1em',
+    },
+  },
+});
+
 const Welcome: React.FC = () => {
   return (
-    <Section>
+    <section className={sectionStyle}>
       <div>
         <h1 role='heading'>
           <img
@@ -21,21 +36,8 @@ const Welcome: React.FC = () => {
         </p>
         <LoginForm />
       </div>
-    </Section>
+    </section>
   );
 };
-
-const Section = styled('section')({
-  display: 'flex',
-  flexDirection: 'row',
-  backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  maxWidth: '620px',
-  margin: '2em auto',
-  borderRadius: '0.5em',
-  padding: '1em',
-  '& > div': {
-    margin: '0 1em',
-  },
-});
 
 export default Welcome;

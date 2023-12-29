@@ -1,11 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
-
+import { input } from './Input.css';
 interface InputProps {
   id?: string;
-  /*
-   * Name:  string
-   * */
   name?: string;
   placeholder?: string;
   type?: string;
@@ -18,18 +14,7 @@ interface InputProps {
 }
 
 const Input: React.FC<InputProps> = ({ ...props }) => {
-  return <StyledInput {...props} />;
+  return <input className={input} {...props} />;
 };
-
-const StyledInput = styled.input<InputProps>`
-  width: '100%';
-  margin-bottom: '1em';
-  padding: '.5em';
-  border: '1px solid #FFF';
-  font-size: '1rem';
-  border-radius: ${(props) =>
-    props.borderRadius ? props.borderRadius : '1.5rem'};
-  outline: 'none';
-`;
 
 export default Input;

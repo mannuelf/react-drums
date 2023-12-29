@@ -1,20 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
 
 type Props = {
   htmlFor: string;
   label: string;
 };
 
-const Label: React.FC<Props> = ({ ...props }) => {
-  return <StyledLabel htmlFor={props.htmlFor}>{props.label}</StyledLabel>;
+const Label: React.FC<Props> = ({ label, htmlFor }) => {
+  return (
+    <label className={label} htmlFor={htmlFor}>
+      {label}
+    </label>
+  );
 };
-
-const StyledLabel = styled('label')({
-  width: '100%',
-  marginBottom: '1rem',
-  fontSize: '1em',
-  color: '#ccc',
-});
 
 export default Label;

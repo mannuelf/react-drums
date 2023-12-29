@@ -21,6 +21,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@prisma/client": "^5.7.1",
     "@vanilla-extract/css": "^1.14.0",
+    "@vanilla-extract/vite-plugin": "^3.9.3",
     "axios": "^1.6.3",
     "cloudinary-react": "^1.7.0",
     "dotenv": "^16.3.1",
@@ -35,8 +36,7 @@
     "react-redux": "^9.0.4",
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
-    "redux": "^5.0.1",
-    "styled-components": "^6.1.6"
+    "redux": "^5.0.1"
   },
   "devDependencies": {
     "@types/jest": "^29.5.11",
@@ -51,6 +51,7 @@
     "@types/styled-components": "^5.1.34",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
+    "@vanilla-extract/esbuild-plugin": "^2.3.1",
     "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^8.55.0",
     "eslint-config-prettier": "^9.1.0",
@@ -68,6 +69,7 @@
     "redux-devtools-extension": "^2.13.9",
     "snyk": "^1.893.0",
     "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+    "vite": "^5.0.8",
+    "vite-plugin-svgr": "^4.2.0"
   }
 }

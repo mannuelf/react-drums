@@ -1,4 +1,9 @@
 import React from 'react';
+import {
+  machineBodyInner,
+  machineBodyMain,
+  machineLayoutColumn,
+} from './MachineBody.css';
 
 type Children = {
   children: React.ReactNode;
@@ -6,10 +11,10 @@ type Children = {
 
 const MachineBody: React.FC<Children> = ({ children }) => {
   return (
-    <section className='app-panel'>
-      <div className='app-panel__controls'>.</div>
-      <div className='app-panel__controls'>
-        <div>{children}</div>
+    <section className={machineBodyMain}>
+      <div className={machineLayoutColumn}>.</div>
+      <div className={machineLayoutColumn}>
+        <div className={machineBodyInner}>{children}</div>
       </div>
     </section>
   );

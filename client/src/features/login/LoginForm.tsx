@@ -2,7 +2,6 @@ import { gql, useMutation } from '@apollo/client';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
-import Button from '../../components/common/Button';
 import Input from '../../components/common/Input';
 import Label from '../../components/common/Label';
 import { AUTH_JWT } from '../../constants';
@@ -138,24 +137,10 @@ const LoginForm: React.FC = () => {
           />
         </div>
         <div>
-          <Button
-            btnAlign={'left'}
-            btnBgColor={'green'}
-            btnPadding={'0.8rem 1rem'}
-            btnWidth={'100px'}
-            btnRadius={'2rem'}
-            type='submit'
-            onClick={() => (formState.loggedIn ? login() : signup())}
-          >
+          <button onClick={() => (formState.loggedIn ? login() : signup())}>
             {formState.loggedIn ? 'Login' : 'Sign Up'}
-          </Button>
-          <Button
-            btnAlign={'left'}
-            btnBgColor={'teal'}
-            btnPadding={'0.8rem 1rem'}
-            btnWidth={'auto'}
-            btnRadius={'2rem'}
-            type='submit'
+          </button>
+          <button
             onClick={() =>
               setFormState({
                 ...formState,
@@ -166,7 +151,7 @@ const LoginForm: React.FC = () => {
             {formState.loggedIn
               ? 'Create an account?'
               : 'Already have an account?'}
-          </Button>
+          </button>
         </div>
       </form>
     </>
