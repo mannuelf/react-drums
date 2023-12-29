@@ -9,6 +9,4 @@ const MachineCable: React.FC = () => {
   );
 };
 
-
-
 export default MachineCable;

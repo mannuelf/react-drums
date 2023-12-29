@@ -54,9 +54,7 @@ export const machineHeaderLcdContainer = style({
   width: '100%',
 });
 
-
 export const machineHeaderLogo = style({
   width: '140px',
   height: 'auto',
 });
-

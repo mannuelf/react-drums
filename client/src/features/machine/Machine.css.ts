@@ -40,6 +40,6 @@ export const machine = style({
       'linear-gradient(353deg, rgba(22, 22, 22, 1) 0%, rgba(76, 76, 76, 1) 100%)',
     borderTop: '1px solid rgba(255,255,255,0.6)',
     borderLeft: '1px solid rgba(255,255,255,0.2)',
-    borderBottom: '1px solid #464646'
+    borderBottom: '1px solid #464646',
   },
 });

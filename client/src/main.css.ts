@@ -8,7 +8,8 @@ globalStyle('body', {
   WebkitFontSmoothing: 'antialiased',
   MozOsxFontSmoothing: 'grayscale',
   backgroundColor: '#583d29',
-  backgroundImage: 'url(https://res.cloudinary.com/mannuel/image/upload/v1633978128/images/desk2.jpg)',
+  backgroundImage:
+    'url(https://res.cloudinary.com/mannuel/image/upload/v1703861156/wood2.svg)',
   backgroundPosition: 'center',
   backgroundSize: 'cover',
   backgroundRepeat: 'repeat',

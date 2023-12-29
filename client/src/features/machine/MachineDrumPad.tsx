@@ -45,7 +45,12 @@ const MachineDrumPad: React.FC<Props> = ({
   };
 
   return (
-    <button className={machineDrumPadStyle} key={id} title={name} onClick={handlePlay}>
+    <button
+      className={machineDrumPadStyle}
+      key={id}
+      title={name}
+      onClick={handlePlay}
+    >
       <MachineKey keyChar={keyChar} />
       <audio
         ref={audioRef}
@@ -57,6 +62,5 @@ const MachineDrumPad: React.FC<Props> = ({
     </button>
   );
 };
-
 
 export default MachineDrumPad;

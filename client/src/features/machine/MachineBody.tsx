@@ -1,5 +1,9 @@
 import React from 'react';
-import { machineBodyInner, machineBodyMain, machineLayoutColumn } from './MachineBody.css';
+import {
+  machineBodyInner,
+  machineBodyMain,
+  machineLayoutColumn,
+} from './MachineBody.css';
 
 type Children = {
   children: React.ReactNode;
