@@ -7,7 +7,11 @@ const MachineHeader: React.FC = () => {
     <>
       <header className={machineHeader}>
         <div className={column}>
-          <img src={LOGO.light} className='logo' alt='Machine Micro' />
+          <img
+            src={LOGO.light}
+            className={machineHeaderLogo}
+            alt='Machine Micro'
+          />
         </div>
         <div className={column}>
           <div className={machineHeaderLcd}>
@@ -74,8 +78,13 @@ const column = style({
     'screen (min-width: 767px)': {
       width: '336px',
       float: 'right',
-    }
+    },
   },
+});
+
+const machineHeaderLogo = style({
+  width: '140px',
+  height: 'auto',
 });
 
 export default MachineHeader;

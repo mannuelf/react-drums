@@ -41,15 +41,6 @@ export const app = style({
   },
 });
 
-// #app .logo {
-//   width: 140px,
-//   height: auto,
-// }
-
-// #app h1[role="heading"] .logo {
-//   width: 220px,
-// }
-
 
 
 // .pad-button {
