@@ -18,13 +18,13 @@ from ROOT package.json
 run prisma generate script
 
 ```bash
-yarn prisma:generate
+pnpm prisma:generate
 ```
 
 run migration script
 
 ```bash
-yarn migrate
+pnpm migrate
 ```
 
 ## Database with Kubernetes
@@ -44,13 +44,13 @@ using [Prisma](https://www.prisma.io/) ORM to handle database workflow.
 First time init, run migrations.
 
 ```bash
-yarn migrate:db
+pnpm migrate:db
 ```
 
 Open Studio to view you database contents.
 
 ```bash
-yarn studio:db
+pnpm studio:db
 ```
 
 open: [http://localhost:5555/](http://localhost:5555/)

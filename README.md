@@ -25,30 +25,30 @@ It is a web version of this (approximation 🥁)
 
 ## Getting started
 
-Uses [YARN workspaces](https://yarnpkg.com/features/workspaces). Client and Server.
+Uses [pnpm workspaces](https://pnpmpkg.com/features/workspaces). Client and Server.
 
 ### Client
 
 Install dependencies:
 
 ```bash
-yarn
+pnpm
 ```
 
 Development
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 Production
 
 ```bash
-yarn build
+pnpm build
 ```
 
 ```bash
-yarn start
+pnpm start
 ```
 
 ## Server
@@ -74,9 +74,9 @@ docker-compose up -d
 Prisma generate and migrate
 
 ```bash
-yarn database:generate
+pnpm database:generate
 ```
 
 ```bash
-yarn database:migrate
+pnpm database:migrate
 ```

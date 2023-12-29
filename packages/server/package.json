@@ -8,18 +8,20 @@
   "license": "MIT",
   "private": true,
   "engines": {
-    "node": "20.10.0",
-    "npm": "10.2.3"
+    "node": "^18.0.0 || >=20.0.0"
   },
+  "type": "module",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only ./src/index.ts",
-    "start": "nodemon -e ts,graphql -x ts-node -r dotenv/config src/index.ts",
-    "build": "rm -rf dist && graphql codegen && tsc",
-    "generate": "yarn -s run generate:prisma",
-    "generate:prisma": "prisma generate",
-    "prisma:studio": "npx prisma studio",
-    "prisma:migrate": "npx prisma migrate dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "pnpm codegen && tsc",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "generate": "prisma generate",
+    "migrate": "prisma migrate dev",
+    "start": "nodemon -e ts, graphql -x ts-node -r dotenv/config src/index.ts",
+    "studio": "prisma studio",
+    "codegen": "graphql-codegen --config codegen.ts"
+  },
+  "prisma": {
+    "schema": "src/prisma/schema.prisma"
   },
   "dependencies": {
     "@prisma/client": "^5.7.1",
@@ -30,19 +32,19 @@
     "type-graphql": "^1.1.1"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "5.0.0",
+    "@graphql-codegen/introspection": "4.0.0",
+    "@graphql-codegen/typescript-document-nodes": "4.0.1",
+    "@graphql-codegen/typescript-resolvers": "4.0.1",
+    "@graphql-codegen/typescript": "4.0.1",
     "@types/bcryptjs": "^2.4.6",
     "@types/express": "^4.17.21",
-    "@types/graphql": "^14.5.0",
     "@types/jsonwebtoken": "^9.0.5",
     "@types/node": "^20.10.5",
     "nodemon": "^3.0.2",
     "prisma": "^5.7.1",
-    "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
-  },
-  "type": "module",
-  "prisma": {
-    "schema": "src/prisma/schema.prisma"
   }
 }
