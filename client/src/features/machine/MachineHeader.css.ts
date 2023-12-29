@@ -15,18 +15,24 @@ export const machineHeader = style({
 });
 
 
-export const machineTitle = style({
-  color: '#ccc',
-  fontFamily: 'Press Start 2P, Arial, Helvetica, sans-serif',
-  lineHeight: '1.4',
-  fontSize: '8px',
-  fontWeight: 'normal',
-  textTransform: 'uppercase',
+export const machineHeaderLcdContainer = style({
+
 });
 
 export const machineSubTitle = style({
   color: 'yellow',
-  fontSize: 12,
+  fontSize: '0.8em',
+  lineHeight: '0.3em',
+});
+
+export const machineTitle = style({
+  color: '#ccc',
+  fontFamily: 'Press Start 2P, Arial, Helvetica, sans-serif',
+  fontSize: '0.8em',
+  fontWeight: 'normal',
+  textTransform: 'uppercase',
+  lineHeight: '0.1em',
+  letterSpacing: '1px',
 });
 
 export const machineHeaderLcd = style({
@@ -59,11 +65,3 @@ export const machineHeaderLogo = style({
   height: 'auto',
 });
 
-export const divStyle = style({
-  selectors: {
-    '&:nth-child(2)': {
-      color: 'yellow',
-    },
-  },
-
-});

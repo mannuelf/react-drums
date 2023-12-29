@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { machineDrumPad } from './MachineDrumPad.css';
+import { machineDrumPadStyle } from './MachineDrumPad.css';
 import MachineKey from './MachineKey';
 
 type Props = {
@@ -45,7 +45,7 @@ const MachineDrumPad: React.FC<Props> = ({
   };
 
   return (
-    <button className={machineDrumPad} key={id} title={name} onClick={handlePlay}>
+    <button className={machineDrumPadStyle} key={id} title={name} onClick={handlePlay}>
       <MachineKey keyChar={keyChar} />
       <audio
         ref={audioRef}

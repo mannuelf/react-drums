@@ -1,10 +1,18 @@
 import { style } from '@vanilla-extract/css';
 
-export const machineDrumPad = style({
+export const machineDrumPadStyle = style({
   position: 'relative',
   outline: 'none',
   color: '#fff',
   transition: 'all 0.4s ease-in-out',
+  background: '#444',
+  borderRadius: '3px',
+  padding: '1rem',
+  border: 'none',
+  height: '68px',
+  width: '100%',
+  cursor: 'pointer',
+  boxShadow: '-2px 2px 2px rgba(0, 0, 0, 0.4)',
   selectors: {
     '&::before': {
       display: 'block',
@@ -30,7 +38,8 @@ export const machineDrumPad = style({
       left: 0,
       right: 0,
       borderRadius: '3px',
-      background: 'radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 1) 100%)',
+      background:
+        'radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 1) 100%)',
     },
     '&:nth-child(1)': { backgroundColor: '#4d94fc', order: 16 },
     '&:nth-child(2)': { backgroundColor: '#4d94fc', order: 15 },
@@ -71,4 +80,13 @@ export const padButtonIdStyle = style({
   position: 'absolute',
   top: '4px',
   left: '4px',
+});
+
+export const spanStyle = style({
+  display: 'block',
+  selectors: {
+    '&:nth-child(2)': {
+      color: 'yellow',
+    },
+  },
 });

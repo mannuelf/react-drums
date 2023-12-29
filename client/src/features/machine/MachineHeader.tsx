@@ -1,6 +1,6 @@
 import React from 'react';
 import { LOGO } from '../../constants';
-import { column, machineHeader, machineHeaderLcd, machineHeaderLogo, machineSubTitle, machineTitle } from './MachineHeader.css';
+import { column, machineHeader, machineHeaderLcd, machineHeaderLcdContainer, machineHeaderLogo, machineSubTitle, machineTitle } from './MachineHeader.css';
 
 const MachineHeader: React.FC = () => {
   return (
@@ -15,10 +15,10 @@ const MachineHeader: React.FC = () => {
         </div>
         <div className={column}>
           <div className={machineHeaderLcd}>
-            <h1 className={machineTitle}>
-              Micro v1.0.0
-              <span className={machineSubTitle}>KIT: 808</span>
-            </h1>
+            <hgroup className={machineHeaderLcdContainer}>
+              <h1 className={machineTitle}>Micro v1.0.0</h1>
+              <h2 className={machineSubTitle}>KIT: 808</h2>
+            </hgroup>
           </div>
         </div>
       </header>
