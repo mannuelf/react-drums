@@ -1,5 +1,6 @@
 import { style } from '@vanilla-extract/css';
 import React from 'react';
+import { machineBodyMain, machineLayoutColumn } from './MachineBody.css';
 
 type Children = {
   children: React.ReactNode;
@@ -7,46 +8,13 @@ type Children = {
 
 const MachineBody: React.FC<Children> = ({ children }) => {
   return (
-    <section className={panelStyle}>
-      <div className={panelControlsStyle}>.</div>
-      <div className={panelControlsStyle}>
-        <div className={controlsStyle}>{children}</div>
+    <section className={machineBodyMain}>
+      <div className={machineLayoutColumn}>.</div>
+      <div className={machineLayoutColumn}>
+        <div className={machineBodyMain}>{children}</div>
       </div>
     </section>
   );
 };
-
-const controlsStyle = style({
-  display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(64px, 1fr))',
-  gridGap: '16px',
-  padding: '1.5em 0 0 0',
-  height: 'auto',
-  width: '100%',
-  borderTop: '1px solid #222',
-  zIndex: 5,
-});
-
-const panelStyle = style({
-  display: 'flex',
-  flexDirection: 'row',
-  width: '100%',
-  zIndex: 5,
-});
-
-const panelControlsStyle = style({
-  flexGrow: 1,
-  color: '#333',
-  selectors: {
-    '&:first-child': {
-      display: 'none',
-      '@media': {
-        '(min-width: 767px)': {
-          display: 'block',
-        },
-      },
-    },
-  },
-});
 
 export default MachineBody;

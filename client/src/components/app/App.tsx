@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LoginForm from '../../features/login/LoginForm';
 import Machine from '../../features/machine/Machine';
 import Footer from '../footer/Footer';
-import './App.css';
 
 const App: React.FC = () => {
   return (

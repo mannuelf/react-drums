@@ -1,15 +1,17 @@
-import { style } from '@vanilla-extract/css';
 import React, { useEffect, useRef } from 'react';
+import { machineDrumPad } from './MachineDrumPad.css';
 import MachineKey from './MachineKey';
 
 type Props = {
-  id: string;
+  id: number;
   keyChar: string;
   keyCode?: number;
   src: string;
   title?: string;
   ref?: any;
   name?: string;
+  onClick?: () => void;
+  handleKeyDown?: () => void;
 };
 
 const MachineDrumPad: React.FC<Props> = ({
@@ -43,7 +45,7 @@ const MachineDrumPad: React.FC<Props> = ({
   };
 
   return (
-    <button className={buttonStyle} key={id} title={name} onClick={handlePlay}>
+    <button className={machineDrumPad} key={id} title={name} onClick={handlePlay}>
       <MachineKey keyChar={keyChar} />
       <audio
         ref={audioRef}
@@ -56,15 +58,5 @@ const MachineDrumPad: React.FC<Props> = ({
   );
 };
 
-export const buttonStyle = style({
-  background: '#444',
-  borderRadius: '3px',
-  padding: '1rem',
-  border: 'none',
-  height: '68px',
-  width: '100%',
-  cursor: 'pointer',
-  boxShadow: '-2px 2px 2px rgba(0, 0, 0, 0.4)',
-});
 
 export default MachineDrumPad;

@@ -2,7 +2,6 @@ import { gql, useMutation } from '@apollo/client';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
-import Button from '../../components/common/Button';
 import Input from '../../components/common/Input';
 import Label from '../../components/common/Label';
 import { AUTH_JWT } from '../../constants';
@@ -138,7 +137,7 @@ const LoginForm: React.FC = () => {
           />
         </div>
         <div>
-          <Button
+          <buttonStyle
             btnAlign={'left'}
             btnBgColor={'green'}
             btnPadding={0.8}
@@ -147,8 +146,8 @@ const LoginForm: React.FC = () => {
             onClick={() => (formState.loggedIn ? login() : signup())}
           >
             {formState.loggedIn ? 'Login' : 'Sign Up'}
-          </Button>
-          <Button
+          </buttonStyle>
+          <buttonStyle
             btnAlign={'left'}
             btnBgColor={'teal'}
             btnPadding={0.8}
@@ -164,7 +163,7 @@ const LoginForm: React.FC = () => {
             {formState.loggedIn
               ? 'Create an account?'
               : 'Already have an account?'}
-          </Button>
+          </buttonStyle>
         </div>
       </form>
     </>

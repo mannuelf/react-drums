@@ -7,6 +7,7 @@ type Kit = {
     src: string;
     keyCode: number;
     keyChar: string;
+    onClick?: () => void;
   }[];
 };
 
@@ -16,7 +17,6 @@ interface Sound {
   src: string;
   keyCode: number;
   keyChar: string;
-  onClick?: () => void;
 }
 
 type Sounds = {

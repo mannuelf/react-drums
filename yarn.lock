@@ -3600,7 +3600,14 @@
     modern-ahocorasick "^1.0.0"
     outdent "^0.8.0"
 
-"@vanilla-extract/integration@^6.2.4":
+"@vanilla-extract/esbuild-plugin@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@vanilla-extract/esbuild-plugin/-/esbuild-plugin-2.3.1.tgz#00ae4b06c222076bc6d2e5589ba7fcc08d6ea86c"
+  integrity sha512-HBCDVfUuQrzRuv+1sx54R2crdXd03V0UDDZjvJB2PwLfXqVJsYEENcHfMwYoM1xGVm5x6KzhbeGLnBDZIlhceQ==
+  dependencies:
+    "@vanilla-extract/integration" "^6.2.0"
+
+"@vanilla-extract/integration@^6.2.0", "@vanilla-extract/integration@^6.2.4":
   version "6.2.4"
   resolved "https://registry.yarnpkg.com/@vanilla-extract/integration/-/integration-6.2.4.tgz#bd8a5ec0916051c1ef5fb66d8484a5cad8d8c58d"
   integrity sha512-+AfymNMVq9sEUe0OJpdCokmPZg4Zi6CqKaW/PnUOfDwEn53ighHOMOBl5hAgxYR8Kiz9NG43Bn00mkjWlFi+ng==

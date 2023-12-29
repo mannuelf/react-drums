@@ -1,7 +1,7 @@
 import { faCode, faHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { style } from '@vanilla-extract/css';
 import React from 'react';
+import { footerStyle } from './Footer.css';
 
 const Footer: React.FC = () => {
   return (
@@ -24,18 +24,5 @@ const Footer: React.FC = () => {
       </footer>
   );
 };
-
-export const footerStyle = style({
-  position: 'absolute',
-  bottom: 0,
-  left: 0,
-  width: '100%',
-  backgroundColor: '#FF9900',
-  color: '#fff',
-  lineHeight: '30px',
-  verticalAlign: 'middle',
-  textAlign: 'center',
-  fontSize: '12px',
-});
 
 export default Footer;

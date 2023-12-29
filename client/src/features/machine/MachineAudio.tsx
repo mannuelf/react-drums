@@ -14,4 +14,5 @@ const MachineAudio: React.FC<Props> = React.forwardRef((props, ref) => {
 });
 
 MachineAudio.displayName = 'MachineAudio';
+
 export default MachineAudio;
