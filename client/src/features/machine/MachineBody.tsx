@@ -1,4 +1,3 @@
-import { style } from '@vanilla-extract/css';
 import React from 'react';
 import { machineBodyMain, machineLayoutColumn } from './MachineBody.css';
 

@@ -137,22 +137,10 @@ const LoginForm: React.FC = () => {
           />
         </div>
         <div>
-          <buttonStyle
-            btnAlign={'left'}
-            btnBgColor={'green'}
-            btnPadding={0.8}
-            btnWidth={100}
-            btnRadius={2}
-            onClick={() => (formState.loggedIn ? login() : signup())}
-          >
+          <button onClick={() => (formState.loggedIn ? login() : signup())}>
             {formState.loggedIn ? 'Login' : 'Sign Up'}
-          </buttonStyle>
-          <buttonStyle
-            btnAlign={'left'}
-            btnBgColor={'teal'}
-            btnPadding={0.8}
-            btnWidth={100}
-            btnRadius={2}
+          </button>
+          <button
             onClick={() =>
               setFormState({
                 ...formState,
@@ -163,7 +151,7 @@ const LoginForm: React.FC = () => {
             {formState.loggedIn
               ? 'Create an account?'
               : 'Already have an account?'}
-          </buttonStyle>
+          </button>
         </div>
       </form>
     </>
