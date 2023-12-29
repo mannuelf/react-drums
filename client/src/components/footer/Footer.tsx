@@ -1,25 +1,34 @@
-import { faCode, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faCode } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { footerStyle } from './Footer.css';
+import { footerLinkStyle, footerStyle } from './Footer.css';
 
 const Footer: React.FC = () => {
   return (
     <footer className={footerStyle}>
-      Built with <FontAwesomeIcon icon={faHeart} /> by{' '}
       <a
+        className={footerLinkStyle}
         href='https://mannuelferreira.com'
         target='_blank'
         rel='noopener noreferrer'
       >
-        Mannuel Ferreira
-      </a>{' '}
+        www.mannuelferreira.com
+      </a>
       <a
+        className={footerLinkStyle}
         href='https://github.com/mannuelf/react-drums'
         target='_blank'
         rel='noopener noreferrer'
       >
         <FontAwesomeIcon icon={faCode} /> Fork it on github.
+      </a>
+      <a
+        className={footerLinkStyle}
+        href='https://www.svgbackgrounds.com/'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        Background by SVGBackgrounds.com
       </a>
     </footer>
   );

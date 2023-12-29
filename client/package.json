@@ -69,6 +69,7 @@
     "redux-devtools-extension": "^2.13.9",
     "snyk": "^1.893.0",
     "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+    "vite": "^5.0.8",
+    "vite-plugin-svgr": "^4.2.0"
   }
 }

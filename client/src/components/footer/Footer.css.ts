@@ -5,10 +5,18 @@ export const footerStyle = style({
   bottom: 0,
   left: 0,
   width: '100%',
-  backgroundColor: '#FF9900',
-  color: '#fff',
-  lineHeight: '30px',
+  backgroundColor: 'rgba(0 0 0 / 49%)',
   verticalAlign: 'middle',
   textAlign: 'center',
-  fontSize: '12px',
+  padding: '1em',
+});
+
+export const footerLinkStyle = style({
+  color: '#fff',
+  fontSize: '1em',
+  padding: '0.5em',
+  textDecoration: 'none',
+  ':hover': {
+    textDecoration: 'underline',
+  },
 });
