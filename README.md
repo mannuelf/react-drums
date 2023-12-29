@@ -4,7 +4,7 @@
 
 Love for coding, music and learning new technology in one project, anything goes, I will try anything that seems interesting to this repo.
 
-It is a web version of this
+It is a web version of this (approximation 🥁)
 
 ![photo](.github/workflows/machinemicro.png)
 
@@ -54,6 +54,8 @@ yarn start
 ## Server
 
 Ensure Docker is on and start the Postgresql container first.
+
+OR stop now and use [SQLITE here](https://www.prisma.io/docs/orm/overview/databases/sqlite)
 
 ### Database with Docker
 
