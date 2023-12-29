@@ -4,6 +4,10 @@
 
 Love for coding, music and learning new technology in one project, anything goes, I will try anything that seems interesting to this repo.
 
+It is a web version of this
+
+![photo](.github/workflows/machinemicro.png)
+
 ## Requirements
 
 - Docker (it's for the database)
