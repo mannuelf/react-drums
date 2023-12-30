@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "apollographql.vscode-apollo",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "graphql.vscode-graphql-syntax",
+    "ms-vscode.vscode-typescript-next",
+    "mylesmurphy.prettify-ts",
+    "yoavbls.pretty-ts-errors",
+    "yzhang.markdown-all-in-one",
+    "ms-playwright.playwright",
+    "prisma.prisma",
+  ]
+}

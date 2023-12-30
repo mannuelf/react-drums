@@ -1,36 +1,26 @@
 {
   "name": "react-drums",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Monorepo, client and server. Front-end drum machine built with React. Graph QL server and API to store and capture user account and sound bank data.",
   "repository": "https://github.com/mannuelf/react-drums",
   "author": "Mannuel Ferreira",
   "license": "MIT",
   "private": true,
   "engines": {
-    "node": "20.10.0",
-    "npm": "10.2.3"
+    "node": "^18.0.0 || >=20.0.0"
   },
-  "scripts": {
-    "build": "yarn --cwd client build",
-    "database:generate": "yarn --cwd server prisma generate",
-    "database:migrate": "yarn --cwd server prisma:migrate",
-    "dev:client": "yarn --cwd client dev",
-    "dev:prettier:fix": "yarn --cwd client prettier:fix",
-    "dev:preview": "yarn --cwd client preview",
-    "dev:server": "yarn --cwd server dev",
-    "dev": "concurrently \"yarn dev:server\" \"yarn dev:client\" \"yarn studio\" ",
-    "server": "yarn --cwd server start",
-    "snyk:all": "snyk test --all-projects",
-    "start": "concurrently \"yarn server\" \"yarn build:client\" ",
-    "studio": "yarn --cwd server prisma:studio",
-    "test:client": "yarn --cwd client test",
-    "test:server": "yarn --cwd server test"
-  },
-  "workspaces": [
-    "client",
-    "server"
-  ],
   "proxy": "http://localhost:4000/",
+  "scripts": {
+    "build": "pnpm -r --filter='./packages/*' run build",
+    "database:generate": "pnpm -r --filter='./packages/server' run generate",
+    "database:migrate": "pnpm -r --filter='./packages/server' run migrate",
+    "database:studio": "pnpm -r --filter='./packages/server' run studio",
+    "dev": "pnpm -r --parallel --filter='./packages/*' run dev",
+    "format": "prettier --write --cache .",
+    "lint": "eslint --cache .",
+    "preinstall": "npx only-allow pnpm",
+    "preview": "pnpm -r --filter='./packages/client' run preview"
+  },
   "dependencies": {
     "concurrently": "^8.2.2"
   }
