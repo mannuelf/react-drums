@@ -14,6 +14,8 @@ builder.prismaObject('User', {
   }),
 });
 
+builder.queryType({});
+
 builder.queryField('users', (t) =>
   t.prismaField({
     type: ['User'],
