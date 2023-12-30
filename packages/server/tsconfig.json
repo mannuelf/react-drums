@@ -1,8 +1,9 @@
+
 {
   "compilerOptions": {
     "lib": ["esnext", "dom"],
     "target": "ESNext",
-    "module": "ESNext",
+    "module": "CommonJS",
     "outDir": "dist",
     "rootDir": "src",
     "strict": true,
@@ -16,6 +17,6 @@
     "resolveJsonModule": true,
     "sourceMap": true
   },
-  "include": ["src/**/*.ts", "src/prisma/seed-db.ts"],
+  "include": ["src/**/*.ts", "src/prisma/seed-db.ts", "src/index.ts", "src/server.mts"],
   "exclude": ["node_modules"]
 }

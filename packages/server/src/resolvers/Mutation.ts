@@ -1,32 +1,19 @@
-import * as jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
+import * as jwt from 'jsonwebtoken';
 import { APP_SECRET } from '../constants';
 import { IAuthPayload, IUser } from '../types';
 const { sign } = jwt;
 
 export const signup = async (
-  parent,
-  args,
-  context,
-  info,
+  parent: any,
+  args: { password: string; id: any; firstName: any; lastName: any; email: any; isAdmin: any; createdAt: any; updatedAt: any; error: any; },
+  context: { prisma: { user: { create: (arg0: { data: IUser; }) => any; }; }; },
+  info: any,
 ): Promise<IAuthPayload> => {
   try {
     console.log('✅ Signup', args);
     const password = await bcrypt.hash(args.password, 10);
-    const user = await context.prisma.user.create({
-      data: {
-        id: args.id,
-        firstName: args.firstName,
-        lastName: args.lastName,
-        email: args.email,
-        isAdmin: args.isAdmin,
-        password: password,
-        createdAt: args.createdAt,
-        updatedAt: args.updatedAt,
-      } as IUser,
-    });
-
-    const token = sign({ userId: user.id }, APP_SECRET);
+    const token = sign({ userId: user.id }, APP_SECRET as string);
     const error = args.error;
 
     return { token, user, error: null };
@@ -38,10 +25,10 @@ export const signup = async (
 };
 
 export const login = async (
-  parent,
-  args,
-  context,
-  info,
+  parent: any,
+  args: { email: any; password: string; },
+  context: { prisma: { user: { findUnique: (arg0: { where: { email: any; }; }) => any; }; }; },
+  info: any,
 ): Promise<IAuthPayload> => {
   const user = await context.prisma.user.findUnique({
     where: { email: args.email },
@@ -61,7 +48,7 @@ export const login = async (
   return { token, user };
 };
 
-export const user = async (parent, args, context, info): Promise<IUser> => {
+export const user = async (parent: any, args: { id: any; firstName: any; lastName: any; email: any; isAdmin: any; password: any; createdAt: any; updatedAt: any; }, context: { prisma?: any; userId?: any; }, info: any): Promise<IUser> => {
   console.log('✅ User', args);
   try {
     const { userId } = context;

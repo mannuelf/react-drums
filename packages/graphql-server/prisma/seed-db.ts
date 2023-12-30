@@ -14,7 +14,10 @@ async function main() {
       updatedAt: new Date(),
     },
   });
+  newUser;
+  console.log('0️⃣ ~ file: seed-db.ts:21 ~ main ~ newUser:', newUser);
   const allUsers = await prisma.user.findMany();
+  console.log('1️⃣ ~ file: seed-db.ts:20 ~ main ~ allUsers :', allUsers);
 }
 
 main()

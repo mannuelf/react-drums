@@ -10,7 +10,9 @@ It is a web version of this (approximation 🥁)
 
 ## Requirements
 
-- Docker (it's for the database)
+- [PNPM](pnpm.io/installation)
+- [Docker](https://docker.com) (it's for the database)
+- [NVM](https://github.com/nvm-sh/nvm)
 
 ## Overview
 
@@ -24,6 +26,12 @@ It is a web version of this (approximation 🥁)
 > [www.react-drum-machine.netlify.app](https://react-drum-machine.netlify.app/)
 
 ## Getting started
+
+Switch to Node v20
+
+```bash
+nvm use
+```
 
 Uses [pnpm workspaces](https://pnpmpkg.com/features/workspaces). Client and Server.
 
