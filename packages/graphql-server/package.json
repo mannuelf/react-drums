@@ -4,15 +4,16 @@
   "description": "GraphQL server for react-drums",
   "main": "server.js",
   "scripts": {
-    "dev": "ts-node-dev src/server.ts",
-    "seed": "ts-node-dev prisma/seed-db.ts",
-    "init": "npx prisma migrate dev --name init",
     "build": "pnpm i && npx prisma generate",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev src/server.ts",
+    "init": "npx prisma migrate dev --name init",
+    "migrate": "prisma migrate",
+    "seed": "ts-node-dev prisma/seed-db.ts",
+    "studio": "npx prisma studio"
   },
   "keywords": [
     "GraphQL",
-    "Express"
+    "Server"
   ],
   "author": "Mannuel Ferreira",
   "license": "ISC",
