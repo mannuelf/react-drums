@@ -1,3 +1,5 @@
+import { Kit } from "../types/types";
+
 export const drums: Kit[] = [
   {
     id: 1,
