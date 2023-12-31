@@ -26,6 +26,9 @@ importers:
       '@fortawesome/react-fontawesome':
         specifier: ^0.2.0
         version: 0.2.0(@fortawesome/fontawesome-svg-core@6.5.1)(react@18.2.0)
+      '@graphql-typed-document-node/core':
+        specifier: ^3.2.0
+        version: 3.2.0(graphql@16.8.1)
       '@prisma/client':
         specifier: ^5.7.1
         version: 5.7.1(prisma@5.7.1)
@@ -74,6 +77,9 @@ importers:
       redux:
         specifier: ^5.0.1
         version: 5.0.1
+      urql:
+        specifier: ^4.0.6
+        version: 4.0.6(graphql@16.8.1)(react@18.2.0)
     devDependencies:
       '@graphql-codegen/cli':
         specifier: ^5.0.0
@@ -210,6 +216,17 @@ importers:
         version: 5.3.3
 
 packages:
+
+  /@0no-co/graphql.web@1.0.4(graphql@16.8.1):
+    resolution: {integrity: sha512-W3ezhHGfO0MS1PtGloaTpg0PbaT8aZSmmaerL7idtU5F7oCI+uu25k+MsMS31BVFlp4aMkHSrNRxiD72IlK8TA==}
+    peerDependencies:
+      graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
+    peerDependenciesMeta:
+      graphql:
+        optional: true
+    dependencies:
+      graphql: 16.8.1
+    dev: false
 
   /@aashutoshrathi/word-wrap@1.2.6:
     resolution: {integrity: sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==}
@@ -3150,6 +3167,15 @@ packages:
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
+
+  /@urql/core@4.2.2(graphql@16.8.1):
+    resolution: {integrity: sha512-TP1kheq9bnrEdnVbJqh0g0ZY/wfdpPeAzjiiDK+Tm+Pbi0O1Xdu6+fUJ/wJo5QpHZzkIyya4/AecG63e6scFqQ==}
+    dependencies:
+      '@0no-co/graphql.web': 1.0.4(graphql@16.8.1)
+      wonka: 6.3.4
+    transitivePeerDependencies:
+      - graphql
+    dev: false
 
   /@vanilla-extract/babel-plugin-debug-ids@1.0.3:
     resolution: {integrity: sha512-vm4jYu1xhSa6ofQ9AhIpR3DkAp4c+eoR1Rpm8/TQI4DmWbmGbOjYRcqV0aWsfaIlNhN4kFuxFMKBNN9oG6iRzA==}
@@ -7723,6 +7749,18 @@ packages:
   /urlpattern-polyfill@9.0.0:
     resolution: {integrity: sha512-WHN8KDQblxd32odxeIgo83rdVDE2bvdkb86it7bMhYZwWKJz0+O0RK/eZiHYnM+zgt/U7hAHOlCQGfjjvSkw2g==}
 
+  /urql@4.0.6(graphql@16.8.1)(react@18.2.0):
+    resolution: {integrity: sha512-meXJ2puOd64uCGKh7Fse2R7gPa8+ZpBOoA62jN7CPXXUt7SVZSdeXWSpB3HvlfzLUkEqsWbvshwrgeWRYNNGaQ==}
+    peerDependencies:
+      react: '>= 16.8.0'
+    dependencies:
+      '@urql/core': 4.2.2(graphql@16.8.1)
+      react: 18.2.0
+      wonka: 6.3.4
+    transitivePeerDependencies:
+      - graphql
+    dev: false
+
   /use-sync-external-store@1.2.0(react@18.2.0):
     resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
     peerDependencies:
@@ -7957,6 +7995,10 @@ packages:
     dependencies:
       isexe: 2.0.0
     dev: true
+
+  /wonka@6.3.4:
+    resolution: {integrity: sha512-CjpbqNtBGNAeyNS/9W6q3kSkKE52+FjIj7AkFlLr11s/VWGUu6a2CdYSdGxocIhIVjaW/zchesBQUKPVU69Cqg==}
+    dev: false
 
   /wrap-ansi@6.2.0:
     resolution: {integrity: sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==}

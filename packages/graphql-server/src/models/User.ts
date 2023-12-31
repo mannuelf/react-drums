@@ -4,7 +4,7 @@ import { prisma } from '../db';
 builder.prismaObject('User', {
   fields: (t) => ({
     id: t.exposeID('id'),
-    fistName: t.exposeString('firstName', { nullable: true }),
+    firstName: t.exposeString('firstName', { nullable: true }),
     lastName: t.exposeString('lastName', { nullable: true }),
     email: t.exposeString('email'),
     password: t.exposeString('password'),

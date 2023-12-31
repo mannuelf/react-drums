@@ -1,4 +1,9 @@
-type Kit = {
+// src/types.ts
+import type { GetUsersQuery } from "../graphql/generated";
+
+export type User = GetUsersQuery["users"][0];
+
+export type Kit = {
   id: number;
   name: string;
   sounds: {
@@ -11,7 +16,7 @@ type Kit = {
   }[];
 };
 
-interface Sound {
+export interface Sound {
   id: number;
   name: string;
   src: string;
@@ -19,30 +24,21 @@ interface Sound {
   keyChar: string;
 }
 
-type Sounds = {
+export type Sounds = {
   sounds: Sound[];
 };
 
-interface User {
-  firstName: string;
-  lastName?: string;
-  email?: string;
-  password?: string;
-  loggedIn?: boolean;
-  isAdmin?: boolean;
-}
-
-interface Users {
+export interface Users {
   users: [User];
 }
 
-interface AuthPayload {
+export interface AuthPayload {
   token: string;
   user: [User];
   error: Error;
 }
 
-interface Logo {
+export interface Logo {
   light: string;
   dark: string;
 }
