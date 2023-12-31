@@ -12,9 +12,9 @@
   "proxy": "http://localhost:4000/",
   "scripts": {
     "build": "pnpm -r --filter='./packages/*' run build",
-    "database:generate": "pnpm -r --filter='./packages/server' run generate",
-    "database:migrate": "pnpm -r --filter='./packages/server' run migrate",
-    "database:studio": "pnpm -r --filter='./packages/server' run studio",
+    "database:generate": "pnpm -r --filter='./packages/graphql-server' run generate",
+    "database:migrate": "pnpm -r --filter='./packages/graphql-server' run migrate",
+    "database:studio": "pnpm -r --filter='./packages/graphql-server' run studio",
     "dev": "pnpm -r --parallel --filter='./packages/*' run dev",
     "format": "prettier --write --cache .",
     "lint": "eslint --cache .",
