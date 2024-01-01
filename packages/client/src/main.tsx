@@ -1,12 +1,12 @@
+import { loadDevMessages, loadErrorMessages } from "@apollo/client/dev";
+import LogRocket from 'logrocket';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import ReactGA from 'react-ga4';
+import { Provider as ReduxProvider } from 'react-redux';
 import { Provider, cacheExchange, createClient, fetchExchange } from 'urql';
 import App from './components/app/App';
 import './main.css';
-
-import LogRocket from 'logrocket';
-import ReactGA from 'react-ga4';
-import { Provider as ReduxProvider } from 'react-redux';
 import { store } from './store/store';
 
 if (import.meta.env.MODE !== 'development') {
@@ -15,12 +15,16 @@ if (import.meta.env.MODE !== 'development') {
   LogRocket.init(`${import.meta.env.VITE_LOG_ROCKET_ID}/react-drum-maschine`);
 }
 
+if (import.meta.env.MODE === 'development') {
+  // https://www.apollographql.com/docs/react/errors/#%7B%22version%22%3A%223.8.8%22%2C%22message%22%3A49%2C%22args%22%3A%5B%5D%7D
+  loadDevMessages();
+  loadErrorMessages();
+}
 
 const client = createClient({
   url: import.meta.env.VITE_API_URL || 'http://localhost:4000/graphql',
   exchanges: [cacheExchange,fetchExchange]
 });
-
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
