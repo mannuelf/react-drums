@@ -35,29 +35,8 @@ nvm use
 
 Uses [pnpm workspaces](https://pnpmpkg.com/features/workspaces). Client and Server.
 
-### Client
-
-Install dependencies:
-
-```bash
-pnpm
-```
-
-Development
-
-```bash
-pnpm dev
-```
-
-Production
-
-```bash
-pnpm build
-```
-
-```bash
-pnpm start
-```
+1. Run server scripts first
+2. Run client scripts second
 
 ## Server
 
@@ -82,9 +61,23 @@ docker-compose up -d
 Prisma generate and migrate
 
 ```bash
-pnpm database:generate
+pnpm db:generate
 ```
 
 ```bash
-pnpm database:migrate
+pnpm db:migrate:dev
+```
+
+### Client
+
+Install dependencies:
+
+```bash
+pnpm install
+```
+
+Development
+
+```bash
+pnpm dev
 ```

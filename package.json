@@ -17,7 +17,7 @@
     "db:migrate:init": "pnpm -r --filter='./packages/graphql-server' run migrate:init",
     "db:migrate:dev": "pnpm -r --filter='./packages/graphql-server' run migrate:dev",
     "db:studio": "pnpm -r --filter='./packages/graphql-server' run studio",
-    "dev": "pnpm -r --parallel --filter='./packages/*' run dev",
+    "dev": "pnpm build && pnpm -r --parallel --filter='./packages/*' run dev",
     "format": "prettier --write --cache .",
     "lint": "eslint --cache .",
     "preinstall": "npx only-allow pnpm",
