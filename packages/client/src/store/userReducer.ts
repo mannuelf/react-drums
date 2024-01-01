@@ -1,3 +1,5 @@
+import { User } from "../types/types";
+
 const initialState: User = {
   firstName: '',
   email: '',
