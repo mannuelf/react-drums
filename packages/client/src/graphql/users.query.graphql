@@ -1,0 +1,12 @@
+query GetUsers {
+  users {
+    id
+    firstName
+    lastName
+    email
+    loggedIn
+    isAdmin
+    createdAt
+    updatedAt
+  }
+}

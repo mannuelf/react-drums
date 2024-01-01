@@ -1,4 +1,5 @@
 import { drums } from '../data/drums';
+import { Kit } from '../types/types';
 
 export function getDrums(): Kit[] {
   return drums;

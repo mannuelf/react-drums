@@ -1,3 +1,5 @@
+import { Logo } from './types/types';
+
 import.meta;
 export const AUTH_JWT = 'AUTH';
 export const AUTH_TOKEN = 'abcdefg';

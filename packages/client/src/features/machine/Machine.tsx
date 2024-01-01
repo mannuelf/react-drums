@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Kit, Sound } from '../../types/types';
 import { getDrumKitByName } from '../../utils/getDrums';
 import { machine } from './Machine.css';
 import MachineBody from './MachineBody';

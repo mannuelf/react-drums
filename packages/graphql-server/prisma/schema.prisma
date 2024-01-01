@@ -20,6 +20,7 @@ model User {
   email     String     @unique
   password  String
   isAdmin   Boolean?   @default(false)
+  loggedIn  Boolean?   @default(false)
   createdAt DateTime   @default(now())
   updatedAt DateTime   @updatedAt
   profile   Profile?
