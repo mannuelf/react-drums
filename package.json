@@ -13,9 +13,10 @@
   "scripts": {
     "build": "pnpm -r --filter='./packages/*' run build",
     "codegen": "pnpm --filter='./packages/client' run codegen",
-    "database:generate": "pnpm -r --filter='./packages/graphql-server' run generate",
-    "database:migrate": "pnpm -r --filter='./packages/graphql-server' run migrate",
-    "database:studio": "pnpm -r --filter='./packages/graphql-server' run studio",
+    "db:generate": "pnpm -r --filter='./packages/graphql-server' run generate",
+    "db:migrate:init": "pnpm -r --filter='./packages/graphql-server' run migrate:init",
+    "db:migrate:dev": "pnpm -r --filter='./packages/graphql-server' run migrate:dev",
+    "db:studio": "pnpm -r --filter='./packages/graphql-server' run studio",
     "dev": "pnpm -r --parallel --filter='./packages/*' run dev",
     "format": "prettier --write --cache .",
     "lint": "eslint --cache .",

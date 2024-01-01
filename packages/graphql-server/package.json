@@ -6,8 +6,8 @@
   "scripts": {
     "build": "pnpm i && npx prisma generate",
     "dev": "ts-node-dev src/server.ts",
-    "init": "npx prisma migrate dev --name init",
-    "migrate": "prisma migrate",
+    "migrate:init": "npx prisma migrate dev --name init",
+    "migrate:dev": "prisma migrate dev --preview-feature",
     "seed": "ts-node-dev prisma/seed-db.ts",
     "studio": "npx prisma studio"
   },
