@@ -21,9 +21,15 @@
     "format": "prettier --write --cache .",
     "lint": "eslint --cache .",
     "preinstall": "npx only-allow pnpm",
-    "preview": "pnpm -r --filter='./packages/client' run preview"
+    "preview": "pnpm -r --filter='./packages/client' run preview",
+    "prepare": "husky install"
   },
   "dependencies": {
     "concurrently": "^8.2.2"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^18.4.3",
+    "commitlint": "^18.4.3",
+    "husky": "^8.0.0"
   }
 }

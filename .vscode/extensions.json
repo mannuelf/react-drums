@@ -4,11 +4,11 @@
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "graphql.vscode-graphql-syntax",
+    "ms-playwright.playwright",
     "ms-vscode.vscode-typescript-next",
     "mylesmurphy.prettify-ts",
+    "prisma.prisma",
     "yoavbls.pretty-ts-errors",
-    "yzhang.markdown-all-in-one",
-    "ms-playwright.playwright",
-    "prisma.prisma"
+    "yzhang.markdown-all-in-one"
   ]
 }
