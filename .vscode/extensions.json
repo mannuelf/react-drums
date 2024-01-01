@@ -9,6 +9,6 @@
     "yoavbls.pretty-ts-errors",
     "yzhang.markdown-all-in-one",
     "ms-playwright.playwright",
-    "prisma.prisma",
+    "prisma.prisma"
   ]
 }

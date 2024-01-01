@@ -18,6 +18,7 @@
   "author": "Mannuel Ferreira",
   "license": "ISC",
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.5",
     "@types/node": "^20.10.6",
     "core": "link:@types@pothos/core",
     "prisma": "5.7.1",

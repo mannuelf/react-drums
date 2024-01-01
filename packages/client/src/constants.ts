@@ -1,4 +1,4 @@
-import { Logo } from "./types/types";
+import { Logo } from './types/types';
 
 import.meta;
 export const AUTH_JWT = 'AUTH';

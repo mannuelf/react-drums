@@ -1,4 +1,4 @@
-import { Kit } from "../types/types";
+import { Kit } from '../types/types';
 
 export const drums: Kit[] = [
   {

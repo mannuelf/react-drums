@@ -1,7 +1,6 @@
 import { style } from '@vanilla-extract/css';
 import React from 'react';
 import { LOGO } from '../../constants';
-import LoginForm from '../../features/login/LoginForm';
 
 const sectionStyle = style({
   display: 'flex',
@@ -34,7 +33,6 @@ const Welcome: React.FC = () => {
           Welcome to Machine Micro. A drum machine inspired by Native
           Instruments MASCHINE MIKRO.
         </p>
-        <LoginForm />
       </div>
     </section>
   );
