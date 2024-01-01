@@ -1,19 +1,25 @@
 import { User } from "../types/types";
 
-const initialState: User = {
+interface UserState {
+  firstName: string;
+  email: string;
+  loggedIn: boolean;
+}
+
+const initialState: UserState = {
   firstName: '',
   email: '',
   loggedIn: false,
 };
 
-type ACTIONTYPE =
+type ACTION_TYPE =
   | { type: 'LOGIN'; payload: User }
   | { type: 'LOGOUT'; payload: User };
 
 export function userReducer(
   state: typeof initialState = initialState,
-  action: ACTIONTYPE,
-): User {
+  action: ACTION_TYPE,
+): UserState {
   switch (action.type) {
     case 'LOGIN':
       return { ...state, loggedIn: true };
