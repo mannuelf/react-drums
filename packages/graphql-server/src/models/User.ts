@@ -7,6 +7,7 @@ builder.prismaObject('User', {
     firstName: t.exposeString('firstName', { nullable: true }),
     lastName: t.exposeString('lastName', { nullable: true }),
     email: t.exposeString('email'),
+    loggedIn: t.exposeBoolean('loggedIn', { nullable: true }),
     password: t.exposeString('password'),
     isAdmin: t.exposeBoolean('isAdmin', { nullable: true }),
     createdAt: t.expose('createdAt', { type: 'Date' }),
