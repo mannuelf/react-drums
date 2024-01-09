@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom/client';
 import ReactGA from 'react-ga4';
 import { Provider, cacheExchange, createClient, fetchExchange } from 'urql';
 import App from './components/app/App';
+import { firebaseAnalytics, firebaseInit } from './features/auth/firebase';
 import './main.css';
 
 if (import.meta.env.MODE !== 'development') {
@@ -23,6 +24,9 @@ const client = createClient({
   url: import.meta.env.VITE_API_URL || 'http://localhost:4000/graphql',
   exchanges: [cacheExchange, fetchExchange],
 });
+
+firebaseInit;
+firebaseAnalytics;
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

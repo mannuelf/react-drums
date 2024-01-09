@@ -1,5 +1,3 @@
-import { faCode } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { footerLinkStyle, footerStyle } from './Footer.css';
 
@@ -14,14 +12,16 @@ const Footer: React.FC = () => {
       >
         www.mannuelferreira.com
       </a>
+      |
       <a
         className={footerLinkStyle}
         href='https://github.com/mannuelf/react-drums'
         target='_blank'
         rel='noopener noreferrer'
       >
-        <FontAwesomeIcon icon={faCode} /> Fork it on github.
+        💻 Fork it on github.
       </a>
+      |
       <a
         className={footerLinkStyle}
         href='https://www.svgbackgrounds.com/'
