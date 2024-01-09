@@ -22,7 +22,8 @@
     "lint": "eslint --cache .",
     "preinstall": "npx only-allow pnpm",
     "preview": "pnpm -r --filter='./packages/client' run preview",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "to:vps": "rsync -a --exclude '.git' --exclude 'node_modules' --exclude '.vscode' .  $HOME/workspace/themwebs-vps/reactdrums/"
   },
   "dependencies": {
     "concurrently": "^8.2.2"
