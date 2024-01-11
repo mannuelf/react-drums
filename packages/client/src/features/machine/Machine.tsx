@@ -29,13 +29,8 @@ const Machine: React.FC = () => {
       <MachineBody>
         {!sounds
           ? 'Loading...'
-          : sounds.map((sound: Sound, idx: number) => (
-              <MachineDrumPad
-                {...sound}
-                key={sound.id}
-                data-index={idx}
-                data-key-char={sound.keyChar}
-              />
+          : sounds.map((sound: Sound) => (
+              <MachineDrumPad {...sound} key={sound.id} />
             ))}
       </MachineBody>
     </div>
