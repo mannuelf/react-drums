@@ -9,16 +9,12 @@ import MachineHeader from './MachineHeader';
 
 const Machine: React.FC = () => {
   const kitName = '808';
-  const [kit, setKit] = useState<Kit | undefined>({} as Kit);
+  const [kit, setKit] = useState<Kit | undefined>(undefined);
 
   useEffect(() => {
     const drumKit = getDrumKitByName(kitName);
     setKit(drumKit);
-  }, [setKit]);
-
-  function handlePlaySound(keyChar: string): void {
-    console.log('handlePlaySound', keyChar);
-  }
+  }, [kitName]);
 
   if (!kit) {
     return <div className={machine}>Loading..</div>;
@@ -33,12 +29,12 @@ const Machine: React.FC = () => {
       <MachineBody>
         {!sounds
           ? 'Loading...'
-          : sounds.map((sound: Sound) => (
+          : sounds.map((sound: Sound, idx: number) => (
               <MachineDrumPad
                 {...sound}
                 key={sound.id}
-                onClick={() => handlePlaySound(sound.keyChar)}
-                handleKeyDown={() => handlePlaySound(sound.keyChar)}
+                data-index={idx}
+                data-key-char={sound.keyChar}
               />
             ))}
       </MachineBody>
