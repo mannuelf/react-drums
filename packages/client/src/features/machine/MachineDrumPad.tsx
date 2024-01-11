@@ -23,6 +23,13 @@ const MachineDrumPad: React.FC<Props> = ({
 }) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  const handleKeydown = (e: KeyboardEvent): void => {
+    if (e.key === String(keyCode) || e.keyCode === keyCode) {
+      audioRef!.current!.currentTime = 0;
+      audioRef!.current!.play();
+    }
+  };
+
   useEffect(() => {
     document.addEventListener('keydown', handleKeydown);
     window.focus();
@@ -30,14 +37,7 @@ const MachineDrumPad: React.FC<Props> = ({
     return () => document.removeEventListener('keydown', handleKeydown);
   }, []);
 
-  const handleKeydown = (e: any): any => {
-    if (e.keyCode === keyCode) {
-      audioRef!.current!.currentTime = 0;
-      audioRef!.current!.play();
-    }
-  };
-
-  const handlePlay = (): any => {
+  const handlePlay = (): void => {
     if (audioRef) {
       audioRef?.current?.play();
       audioRef!.current!.currentTime = 0;
@@ -47,6 +47,7 @@ const MachineDrumPad: React.FC<Props> = ({
   return (
     <button
       className={machineDrumPadStyle}
+      data-key-char={keyChar}
       key={id}
       title={name}
       onClick={handlePlay}
